@@ -1,0 +1,56 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "scripts": {
+    "test": "NODE_ENV=test jest --coverage",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
+    "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
+    "fix": "npm run fix:ts & npm run fix:sass",
+    "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
+    "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --parser typescript --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-html-reporter": "^2.8.0",
+    "jest-ts-auto-mock": "^1.0.10",
+    "lint-staged": "^9.5.0",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "ts-auto-mock": "^1.4.4",
+    "ts-jest": "^24.2.0",
+    "ts-loader": "^6.2.1",
+    "ttypescript": "^1.5.8",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "lerna": "^3.20.2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "jest-ts-auto-mock-sample",
+  "version": "1.0.5",
+  "description": "",
+  "author": "YasushiKobayashi <ptpadan@gmail.com>",
+  "homepage": "https://github.com/YasushiKobayashi/samples#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasushiKobayashi/samples.git"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test jest --coverage",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "fix": "npm run fix:ts",
+    "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
+    "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/jest-ts-auto-mock-sample && cp -fr test-report.html $TEST_ARTIFACTS/jest-ts-auto-mock-sample"
+  }
+}

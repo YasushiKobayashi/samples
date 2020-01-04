@@ -1,0 +1,30 @@
+name: Test workflow
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ["10", "12"]
+    env:
+      NODE_ENV: test
+      TEST_ARTIFACTS: /tmp/artifacts
+
+    steps:
+      - uses: actions/checkout@v1
+      - run: mkdir -p $TEST_ARTIFACTS
+      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: yarn
+      - run: npx lerna run lint:ts --stream
+      - run: npx lerna run lint:sass --stream
+      - run: npx lerna run test --stream
+      - run: npx lerna run type-check --stream
+      - run: npx lerna run cp-artifacts --stream
+      - run: npx lerna run cp-artifacts --stream
+        if: failure()
+      - uses: actions/upload-artifact@master
+        with:
+          name: test-artifacts
+          path: /tmp/artifacts
+        env:
+          CI: true
