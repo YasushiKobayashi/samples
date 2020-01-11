@@ -14,7 +14,8 @@
     "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
     "fix": "npm run fix:ts & npm run fix:sass",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
-    "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix"
+    "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
+    "cp-artifacts": "lerna run --stream cp-artifacts"
   },
   "husky": {
     "hooks": {
