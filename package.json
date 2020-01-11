@@ -5,13 +5,17 @@
     "src/*"
   ],
   "scripts": {
-    "test": "NODE_ENV=test jest --coverage",
-    "test:watch": "NODE_ENV=test jest --watch",
+    "build": "lerna run --stream build",
+    "test": "lerna run --stream test",
+    "test:watch": "lerna exec --parallel -- yarn test:watch",
+    "type-check": "lerna run --stream type-check",
+    "type-check:watch": "lerna exec --parallel -- yarn type-check:watch",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
     "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
     "fix": "npm run fix:ts & npm run fix:sass",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
-    "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix"
+    "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
+    "cp-artifacts": "lerna run --stream cp-artifacts"
   },
   "husky": {
     "hooks": {
@@ -44,6 +48,12 @@
     "lint-staged": "^9.5.0",
     "path": "^0.12.7",
     "prettier": "^1.19.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-analyzer": "^3.2.2",
+    "rollup-plugin-babili": "^3.1.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.25.3",
     "ts-auto-mock": "^1.4.4",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
