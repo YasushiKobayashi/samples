@@ -17,10 +17,10 @@ jobs:
       - run: yarn
       - run: npx lerna run lint:ts --stream
       - run: npx lerna run lint:sass --stream
-      - run: npx lerna run test --stream
-      - run: npx lerna run type-check --stream
-      - run: npx lerna run cp-artifacts --stream
-      - run: npx lerna run cp-artifacts --stream
+      - run: yarn test
+      - run: yarn type-check
+      - run: yarn cp-artifacts
+      - run: yarn cp-artifacts
         if: failure()
       - uses: actions/upload-artifact@master
         with:

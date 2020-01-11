@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowJs": false,
+    "module": "ES2015",
+    "target": "es5",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "declarationDir": "dist",
+    "declaration": true,
+    "incremental": false,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "*": [
+        "typings/*",
+        "src/typings/*"
+      ]
+    }
+  }
+}

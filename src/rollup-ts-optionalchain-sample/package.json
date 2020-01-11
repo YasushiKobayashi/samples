@@ -1,11 +1,19 @@
 {
-  "name": "jest-ts-auto-mock-sample",
-  "version": "1.0.5",
+  "name": "rollup-ts-optionalchain-sample",
   "version": "0.0.0",
-  "description": "",
+  "description": "> TODO: description",
   "author": "YasushiKobayashi <ptpadan@gmail.com>",
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
+  "main": "dist/sample-optional.cjs.js",
+  "module": "dist/sample-optional.esm.js",
+  "types": "dist/sample-optional.d.ts",
+  "typings": "dist/sample-optional.d.ts",
+  "typescript": {
+    "definition": "dist/sample-optional.d.ts"
+  },
   "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
     "test": "NODE_ENV=test jest --coverage",
     "test:watch": "NODE_ENV=test jest --watch",
     "type-check": "tsc --noEmit",
@@ -13,6 +21,6 @@
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
     "fix": "npm run fix:ts",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
-    "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/jest-ts-auto-mock-sample && cp -fr test-report.html $TEST_ARTIFACTS/jest-ts-auto-mock-sample"
+    "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/sample-optional && cp -fr test-report.html $TEST_ARTIFACTS/sample-optional"
   }
 }
