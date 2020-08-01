@@ -8,6 +8,7 @@
     "build": "lerna run --stream --parallel build",
     "test": "lerna run --stream --parallel test",
     "test:watch": "lerna run --parallel --stream test:watch",
+    "codecov": "lerna exec --parallel -- npx codecov",
     "type-check": "lerna run --stream --parallel type-check",
     "type-check:watch": "lerna run --parallel --stream type-check:watch",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
