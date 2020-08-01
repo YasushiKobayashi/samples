@@ -16,7 +16,7 @@ jobs:
       - run: curl -o- -L https://yarnpkg.com/install.sh | bash
       - run: yarn
       - run: yarn lint:ts
-      - run: yarn lint:sass
+      # - run: yarn lint:sass
       - run: yarn test
       - run: yarn type-check
       - run: yarn build
