@@ -5,11 +5,11 @@
     "src/*"
   ],
   "scripts": {
-    "build": "lerna run --stream build",
-    "test": "lerna run --stream test",
-    "test:watch": "lerna exec --parallel -- yarn test:watch",
-    "type-check": "lerna run --stream type-check",
-    "type-check:watch": "lerna exec --parallel -- yarn type-check:watch",
+    "build": "lerna run --stream --parallel build",
+    "test": "lerna run --stream --parallel test",
+    "test:watch": "lerna run --parallel --stream test:watch",
+    "type-check": "lerna run --stream --parallel type-check",
+    "type-check:watch": "lerna run --parallel --stream type-check:watch",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
     "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
     "fix": "npm run fix:ts & npm run fix:sass",
