@@ -18,6 +18,7 @@ jobs:
       - run: yarn lint:ts
       # - run: yarn lint:sass
       - run: yarn test
+      - run: yarn codecov
       - run: yarn type-check
       - run: yarn build
       - run: yarn cp-artifacts
