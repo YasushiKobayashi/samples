@@ -12,7 +12,7 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "incremental": true,
+    "incremental": false,
     "removeComments": false,
     "allowJs": true,
     "resolveJsonModule": true,
