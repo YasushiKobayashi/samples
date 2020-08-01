@@ -13,7 +13,7 @@ jobs:
         node: ["10", "12"]
     env:
       NODE_ENV: test
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}     TEST_ARTIFACTS: /tmp/artifacts
+      TEST_ARTIFACTS: /tmp/artifacts
 
     steps:
       - uses: actions/checkout@v1
