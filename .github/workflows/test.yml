@@ -1,5 +1,10 @@
 name: Test workflow
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,7 +13,7 @@ jobs:
         node: ["10", "12"]
     env:
       NODE_ENV: test
-      TEST_ARTIFACTS: /tmp/artifacts
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}     TEST_ARTIFACTS: /tmp/artifacts
 
     steps:
       - uses: actions/checkout@v1
@@ -18,7 +23,7 @@ jobs:
       - run: yarn lint:ts
       # - run: yarn lint:sass
       - run: yarn test
-      - run: npx codecov
+      - uses: codecov/codecov-action@v1
       - run: yarn type-check
       - run: yarn build
       - run: yarn cp-artifacts
