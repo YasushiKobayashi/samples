@@ -15,10 +15,11 @@ jobs:
       - run: mkdir -p $TEST_ARTIFACTS
       - run: curl -o- -L https://yarnpkg.com/install.sh | bash
       - run: yarn
-      - run: npx lerna run lint:ts --stream
-      - run: npx lerna run lint:sass --stream
+      - run: yarn lint:ts
+      # - run: yarn lint:sass
       - run: yarn test
       - run: yarn type-check
+      - run: yarn build
       - run: yarn cp-artifacts
       - run: yarn cp-artifacts
         if: failure()
