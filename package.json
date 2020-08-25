@@ -48,7 +48,7 @@
     "lerna": "3.22.1",
     "lint-staged": "10.2.12",
     "path": "0.12.7",
-    "prettier": "2.0.5",
+    "prettier": "2.1.0",
     "ts-auto-mock": "2.3.4",
     "ts-jest": "26.1.4",
     "ts-loader": "8.0.2",
