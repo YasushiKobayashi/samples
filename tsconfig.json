@@ -20,7 +20,7 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "esnext",
     "target": "es5",
     "noEmit": true,
     "jsx": "react",

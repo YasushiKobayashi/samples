@@ -1,11 +1,2 @@
-# `jest-ts-auto-mock-sample`
-
-> TODO: description
-
-## Usage
-
-```
-const jestTsAutoMockSample = require('jest-ts-auto-mock-sample');
-
-// TODO: DEMONSTRATE API
-```
+# sample code
+- https://note.com/jkhayate/n/n5a347fb5e79d
