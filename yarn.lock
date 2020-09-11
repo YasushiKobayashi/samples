@@ -8869,10 +8869,10 @@ triple-beam@^1.2.0, triple-beam@^1.3.0:
   resolved "https://registry.yarnpkg.com/triple-beam/-/triple-beam-1.3.0.tgz#a595214c7298db8339eeeee083e4d10bd8cb8dd9"
   integrity sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
 
-ts-auto-mock@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-2.4.0.tgz#cc28d6b5f5478294f7fc341baa9f0ebc06d93116"
-  integrity sha512-XGOTPYa2DV3e46clnRED61xz5b0Hz/zrSxgjJx8AWd+Nup65Z663EvNPi0vc0/KaKs4lgewW5i2ElbCWJbGNWA==
+ts-auto-mock@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-2.5.0.tgz#bc2d46782c831ca38db05661f504a5dcd3366583"
+  integrity sha512-re+yqR1WNNuSPBP8bd0WU9DcVI7/MGo1P1OElvDvLYmOa0pNGFpTBBJGRhpY2yFTDNnKZIWKGmTfF8qLL83f7w==
   dependencies:
     lodash-es "^4.17.15"
     winston "^3.3.3"
