@@ -1,15 +1,14 @@
 {
-  "name": "jset-same-example",
+  "name": "jest-same-example-rollup",
   "version": "0.0.0",
-  "description": "",
   "author": "YasushiKobayashi <ptpadan@gmail.com>",
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
-  "main": "dist/jest-same-example.cjs.js",
-  "module": "dist/jest-same-example.esm.js",
-  "types": "dist/jest-same-example.d.ts",
-  "typings": "dist/jest-same-example.d.ts",
+  "main": "dist/jest-same-example-rollup.cjs.js",
+  "module": "dist/jest-same-example-rollup.esm.js",
+  "types": "dist/jest-same-example-rollup.d.ts",
+  "typings": "dist/jest-same-example-rollup.d.ts",
   "typescript": {
-    "definition": "dist/jest-same-example.d.ts"
+    "definition": "dist/jest-same-example-rollup.d.ts"
   },
   "scripts": {
     "build": "rollup -c",

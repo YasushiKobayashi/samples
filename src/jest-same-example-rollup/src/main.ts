@@ -6,6 +6,7 @@ export const main = () => {
   return test()
 }
 
+/* @__PURE__ */
 describe('main', () => {
   it('test', () => {
     const res = test()
