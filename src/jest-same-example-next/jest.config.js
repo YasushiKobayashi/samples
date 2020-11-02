@@ -2,13 +2,6 @@ const path = require('path')
 const { execSync } = require('child_process')
 const jest = require('../../jest.config')
 
-jest.moduleNameMapper = {
-  ...jest.moduleNameMapper,
-  '@/(.*)$': '<rootDir>/src/$1',
-}
-
-jest.moduleFileExtensions = ['ts', 'tsx', 'js']
-
 // "jsx": "react"にする
 jest.globals['ts-jest'] = {
   ...jest.globals['ts-jest'],
