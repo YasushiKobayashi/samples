@@ -15,7 +15,7 @@ const testUtils: TestUtils = {}
 
 /* @__PURE__ */
 describe('Component', () => {
-  beforeEach(async () => {
+  beforeAll(async () => {
     const { render } = await import('@testing-library/react')
     testUtils.render = render
   })

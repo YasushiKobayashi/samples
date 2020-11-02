@@ -21,9 +21,7 @@ const plugins = [
     include: 'node_modules/**',
   }),
   commonjs(),
-  typescript({
-    tsconfig: 'tsconfig.json',
-  }),
+  typescript(),
   alias({
     entries: {
       '@': path.resolve('./src'),
@@ -41,20 +39,12 @@ export default [
         name: pkg.name,
         file: pkg.main,
         format: 'cjs',
-
-        global: {
-          react: 'React',
-        },
       },
       {
         sourcemap: true,
         name: pkg.name,
         file: pkg.module,
         format: 'es',
-
-        global: {
-          react: 'React',
-        },
       },
     ],
     external: ['prop-types', 'react', 'react-dom', '@testing-library/react'],
