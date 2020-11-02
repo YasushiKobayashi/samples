@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "build": "lerna run --stream --parallel build",
+    "build:modules": "lerna run --stream --parallel build:modules",
     "test": "lerna run --stream --parallel test",
     "test:watch": "lerna run --parallel --stream test:watch",
     "type-check": "lerna run --stream --parallel type-check",

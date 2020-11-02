@@ -11,7 +11,7 @@
     "definition": "dist/jest-same-example-rollup.d.ts"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build:modules": "rollup -c",
     "start": "rollup -cw",
     "watch": "rollup -cw",
     "test": "NODE_ENV=test jest --coverage --passWithNoTests --runInBand",
