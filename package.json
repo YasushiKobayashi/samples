@@ -5,6 +5,7 @@
     "src/*"
   ],
   "scripts": {
+    "start": "zenn preview",
     "build": "lerna run --stream --parallel build",
     "build:modules": "lerna run --stream --parallel build:modules",
     "test": "lerna run --stream --parallel test",
