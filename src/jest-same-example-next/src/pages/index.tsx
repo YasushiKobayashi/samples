@@ -1,8 +1,7 @@
-import { main } from '../modules/test'
+import * as React from 'react'
 
-const Pages = () => {
-  console.log(main())
-  return <div>test</div>
+const Pages: React.FC = () => {
+  return <div>index</div>
 }
 
 export default Pages

@@ -6,9 +6,8 @@ export const main = () => {
   return fn()
 }
 
-/* @__TEST__ */
-/* @__PURE__ */
 if (process.env.NODE_ENV === 'test') {
+  /* @__PURE__ */
   describe('main', () => {
     it('test', () => {
       const res = fn()
