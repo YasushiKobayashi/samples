@@ -34,22 +34,30 @@ const plugins = [
 
 export default [
   {
-    input: './src/main.ts',
+    input: './src/jest-same-example-rollup.tsx',
     output: [
       {
         sourcemap: true,
         name: pkg.name,
         file: pkg.main,
         format: 'cjs',
+
+        global: {
+          react: 'React',
+        },
       },
       {
         sourcemap: true,
         name: pkg.name,
         file: pkg.module,
         format: 'es',
+
+        global: {
+          react: 'React',
+        },
       },
     ],
-    external: [],
+    external: ['prop-types', 'react', 'react-dom', '@testing-library/react'],
     plugins,
   },
 ]
