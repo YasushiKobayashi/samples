@@ -5,16 +5,20 @@
     "src/*"
   ],
   "scripts": {
+    "start": "zenn preview",
     "build": "lerna run --stream --parallel build",
+    "build:modules": "lerna run --stream --parallel build:modules",
     "test": "lerna run --stream --parallel test",
     "test:watch": "lerna run --parallel --stream test:watch",
     "type-check": "lerna run --stream --parallel type-check",
     "type-check:watch": "lerna run --parallel --stream type-check:watch",
     "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx ./ --ignore-path .gitignore",
     "lint:sass": "stylelint --config .stylelintrc.yml 'src/**/*.tsx' 'packages/**/*.scss'",
-    "fix": "npm run fix:ts & npm run fix:sass",
+    "lint:md": "textlint articles/*",
+    "fix": "yarn fix:ts & yarn fix:sass yarn fix:md",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
+    "fix:md": "textlint articles/*",
     "cp-artifacts": "lerna run --stream cp-artifacts"
   },
   "husky": {
@@ -26,6 +30,10 @@
     "*.{ts,tsx}": [
       "prettier --parser typescript --write",
       "eslint --fix",
+      "git add"
+    ],
+    "*.md": [
+      "textlint --fix",
       "git add"
     ]
   },
@@ -59,12 +67,22 @@
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.27.2",
+    "textlint": "^11.7.6",
+    "textlint-rule-ja-no-mixed-period": "^2.1.1",
+    "textlint-rule-max-ten": "^2.0.4",
+    "textlint-rule-no-mix-dearu-desumasu": "^4.0.1",
+    "textlint-rule-preset-ja-spacing": "^2.0.2",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.1",
+    "textlint-rule-prh": "^5.3.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "ts-auto-mock": "^2.4.0",
     "ts-jest": "^26.3.0",
     "ts-loader": "^8.0.3",
     "ttypescript": "^1.5.12",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "zenn-cli": "^0.1.50"
   },
   "dependencies": {
     "next": "^9.5.3",

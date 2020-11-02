@@ -22,10 +22,10 @@ jobs:
       - run: yarn
       - run: yarn lint:ts
       # - run: yarn lint:sass
+      - run: make build
       - run: yarn test
       - uses: codecov/codecov-action@v1
       - run: yarn type-check
-      - run: yarn build
       - run: yarn cp-artifacts
       - run: yarn cp-artifacts
         if: failure()
