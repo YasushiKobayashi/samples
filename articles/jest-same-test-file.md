@@ -2,8 +2,8 @@
 title: jestでテストファイルと実装ファイルをまとめてみる
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ['jest', 'JavaScript']
-published: false
+topics: ['jest', 'JavaScript', 'TypeScript']
+published: true
 ---
 
 ## テストファイルと実装ファイルを同一にすることで、exportする必要がないコードもテストできるようにしたい
@@ -196,3 +196,9 @@ if (process.env.NODE_ENV === 'test') {
 ```
 
 rust のように、言語仕様でできる言語同様にテストを書くことができるわけではないですが、 js(ts) でも同様のテストの実行は可能でした。
+
+今回サンプルコードにした内容は全てこちらの PR で作成しており、すべて動作確認可能です。
+
+https://github.com/YasushiKobayashi/samples/pull/59
+https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-rollup
+https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-next
