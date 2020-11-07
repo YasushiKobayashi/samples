@@ -7,4 +7,4 @@ trailingComma: all
 bracketSpacing: true
 jsxBracketSameLine: true
 arrowParens: avoid
-parser: flow
+parser: typescript
