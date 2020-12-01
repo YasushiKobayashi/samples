@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "Yasushi Kobayashi",
+  "address": {
+    "id": 1,
+    "postCode": "162-0846",
+    "prefecture": "東京都",
+    "city": "新宿区",
+    "address": "市谷左内町21-13",
+    "mansion": null
+  },
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1
+    }
+  ]
+}
