@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BestConfirmTemplate 購入まで 1`] = `
+<DocumentFragment>
+  <div>
+    <form>
+      <h2>
+        配送先情報
+      </h2>
+      <p>
+        Yasushi Kobayashi様
+      </p>
+      <p>
+        〒162-0846 東京都新宿区市谷左内町21-13
+      </p>
+      <h2>
+        カート情報
+      </h2>
+      <ul>
+        <li>
+          <p>
+            商品名:TypeScript入門
+          </p>
+          <p>
+            数量:1個
+          </p>
+          <p>
+            価格:3,000円
+          </p>
+        </li>
+        <li>
+          <p>
+            商品名:Python入門
+          </p>
+          <p>
+            数量:2個
+          </p>
+          <p>
+            価格:4,000円
+          </p>
+        </li>
+      </ul>
+      <div>
+        <h2>
+          金額情報
+        </h2>
+        <h3>
+          送料
+        </h3>
+        <p>
+          無料
+        </p>
+        <h3>
+          合計金額
+        </h3>
+        <p>
+          11,000円
+        </p>
+      </div>
+      <button
+        type="submit"
+      >
+        購入する
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

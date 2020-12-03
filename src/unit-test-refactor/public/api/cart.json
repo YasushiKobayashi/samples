@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "userId": 1,
+  "details": [
+    {
+      "productId": 1,
+      "quantity": 1,
+      "product": {
+        "id": 1,
+        "name": "TypeScript入門",
+        "price": 3000
+      }
+    },
+    {
+      "productId": 2,
+      "quantity": 2,
+      "product": {
+        "id": 2,
+        "name": "Python入門",
+        "price": 4000
+      }
+    }
+  ]
+}
