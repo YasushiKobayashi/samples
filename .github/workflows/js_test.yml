@@ -16,7 +16,7 @@ jobs:
       TEST_ARTIFACTS: /tmp/artifacts
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.4
       - run: mkdir -p $TEST_ARTIFACTS
       - run: curl -o- -L https://yarnpkg.com/install.sh | bash
       - run: yarn
