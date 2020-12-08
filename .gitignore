@@ -48,3 +48,4 @@ tsconfig.tsbuildinfo
 .rpt2_cache
 dist
 analyze.txt
+.terraform
