@@ -1,3 +1,11 @@
+resource "aws_internet_gateway" "api" {
+  vpc_id = aws_vpc.api.id
+
+  tags = {
+    Name = "api"
+  }
+}
+
 resource "aws_vpc" "api" {
   cidr_block = "172.32.0.0/16"
 
