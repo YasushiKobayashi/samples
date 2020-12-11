@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
+echo -n $1 > enc.txt
 aws kms encrypt \
   --key-id alias/laravel-ecs-ec2-1instance \
-  --plaintext $1 \
-  --output text \
-  --query CiphertextBlob > ./test.txt
+  --plaintext fileb://enc.txt \
+  --query CiphertextBlob \
+  --output text > test.txt

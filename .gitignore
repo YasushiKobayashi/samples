@@ -49,3 +49,4 @@ tsconfig.tsbuildinfo
 dist
 analyze.txt
 .terraform
+enc.txt
