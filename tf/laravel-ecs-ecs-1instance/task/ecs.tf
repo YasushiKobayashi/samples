@@ -24,3 +24,19 @@ resource "aws_ecs_cluster" "api" {
     capacity_provider = aws_ecs_capacity_provider.api.name
   }
 }
+
+resource "aws_ecs_service" "api" {
+  name            = var.app_name
+  task_definition = aws_ecs_task_definition.api.arn
+  cluster         = aws_ecs_cluster.api.arn
+  launch_type     = "EC2"
+  desired_count   = 1
+  deployment_minimum_healthy_percent = 100
+  deployment_maximum_percent         = 200
+
+  load_balancer {
+    target_group_arn = data.terraform_remote_state.api.outputs.alb_target_group_api.arn
+    container_name   = var.nginx_container_name
+    container_port   = 80
+  }
+}
