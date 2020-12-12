@@ -1,7 +1,7 @@
 locals {
   # apiリポジトリのコミットIDに合わせ、デグレしないように気をつける
-  nginx_image_id   = "latest"
-  api_image_id = "latest"
+  nginx_image_id   = "822907c4c251f0f1840f330b4ef58d4c3dee8917"
+  api_image_id = "4e0f97c08499a2fb178f4f040602f5661b753e28"
 }
 
 resource "aws_ecs_task_definition" "api" {
@@ -43,6 +43,8 @@ resource "aws_ecs_task_definition" "api" {
       "environment" : [
         { "name" : "APP_ENV", "value" : "production" },
         { "name" : "DB_HOST", "value" : data.terraform_remote_state.api.outputs.db_instance_api.address },
+        # 暗号化するべきだが、面倒なので・・・
+        { "name" : "APP_ENV", "value" : "base64:YH7F1huFkWpLU+jmoFbO8o+R30TCtJPT8wNNc/8SdC8=" },
       ],
       "memory" : 512,
       "essential" : true,
