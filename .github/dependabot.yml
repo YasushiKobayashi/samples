@@ -26,3 +26,21 @@ updates:
     - YasushiKobayashi
   assignees:
     - YasushiKobayashi
+
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+  reviewers:
+    - YasushiKobayashi
+  assignees:
+    - YasushiKobayashi
+
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  reviewers:
+    - YasushiKobayashi
+  assignees:
+    - YasushiKobayashi
