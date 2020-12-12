@@ -7,6 +7,6 @@ set -e
 declare -p | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /container.env
 
 # @TODO サーバー複数台にする際には分離する
-php artisan config:cache
+php artisan optimize
 php artisan migrate --seed --force &
 exec "php-fpm"

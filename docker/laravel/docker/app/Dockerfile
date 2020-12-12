@@ -33,8 +33,6 @@ RUN mkdir -p storage/framework/cache/data \
     && chmod -R 777 storage \
     && composer install --prefer-dist --no-dev --optimize-autoloader \
     && php artisan clear-compiled \
-    && php artisan optimize \
-    && php artisan route:cache \
     && php artisan event:cache
 
 ENTRYPOINT [ "/entrypoint.sh" ]
