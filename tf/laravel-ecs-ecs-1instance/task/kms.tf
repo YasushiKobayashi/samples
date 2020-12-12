@@ -11,12 +11,12 @@ resource "aws_kms_alias" "api_task" {
 data "aws_kms_secrets" "ecs" {
   secret {
     name    = "db_username"
-    payload = "AQICAHgLj4ep5Juu2IoyOya2TVUGj+0Nc7X/Akpzj7PLRA8H5gGIHKHMd7XO8oiSaIJoDBAXAAAAZjBkBgkqhkiG9w0BBwagVzBVAgEAMFAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM7f00AjIQ4aopf4cxAgEQgCO4B2LvvOuUTlPh2EShQPX6+mULUFFvlaYQKwY6tqoUV0T7Mw=="
+    payload = "AQICAHgLj4ep5Juu2IoyOya2TVUGj+0Nc7X/Akpzj7PLRA8H5gHHj95drRcee+XWxY4dPmpEAAAAYjBgBgkqhkiG9w0BBwagUzBRAgEAMEwGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM0bZUh8aPvUQFf9I/AgEQgB8fs0JSsRVFEjD/sVQD46XGY4zpS8/RFQRSR2/uBPjE"
   }
 
   secret {
     name    = "db_password"
-    payload = "AQICAHgLj4ep5Juu2IoyOya2TVUGj+0Nc7X/Akpzj7PLRA8H5gHh7YZ19KYm+Ddamm4l18qhAAAAaTBnBgkqhkiG9w0BBwagWjBYAgEAMFMGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMeRE61bSvO+yuGAYUAgEQgCaBDCy+OSVjfAr93mgPKLT+XARjOYyzx6qeMsquvlx+L3DdKmWHXg=="
+    payload = "AQICAHgLj4ep5Juu2IoyOya2TVUGj+0Nc7X/Akpzj7PLRA8H5gGU0f1iUREC3dd9tMxLe3gwAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMriPheQbhTfHQskanAgEQgDsVP7zA8FZyprV9IeVi/E1CsCxHCt24R+PbWdcxR2Ppw5RrKi8b1kUtS6Z4muLcs4tCN8pDD2FSDutQig=="
   }
 }
 
