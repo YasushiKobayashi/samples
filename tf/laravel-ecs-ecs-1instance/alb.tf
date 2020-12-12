@@ -62,7 +62,6 @@ resource "aws_alb_listener" "api_https" {
   port              = "443"
   protocol          = "HTTPS"
   certificate_arn   = data.aws_acm_certificate.api.arn
-  ssl_policy        = "ELBSecurityPolicy-2015-05"
 
   default_action {
     target_group_arn = aws_alb_target_group.api.id
@@ -87,10 +86,11 @@ resource "aws_security_group" "alb" {
 }
 
 resource "aws_security_group_rule" "alb_http" {
-  type      = "ingress"
-  from_port = 80
-  to_port   = 80
-  protocol  = "tcp"
+  description = "alb_http"
+  type        = "ingress"
+  from_port   = 80
+  to_port     = 80
+  protocol    = "tcp"
   cidr_blocks = [
     "0.0.0.0/0",
   ]
@@ -98,6 +98,7 @@ resource "aws_security_group_rule" "alb_http" {
 }
 
 resource "aws_security_group_rule" "alb_https" {
+  description = "alb_https"
   type      = "ingress"
   from_port = 443
   to_port   = 443

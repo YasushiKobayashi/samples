@@ -1,7 +1,7 @@
 data "aws_kms_secrets" "rds" {
   secret {
     name    = "root_username"
-    payload    = "AQICAHgu1ESf7ghxqox5ud+3uLa0u1G9BsOif/zPd9Be97hOPgG40GQBcoE6DPiRVVSd+zIzAAAAYjBgBgkqhkiG9w0BBwagUzBRAgEAMEwGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMh+ky55ybrqkQChceAgEQgB/ARx3BkeeESAfmAo4EKUcTShA8jpun3dXbHXu5tpJn"
+    payload = "AQICAHgu1ESf7ghxqox5ud+3uLa0u1G9BsOif/zPd9Be97hOPgG40GQBcoE6DPiRVVSd+zIzAAAAYjBgBgkqhkiG9w0BBwagUzBRAgEAMEwGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMh+ky55ybrqkQChceAgEQgB/ARx3BkeeESAfmAo4EKUcTShA8jpun3dXbHXu5tpJn"
   }
   secret {
     name    = "root_password"
@@ -28,7 +28,9 @@ resource "aws_db_instance" "api" {
   password               = data.aws_kms_secrets.rds.plaintext["root_password"]
   vpc_security_group_ids = [aws_security_group.api_db.id]
   db_subnet_group_name   = aws_db_subnet_group.api.name
+  kms_key_id             = aws_kms_key.api.arn
   skip_final_snapshot    = true
+  storage_encrypted      = true
 }
 
 resource "aws_security_group" "api_db" {
@@ -48,6 +50,7 @@ resource "aws_security_group" "api_db" {
 }
 
 resource "aws_security_group_rule" "api_db" {
+  description              = "api_db"
   type                     = "ingress"
   from_port                = 3306
   to_port                  = 3306

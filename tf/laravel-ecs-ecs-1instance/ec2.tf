@@ -15,6 +15,7 @@ resource "aws_security_group" "api" {
 }
 
 resource "aws_security_group_rule" "api_ec2_http" {
+  description              = "api_ec2_http"
   type                     = "ingress"
   from_port                = 0
   to_port                  = 65535

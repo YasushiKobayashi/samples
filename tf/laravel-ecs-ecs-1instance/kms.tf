@@ -1,5 +1,6 @@
 resource "aws_kms_key" "api" {
   description             = "api task master key"
+  enable_key_rotation     = true
   deletion_window_in_days = 10
 }
 
