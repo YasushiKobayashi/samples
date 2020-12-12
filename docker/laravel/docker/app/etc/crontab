@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+BASH_ENV=/container.env
+
+* * * * * /usr/local/bin/php /var/www/artisan schedule:run
