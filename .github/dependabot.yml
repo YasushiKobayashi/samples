@@ -36,11 +36,8 @@ updates:
   assignees:
     - YasushiKobayashi
 
-- package-ecosystem: npm
+- package-ecosystem: composer
   directory: "/"
   schedule:
     interval: daily
-  reviewers:
-    - YasushiKobayashi
-  assignees:
-    - YasushiKobayashi
+  open-pull-requests-limit: 10
