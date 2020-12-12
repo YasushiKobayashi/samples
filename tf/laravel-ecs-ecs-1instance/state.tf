@@ -12,3 +12,13 @@ terraform {
   }
 }
 
+data "terraform_remote_state" "api_task" {
+  backend = "s3"
+
+  config = {
+    bucket = "sample-repository-tfstate"
+    key    = "laravel-ecs-ecs-1instance-task.tfstate"
+    region = "ap-northeast-1"
+  }
+}
+

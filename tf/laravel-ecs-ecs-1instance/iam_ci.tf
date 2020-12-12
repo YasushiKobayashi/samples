@@ -2,7 +2,7 @@
 # ## apiのci用のユーザー
 # ################################################
 resource "aws_iam_user" "api_ci" {
-  name = "stg-api-ci-deploy"
+  name = "api-ci-deploy"
 }
 
 resource "aws_iam_user_policy_attachment" "api_ci" {
@@ -40,6 +40,25 @@ resource "aws_iam_policy" "api_ci" {
           aws_ecr_repository.nginx.arn,
           aws_ecr_repository.api.arn,
         ]
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "ecs:DeregisterTaskDefinition",
+          "ecs:DescribeServices",
+          "ecs:DescribeTaskDefinition",
+          "ecs:DescribeTasks",
+          "ecs:ListTasks",
+          "ecs:ListTaskDefinitions",
+          "ecs:RegisterTaskDefinition",
+          "ecs:StartTask",
+          "ecs:StopTask",
+          "ecs:UpdateService",
+          "iam:PassRole",
+        ],
+        "Resource" : [
+          "*",
+        ],
       },
     ],
   })

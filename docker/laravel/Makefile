@@ -8,7 +8,7 @@ build-nginx:
 	docker push ${ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:${COMMIT_ID}
 
 deploy-api-nginx:
-	make build-prod-nginx
+	make build-ginx
 	./ecs-deploy -c api --service-name api --image ${ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/nginx:${COMMIT_ID}
 
 build-app:
