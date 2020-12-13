@@ -18,7 +18,7 @@
     "fix": "yarn fix:ts & yarn fix:sass yarn fix:md",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
-    "fix:md": "textlint articles/*",
+    "fix:md": "yarn lint:md --fix",
     "cp-artifacts": "lerna run --stream cp-artifacts"
   },
   "husky": {

@@ -53,13 +53,25 @@ https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=37728aa5
 
 この方法でテストが必要なファイルのリストアップができたの、 `src/*`以下を対象にテストを回す必要はなくなったので、 `testRegex` の記述は消しても大丈夫です。
 
+
+※エラーが出ないよりベターな書き方をコメントいただいたので、下記コードの修正をしています。
+
 ```javascript
 const basePath = path.resolve(__dirname, 'src')
-const stdout = execSync(`grep -ril describe ${basePath}/*`)
-const targets = stdout
-  .toString()
-  .split('\n')
-  .filter(v => v !== '')
+const spawn = spawnSync(`grep -ril describe ${basePath}/*`, { shell: true })
+const targets = []
+
+if (spawn.status === 0) {
+  spawn.stdout
+    .toString()
+    .split('\n')
+    .forEach(filePath => {
+      if (filePath) targets.push(filePath)
+    })
+} else if (spawn.status !== 1) {
+  throw new Error(spawn.error.message)
+}
+
 jest.testRegex = targets.concat([jest.testRegex])
 ```
 
