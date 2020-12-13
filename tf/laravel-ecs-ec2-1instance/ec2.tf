@@ -7,9 +7,10 @@ resource "aws_security_group" "api" {
   vpc_id = aws_vpc.api.id
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    # tfsec:ignore:AWS006, tfsec:ignore:AWS009
     cidr_blocks = ["0.0.0.0/0"]
   }
 }

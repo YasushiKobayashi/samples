@@ -3,6 +3,7 @@ data "aws_acm_certificate" "api" {
   types  = ["AMAZON_ISSUED"]
 }
 
+# tfsec:ignore:AWS005
 resource "aws_alb" "api" {
   name            = var.app_name
   security_groups = [aws_security_group.alb.id]
@@ -78,9 +79,10 @@ resource "aws_security_group" "alb" {
   vpc_id = aws_vpc.api.id
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    # tfsec:ignore:AWS006, tfsec:ignore:AWS009
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
@@ -91,6 +93,7 @@ resource "aws_security_group_rule" "alb_http" {
   from_port   = 80
   to_port     = 80
   protocol    = "tcp"
+  # tfsec:ignore:AWS006
   cidr_blocks = [
     "0.0.0.0/0",
   ]
@@ -99,12 +102,12 @@ resource "aws_security_group_rule" "alb_http" {
 
 resource "aws_security_group_rule" "alb_https" {
   description = "alb_https"
-  type      = "ingress"
-  from_port = 443
-  to_port   = 443
-  protocol  = "tcp"
+  type        = "ingress"
+  from_port   = 443
+  to_port     = 443
+  protocol    = "tcp"
   cidr_blocks = [
-    "0.0.0.0/0",
+    "0.0.0.0/0", # tfsec:ignore:AWS006, tfsec:ignore:AWS009
   ]
   security_group_id = aws_security_group.alb.id
 }
