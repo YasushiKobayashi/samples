@@ -2,7 +2,7 @@
 title: ecs/ec2インスタンス一台で動く、Laravelのapi環境をTerraformで構築する
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ['Terraform', 'Lalavel', 'ecs', 'ec2']
+topics: ['Terraform', 'Laravel', 'ecs', 'ec2']
 published: true
 ---
 
