@@ -15,3 +15,6 @@
 # ts-auto-mockでinterfaceからテスト用データのモック生成を楽にする
 - https://note.com/jkhayate/n/n5a347fb5e79d
 - https://github.com/YasushiKobayashi/samples/blob/master/src/jest-ts-auto-mock-sample
+
+## 「ecs/ec2インスタンス一台で動く、Laravelのapi環境をTerraformで構築する」のサンプルコード
+- https://zenn.dev/ptpadan/articles/laravel-ecs-ec2-1instance
