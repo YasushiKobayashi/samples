@@ -290,7 +290,7 @@ ecs のデプロイには様々なツールがありますが、使用するイ�
 
 構築したサービスでは、この Makefile を GitHub actions で実行しています。
 
-```
+```bash
 COMMIT_ID := $(shell git log -n 1 --pretty=format:"%H")
 ACCOUNT_ID := $(shell aws sts get-caller-identity | jq -r ".Account")
 
