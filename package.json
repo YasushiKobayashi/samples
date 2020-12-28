@@ -78,7 +78,7 @@
     "textlint-rule-preset-ja-technical-writing": "^4.0.1",
     "textlint-rule-prh": "^5.3.0",
     "textlint-rule-spellcheck-tech-word": "^5.0.0",
-    "ts-auto-mock": "^2.6.5",
+    "ts-auto-mock": "^3.0.0",
     "ts-jest": "^26.4.3",
     "ts-loader": "^8.0.10",
     "ttypescript": "^1.5.12",
