@@ -14583,10 +14583,10 @@ try-resolve@^1.0.1:
   resolved "https://registry.yarnpkg.com/try-resolve/-/try-resolve-1.0.1.tgz#cfde6fabd72d63e5797cfaab873abbe8e700e912"
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
-ts-auto-mock@^2.6.5:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-2.7.0.tgz#0ea9e6ceb018bbd8a27ba4a8612f6105230fc040"
-  integrity sha512-a+lcoUYsYArnVTBaxcEGOBfqAjgsrGxPOW+0/x4UQtucSZ8BK+2yyoTnKIoyVf21K1GCzXNpsF+/lP1EQa49qA==
+ts-auto-mock@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.0.0.tgz#ca388e43336d38315828d9bd03faec7c669632e6"
+  integrity sha512-QEIEcJKScN9VWrRyiASXuoMIgPaJFNZ/opLVwcmai0l/jsYx0aUR5j2d4YG4X1i2jrbjM37gnVjMYSgxE2rKNQ==
   dependencies:
     lodash-es "^4.17.15"
     micromatch "^4.0.2"
