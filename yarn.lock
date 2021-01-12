@@ -13801,10 +13801,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swr@^0.3.8:
-  version "0.3.11"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-0.3.11.tgz#f7f50ed26c06afea4249482cec504768a2272664"
-  integrity sha512-ya30LuRGK2R7eDlttnb7tU5EmJYJ+N6ytIOM2j0Hqs0qauJcDjVLDOGy7KmFeH5ivOwLHalFaIyYl2K+SGa7HQ==
+swr@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.4.0.tgz#e76da9f981fe6dee0e133289e9b582fc80d9c41d"
+  integrity sha512-70qd1FHYHwIdYXW0jTpm5ktitzvPBCtyKz8ZzynWlY/rMqe4drYPgcl/H9Ipuh+Xv6ZW5viNx13ro8EKIWZcoQ==
   dependencies:
     dequal "2.0.2"
 
@@ -15685,9 +15685,9 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 zenn-cli@^0.1.53:
-  version "0.1.66"
-  resolved "https://registry.yarnpkg.com/zenn-cli/-/zenn-cli-0.1.66.tgz#65b1a31cf2955cf96153779098c93060f81ca30a"
-  integrity sha512-ehKXPH+YsWTYrGIT/u7XmvC7c6bAkUu+dkwMCPrvkAZ2AM+BNwMw9oDHGV+qLLoXKTx8fIR9Ro2zP5zr+EWLDg==
+  version "0.1.69"
+  resolved "https://registry.yarnpkg.com/zenn-cli/-/zenn-cli-0.1.69.tgz#8a5ab035f2935ad8a5e06bba900e2c6cf2751c88"
+  integrity sha512-3PSOJxkpOvZVjMNdH4j+RHLlHZPjD8uLmi2Ev+IOOxR49W69l206K9r+xDD6JOMQL74+sJdMvW7+tNDgk1aWYw==
   dependencies:
     "@types/socket.io" "^2.1.11"
     "@types/update-notifier" "^5.0.0"
@@ -15707,24 +15707,24 @@ zenn-cli@^0.1.53:
     socket.io "^2.3.0"
     socket.io-client "^2.3.0"
     update-notifier "^5.0.1"
-    zenn-content-css "^0.1.64"
-    zenn-embed-elements "^0.1.65"
-    zenn-markdown-html "^0.1.66"
+    zenn-content-css "^0.1.67"
+    zenn-embed-elements "^0.1.69"
+    zenn-markdown-html "^0.1.68"
 
-zenn-content-css@^0.1.64:
-  version "0.1.64"
-  resolved "https://registry.yarnpkg.com/zenn-content-css/-/zenn-content-css-0.1.64.tgz#a9da43b4e8b617a4473012aab54f14bca8b6fcbf"
-  integrity sha512-yWX4bHe+0qEq9ppNtUhSPqLTE9Io4DKNYnzKUoL+D0yQ5qckSRmfkt5ZvcElZVlbxFIiYVksXqMcE40nakB4KQ==
+zenn-content-css@^0.1.67:
+  version "0.1.67"
+  resolved "https://registry.yarnpkg.com/zenn-content-css/-/zenn-content-css-0.1.67.tgz#5f5c259295da1b0d7a5f8d8d3cbb36c85f828c94"
+  integrity sha512-AeIuX/jdQEWGqZ3VYeUTRl3wki2KyVU0tzq5JDiO1CyL70coLjBgS5CdnvMsSL9XWjceAYuNL+QAONww84dGMg==
 
-zenn-embed-elements@^0.1.65:
-  version "0.1.65"
-  resolved "https://registry.yarnpkg.com/zenn-embed-elements/-/zenn-embed-elements-0.1.65.tgz#d063f892e0419b281ed7ecd17c5743783c2d6320"
-  integrity sha512-Fhd4YcDCsizadtMN15T+BWziA19NEnUqhDsVdxdYMjjVfPB1SsRxRAaj1W00wEJZ4greKD6ngt0EB3whv1sYlg==
+zenn-embed-elements@^0.1.69:
+  version "0.1.69"
+  resolved "https://registry.yarnpkg.com/zenn-embed-elements/-/zenn-embed-elements-0.1.69.tgz#6bebf9a022ea021d20c717c3a753ad4c4f8bf559"
+  integrity sha512-3WvmCZX48x1ldJEkfxXRvWqAWO/OG7tqZRj4hwAaBOwYhG5Hm8S6/tvgPxaakbP8mBOJ1lkP1BfQ1ty2RNIZ9w==
 
-zenn-markdown-html@^0.1.66:
-  version "0.1.66"
-  resolved "https://registry.yarnpkg.com/zenn-markdown-html/-/zenn-markdown-html-0.1.66.tgz#8abd1f0f347d4927f21dfe868770cb43d7c2146b"
-  integrity sha512-Th52ir+bRWnh46k1SUQb/fgMVYFJ1UJXeLVkPYkrIHTp6pDZHn2QunZU36CSinXUGBdqhEoIpibSN6CWLHIEJw==
+zenn-markdown-html@^0.1.68:
+  version "0.1.68"
+  resolved "https://registry.yarnpkg.com/zenn-markdown-html/-/zenn-markdown-html-0.1.68.tgz#2ea7ccf80da69a58dcd463e8400387ff298983a1"
+  integrity sha512-BeLqiGwD0Zba/ILnCNTwsLBmBeFVSUf6JWO3+KSz4Enk/xIT3g2mKmqwtPZee3BpCP79rqXXo0kFldwgBUPKtQ==
   dependencies:
     "@steelydylan/markdown-it-imsize" "^1.0.2"
     "@types/prismjs" "^1.16.1"
