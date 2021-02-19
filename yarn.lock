@@ -13814,9 +13814,9 @@ try-resolve@^1.0.1:
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
 ts-auto-mock@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.1.0.tgz#01fa86b04f14f04959390e834404c8dd80fdf4ca"
-  integrity sha512-N6Wp+oNBCxxRqXXp9BOgULSre0CUNpF6H3teDGPjlLF6hSDMUXsVHI8FM6g5qTSQma34ZtDDE2jlcPrtFHINvA==
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.1.1.tgz#0209b3a1ab0f47badb6a5751d84995d570b13cf3"
+  integrity sha512-Z/nA+/DIHYD/McYjqTtYT/zgndZnXvfGZVU2vVuo9hn1xz9DpfDH2uoWls+YUQYyLXhrPavzg2e3VbtYuE0OgA==
   dependencies:
     lodash-es "^4.17.15"
     micromatch "^4.0.2"
