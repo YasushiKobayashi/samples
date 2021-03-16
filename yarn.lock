@@ -8735,10 +8735,10 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
-  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
@@ -13754,11 +13754,11 @@ try-resolve@^1.0.1:
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
 ts-auto-mock@^3.0.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.1.1.tgz#0209b3a1ab0f47badb6a5751d84995d570b13cf3"
-  integrity sha512-Z/nA+/DIHYD/McYjqTtYT/zgndZnXvfGZVU2vVuo9hn1xz9DpfDH2uoWls+YUQYyLXhrPavzg2e3VbtYuE0OgA==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.1.2.tgz#f1b4e73dd11a6296aa77d7779c341c29ab3b1fef"
+  integrity sha512-JoUQu7gtGXU0M8oDexUmBWcolzrGa2e69qm6DraRkkS09DsWfO7XE3lpCGjZ0kPQL+94Dv0unxSWpIY0qs5KnQ==
   dependencies:
-    lodash-es "^4.17.15"
+    lodash-es "^4.17.21"
     micromatch "^4.0.2"
     winston "^3.3.3"
 
