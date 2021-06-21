@@ -86,7 +86,7 @@
     "zenn-cli": "^0.1.53"
   },
   "dependencies": {
-    "next": "^10.0.1",
+    "next": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "unstated-next": "^1.1.0"
