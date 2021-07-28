@@ -22,11 +22,6 @@
     "cp-artifacts": "lerna run --stream cp-artifacts",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --parser typescript --write",
