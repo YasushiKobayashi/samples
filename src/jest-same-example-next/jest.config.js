@@ -5,7 +5,7 @@ const jest = require('../../jest.config')
 // "jsx": "react"にする
 jest.globals['ts-jest'] = {
   ...jest.globals['ts-jest'],
-  ...{ tsConfig: 'tsconfig.jest.json' },
+  ...{ tsconfig: 'tsconfig.jest.json' },
 }
 
 const basePath = path.resolve(__dirname, 'src')
