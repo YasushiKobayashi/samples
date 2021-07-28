@@ -16,7 +16,7 @@ describe('ShippingFee', () => {
 
   it('送料500円の場合はそのまま表示', () => {
     const { container, asFragment } = render(<ShippingFee shippingFee={500} />)
-    expect(container.textContent).toContain(500)
+    expect(container.textContent).toMatch(/500/)
     expect(asFragment()).toMatchSnapshot()
   })
 })
