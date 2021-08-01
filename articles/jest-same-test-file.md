@@ -214,3 +214,5 @@ rust のように、言語仕様でできる言語同様にテストを書くこ
 https://github.com/YasushiKobayashi/samples/pull/59
 https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-rollup
 https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-next
+
+2021/8/21 追記：jest/ts-jest を 27 系に update すると、非同期での react-test-utils の import が動かなかったです。通常の import の場合動作します。
