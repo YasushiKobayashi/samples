@@ -50,3 +50,4 @@ dist
 analyze.txt
 .terraform
 enc.txt
+.env
