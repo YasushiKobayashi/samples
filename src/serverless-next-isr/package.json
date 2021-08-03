@@ -4,7 +4,9 @@
   "author": "YasushiKobayashi <ptpadan@gmail.com>",
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
   "scripts": {
-    "dev": "next dev",
+    "dev": "run-p dev:serve dev:path",
+    "dev:serve": "next dev",
+    "dev:path": "pathpida --enableStatic --watch",
     "build": "next build && next export",
     "start": "next start",
     "test": "NODE_ENV=test jest --coverage",
