@@ -30,7 +30,7 @@ interface CategoryInterface {
 interface PostInterface {
   title: RichTextBlock[]
   content: RichTextBlock[]
-  category: CustomDocument<CategoryInterface>
+  categories: { category: CustomDocument<CategoryInterface> }[]
 }
 
 export const fetchPosts = async (client: DefaultClient) => {
@@ -39,7 +39,9 @@ export const fetchPosts = async (client: DefaultClient) => {
 }
 
 export const fetchPost = async (client: DefaultClient, id: string) => {
-  const res = await client.getByUID(post, id, { fetchLinks: `${category}.category_name` })
+  const res = await client.getByUID(post, id, {
+    fetchLinks: `${category}.category_name`,
+  })
   return res as CustomDocument<PostInterface>
 }
 

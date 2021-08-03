@@ -16,13 +16,17 @@ const Pages: React.VFC = () => {
       return null
     }
 
+    const categories = data.data.categories.map(v => {
+      return RichText.asText(v.category.data.category_name)
+    })
+
     return (
       <div>
         <p>タイトル</p>
         <h1>{RichText.asText(data.data.title)}</h1>
 
         <p>記事カテゴリ</p>
-        <div>{RichText.asText(data.data.category.data.category_name)}</div>
+        <div>{categories.join(', ')}</div>
 
         <p>記事詳細</p>
         <div>{RichText.render(data.data.content)}</div>
