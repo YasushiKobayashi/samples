@@ -1,0 +1,16 @@
+bucketName: l25fds-mrv952
+bucketRegion: ap-northeast-1
+distributionId: E3EVV9HQSJ251Z
+
+serverless-next-isr:
+  component: "../../node_modules/@sls-next/serverless-component"
+  inputs:
+    build:
+      cmd: ../../node_modules/.bin/next
+      env:
+        NODE_ENV: production
+    name: "serverless-next-isr"
+    bucketName: ${bucketName}
+    bucketRegion: ${bucketRegion}
+    cloudfront:
+      distributionId: ${distributionId}

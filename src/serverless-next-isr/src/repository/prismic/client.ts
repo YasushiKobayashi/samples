@@ -35,18 +35,21 @@ interface PostInterface {
 
 export type PostsResponse = CustomApiSearchResponse<PostInterface>
 export type PostResponse = CustomDocument<PostInterface>
-export type CategoriesResponse = CustomApiSearchResponse<CategoryInterface | undefined>
+export type CategoriesResponse = CustomApiSearchResponse<CategoryInterface>
 
 export const fetchPosts = async (client: DefaultClient) => {
   const res = await client.query(Prismic.predicates.at('document.type', post))
   return res as PostsResponse
 }
 
-export const fetchPost = async (client: DefaultClient, id: string) => {
+export const fetchPost = async (
+  client: DefaultClient,
+  id: string,
+): Promise<PostResponse | undefined> => {
   const res = await client.getByUID(post, id, {
     fetchLinks: `${category}.category_name`,
   })
-  return res as PostResponse
+  return res
 }
 
 export const fetchCategories = async (client: DefaultClient) => {

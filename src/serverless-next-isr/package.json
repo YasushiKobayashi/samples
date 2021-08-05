@@ -17,5 +17,6 @@
     "fix": "npm run fix:ts",
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/jest-ts-auto-mock-sample && cp -fr test-report.html $TEST_ARTIFACTS/jest-ts-auto-mock-sample"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,6 @@
+BUCKET_NAME=l25fds-mrv952
+REGION=ap-northeast-1
+DISTRIBUTION_ID=E3EVV9HQSJ251Z
+
+deploy:
+	yarn sls
