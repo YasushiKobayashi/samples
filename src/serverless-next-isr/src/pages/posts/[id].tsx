@@ -2,7 +2,7 @@ import * as React from 'react'
 import { RichText } from 'prismic-reactjs'
 
 import { fetchPost, PostResponse, prismicClient } from '@/repository/prismic/client'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'node:querystring'
 
 interface Params extends ParsedUrlQuery {
@@ -13,17 +13,25 @@ interface Props {
   post: PostResponse
 }
 
-export const getServerSideProps: GetServerSideProps<Props, Params> = async context => {
+export const getStaticPaths = async () => {
+  const paths = ['/posts/page--uhtnash', '/posts/first-publish', '/posts/ueoauoa']
+  return { paths, fallback: false }
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async context => {
   const client = prismicClient()
   const post = await fetchPost(client, context.params?.id as string)
-  if (post) {
+  if (!post) {
     return {
-      props: {
-        post,
-      },
+      notFound: true,
     }
   }
-  return { notFound: true }
+  return {
+    props: {
+      post,
+    },
+    revalidate: 60,
+  }
 }
 
 const Pages: React.VFC<Props> = ({ post }) => {

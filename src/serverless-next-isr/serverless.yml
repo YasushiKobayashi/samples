@@ -3,7 +3,8 @@ bucketRegion: ap-northeast-1
 distributionId: E3EVV9HQSJ251Z
 
 serverless-next-isr:
-  component: "../../node_modules/@sls-next/serverless-component"
+  # component: "../../node_modules/@sls-next/serverless-component"
+  component: "@sls-next/serverless-component@1.18.0"
   inputs:
     build:
       cmd: ../../node_modules/.bin/next

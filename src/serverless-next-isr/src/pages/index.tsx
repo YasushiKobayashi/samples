@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { RichText } from 'prismic-reactjs'
 
 import { topService } from '@/service/topService'
@@ -12,7 +12,7 @@ interface Props {
   categories: CategoriesResponse
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const client = prismicClient()
   const { posts, categories } = await topService(client)
   return {
@@ -20,6 +20,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
       posts,
       categories,
     },
+    revalidate: 60,
   }
 }
 
