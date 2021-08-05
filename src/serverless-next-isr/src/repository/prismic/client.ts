@@ -30,22 +30,26 @@ interface CategoryInterface {
 interface PostInterface {
   title: RichTextBlock[]
   content: RichTextBlock[]
-  categories: { category: CustomDocument<CategoryInterface> }[]
+  categories: { category?: CustomDocument<CategoryInterface> }[]
 }
+
+export type PostsResponse = CustomApiSearchResponse<PostInterface>
+export type PostResponse = CustomDocument<PostInterface>
+export type CategoriesResponse = CustomApiSearchResponse<CategoryInterface | undefined>
 
 export const fetchPosts = async (client: DefaultClient) => {
   const res = await client.query(Prismic.predicates.at('document.type', post))
-  return res as CustomApiSearchResponse<PostInterface>
+  return res as PostsResponse
 }
 
 export const fetchPost = async (client: DefaultClient, id: string) => {
   const res = await client.getByUID(post, id, {
     fetchLinks: `${category}.category_name`,
   })
-  return res as CustomDocument<PostInterface>
+  return res as PostResponse
 }
 
 export const fetchCategories = async (client: DefaultClient) => {
   const res = await client.query(Prismic.predicates.at('document.type', category))
-  return res as CustomApiSearchResponse<CategoryInterface>
+  return res as CategoriesResponse
 }

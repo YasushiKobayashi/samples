@@ -1,25 +1,34 @@
 import * as React from 'react'
-import useSWR from 'swr'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 import { RichText } from 'prismic-reactjs'
 
-import { AppStateContainer } from '@/context/AppStateContainer'
 import { topService } from '@/service/topService'
 import { pagesPath } from '@/utils/$path'
+import { CategoriesResponse, PostsResponse, prismicClient } from '@/repository/prismic/client'
 
-const Pages: React.VFC = () => {
-  const { client } = AppStateContainer.useContainer()
-  const { data } = useSWR('/top', () => topService(client))
+interface Props {
+  posts: PostsResponse
+  categories: CategoriesResponse
+}
 
-  if (!data) {
-    return null
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const client = prismicClient()
+  const { posts, categories } = await topService(client)
+  return {
+    props: {
+      posts,
+      categories,
+    },
   }
+}
 
-  const categories = data.categories.results.map(v => {
+const Pages: React.VFC<Props> = ({ posts, categories }) => {
+  const categoryList = categories.results.map(v => {
     return <li key={v.id}>{RichText.asText(v.data.category_name)}</li>
   })
 
-  const posts = data.posts.results.map(v => {
+  const postList = posts.results.map(v => {
     return (
       <li key={v.id}>
         <Link href={pagesPath.posts._id(v.uid as string).$url()}>
@@ -32,9 +41,9 @@ const Pages: React.VFC = () => {
   return (
     <div>
       <h2>カテゴリ一覧</h2>
-      <ul>{categories}</ul>
+      <ul>{categoryList}</ul>
       <h2>記事一覧</h2>
-      <ul>{posts}</ul>
+      <ul>{postList}</ul>
     </div>
   )
 }
