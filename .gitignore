@@ -50,3 +50,6 @@ dist
 analyze.txt
 .terraform
 enc.txt
+.env
+.serverless
+.serverless_nextjs
