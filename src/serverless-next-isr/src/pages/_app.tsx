@@ -1,5 +1,6 @@
 import * as React from 'react'
 import App from 'next/app'
+
 import { AppStateContainer } from '@/context/AppStateContainer'
 
 export default class CustomApp extends App {

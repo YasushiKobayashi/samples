@@ -1,13 +1,13 @@
 import * as React from 'react'
-import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import { RichText } from 'prismic-reactjs'
 import useSWR from 'swr'
 
+import { AppStateContainer } from '@/context/AppStateContainer'
+import { CategoriesResponse, PostsResponse, prismicClient } from '@/repository/prismic/client'
 import { topService } from '@/service/topService'
 import { pagesPath } from '@/utils/$path'
-import { CategoriesResponse, PostsResponse, prismicClient } from '@/repository/prismic/client'
-import { AppStateContainer } from '@/context/AppStateContainer'
 
 interface Props {
   posts: PostsResponse

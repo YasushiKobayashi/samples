@@ -1,5 +1,6 @@
-import { fetchCategories, fetchPosts } from '@/repository/prismic/client'
 import { DefaultClient } from '@prismicio/client/types/client'
+
+import { fetchCategories, fetchPosts } from '@/repository/prismic/client'
 
 export const topService = async (client: DefaultClient) => {
   const posts = fetchPosts(client)

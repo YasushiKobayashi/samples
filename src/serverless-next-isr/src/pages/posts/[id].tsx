@@ -1,11 +1,11 @@
 import * as React from 'react'
+import { GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'node:querystring'
 import { RichText } from 'prismic-reactjs'
 import useSWR from 'swr'
 
-import { fetchPost, PostResponse, prismicClient } from '@/repository/prismic/client'
-import { GetStaticProps } from 'next'
-import { ParsedUrlQuery } from 'node:querystring'
 import { AppStateContainer } from '@/context/AppStateContainer'
+import { fetchPost, PostResponse, prismicClient } from '@/repository/prismic/client'
 
 interface Params extends ParsedUrlQuery {
   id: string
