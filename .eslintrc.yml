@@ -12,12 +12,14 @@ env:
   es6: true
 
 plugins:
+  - simple-import-sort
   - import
   - react
   - jsx-a11y
   - prettier
   - "@typescript-eslint"
   - react-hooks
+  - import-access
 
 parser: "@typescript-eslint/parser"
 parserOptions:
@@ -71,16 +73,27 @@ rules:
       delimiter: comma
       requireLast: false
 
-  jsx-filename-extension: 0
-  jsx-quotes: 0
-
   import/no-named-as-default: 0
   import/no-named-as-default-member: 0
   import/extensions: 0
-# @TODO monorepo対応
   import/no-extraneous-dependencies: 0
   import/no-unresolved: 0
   import/prefer-default-export: 0
+  import/first: 2
+  import/newline-after-import: 2
+  import/no-duplicates: 2
+  simple-import-sort/exports: 2
+  simple-import-sort/imports:
+    - error
+    - groups:
+      - ["^react", "^@?\\w"]
+      - ["^\\u0000"]
+      - ["^(@pocket-sommelier/*)(/.*|$)"]
+      - ["^(@/*)(/.*|$)"]
+      - ["^\\.\\.(?!/?$)", "^\\.\\./?$"]
+      - ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+      - ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+      - ["^.+\\.s?css$"]
 
   react/no-danger: 0
   react/no-string-refs: 0
@@ -100,3 +113,5 @@ rules:
   jsx-a11y/no-noninteractive-element-interactions: 1
   jsx-a11y/label-has-for: 0
   jsx-a11y/anchor-has-content: 0
+  jsx-filename-extension: 0
+  jsx-quotes: 0
