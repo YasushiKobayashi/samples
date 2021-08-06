@@ -18,4 +18,4 @@ class MockClass implements MockInterface {
   }
 }
 
-export { MockInterface, MockType, MockClass }
+export { MockClass, MockInterface, MockType }

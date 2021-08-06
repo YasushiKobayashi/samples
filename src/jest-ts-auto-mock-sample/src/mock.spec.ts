@@ -1,6 +1,6 @@
 import { createMock } from 'ts-auto-mock'
 
-import { MockInterface, MockType, MockClass } from './mock'
+import { MockClass, MockInterface, MockType } from './mock'
 
 describe('Mock test', () => {
   it('MockInterface', () => {

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import type { render } from '@testing-library/react'
-
 import { Component } from 'jest-same-example-rollup'
 
 const Pages: React.FC = () => {

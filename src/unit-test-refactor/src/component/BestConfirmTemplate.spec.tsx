@@ -2,6 +2,7 @@ import * as React from 'react'
 import { cleanup, fireEvent, render } from '@testing-library/react'
 
 import { submitOrder } from '@/service/orderService'
+
 import { BestConfirmTemplate } from './BestConfirmTemplate'
 
 describe('BestConfirmTemplate', () => {

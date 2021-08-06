@@ -1,2 +1,2 @@
-export * from './main'
 export * from './Component'
+export * from './main'
