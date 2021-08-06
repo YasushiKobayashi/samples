@@ -7,7 +7,6 @@
     "dev": "run-p dev:serve dev:path",
     "dev:serve": "next dev",
     "dev:path": "pathpida --enableStatic --watch",
-    "build": "next build && next export",
     "start": "next start",
     "test": "NODE_ENV=test jest --coverage",
     "test:watch": "NODE_ENV=test jest --watch",
