@@ -1,10 +1,9 @@
-bucketName: l25fds-mrv952
+bucketName: qtecfsl-kcxc4fp
 bucketRegion: ap-northeast-1
-distributionId: E3EVV9HQSJ251Z
+distributionId: E328WXB08DXVWZ
 
 serverless-next-isr:
-  # component: "../../node_modules/@sls-next/serverless-component"
-  component: "@sls-next/serverless-component@1.18.0"
+  component: "../../node_modules/@sls-next/serverless-component"
   inputs:
     build:
       cmd: ../../node_modules/.bin/next
@@ -15,3 +14,17 @@ serverless-next-isr:
     bucketRegion: ${bucketRegion}
     cloudfront:
       distributionId: ${distributionId}
+    runtime:
+      defaultLambda: "nodejs14.x"
+      apiLambda: "nodejs14.x"
+      imageLambda: "nodejs14.x"
+
+    /:
+      minTTL: 1
+      maxTTL: 1
+      defaultTTL: 1
+
+    /*:
+      minTTL: 1
+      maxTTL: 1
+      defaultTTL: 1

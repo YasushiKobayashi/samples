@@ -13,7 +13,6 @@ export const prismicClient = (req?: any) => {
 type PostType = 'sample-post' | 'sample-category'
 const post: PostType = 'sample-post'
 const category: PostType = 'sample-category'
-
 interface CustomDocument<T> extends Document {
   data: T
 }

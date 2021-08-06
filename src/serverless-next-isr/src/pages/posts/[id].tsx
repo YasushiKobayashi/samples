@@ -1,21 +1,22 @@
 import * as React from 'react'
 import { RichText } from 'prismic-reactjs'
+import useSWR from 'swr'
 
 import { fetchPost, PostResponse, prismicClient } from '@/repository/prismic/client'
 import { GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'node:querystring'
+import { AppStateContainer } from '@/context/AppStateContainer'
 
 interface Params extends ParsedUrlQuery {
   id: string
 }
 
 interface Props {
-  post: PostResponse
+  post?: PostResponse
 }
 
 export const getStaticPaths = async () => {
-  const paths = ['/posts/page--uhtnash', '/posts/first-publish', '/posts/ueoauoa']
-  return { paths, fallback: false }
+  return { paths: [], fallback: true }
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async context => {
@@ -30,12 +31,24 @@ export const getStaticProps: GetStaticProps<Props, Params> = async context => {
     props: {
       post,
     },
-    revalidate: 60,
+    revalidate: 1,
   }
 }
 
 const Pages: React.VFC<Props> = ({ post }) => {
-  const categories = post.data.categories.map(v => {
+  if (!post) {
+    return null
+  }
+
+  const { client } = AppStateContainer.useContainer()
+  const { data } = useSWR('/post/', () => fetchPost(client, post.uid as string), {
+    initialData: post,
+  })
+  if (!data) {
+    return null
+  }
+
+  const categories = data.data.categories.map(v => {
     if (!v.category?.data) {
       return
     }
@@ -45,13 +58,13 @@ const Pages: React.VFC<Props> = ({ post }) => {
   return (
     <div>
       <p>タイトル</p>
-      <h1>{RichText.asText(post.data.title)}</h1>
+      <h1>{RichText.asText(data.data.title)}</h1>
 
       <p>記事カテゴリ</p>
       <div>{categories.join(', ')}</div>
 
       <p>記事詳細</p>
-      <div>{RichText.render(post.data.content)}</div>
+      <div>{RichText.render(data.data.content)}</div>
     </div>
   )
 }
