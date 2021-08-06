@@ -1,13 +1,11 @@
-import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import typescript from 'rollup-plugin-typescript2'
-import analyze from 'rollup-plugin-analyzer'
 import alias from '@rollup/plugin-alias'
-import { terser } from 'rollup-plugin-terser'
-
-import path from 'path'
-
 import fs from 'fs'
+import path from 'path'
+import analyze from 'rollup-plugin-analyzer'
+import commonjs from 'rollup-plugin-commonjs'
+import nodeResolve from 'rollup-plugin-node-resolve'
+import { terser } from 'rollup-plugin-terser'
+import typescript from 'rollup-plugin-typescript2'
 
 const pkg = require('./package.json')
 

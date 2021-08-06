@@ -5,10 +5,10 @@ import useSWR from 'swr'
 import { AppStateContainer } from '@/contexts/AppStateContainer'
 import {
   CartType,
-  getTotalPrice,
-  getShippingFee,
-  isFreeShippingFee,
   getPaymentAmount,
+  getShippingFee,
+  getTotalPrice,
+  isFreeShippingFee,
 } from '@/models/cart'
 
 const fetchCart = async () => {

@@ -2,9 +2,9 @@ import * as React from 'react'
 import Router from 'next/router'
 import useSWR from 'swr'
 
+import { CartPriceInfo } from '@/component/CartPriceInfo'
 import { AppStateContainer } from '@/contexts/AppStateContainer'
 import { CartType, getPaymentAmount, getShippingFee, getTotalPrice } from '@/models/cart'
-import { CartPriceInfo } from '@/component/CartPriceInfo'
 
 const fetchCart = async () => {
   const res = await fetch('/api/cart.json')

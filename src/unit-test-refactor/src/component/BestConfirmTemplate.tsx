@@ -1,12 +1,12 @@
 import * as React from 'react'
 
+import { CartPriceInfo } from '@/component/CartPriceInfo'
 import { CartType, getPaymentAmount, getShippingFee, getTotalPrice } from '@/models/cart'
 import { UserType } from '@/models/user'
-
-import { CartPriceInfo } from '@/component/CartPriceInfo'
 import { submitOrder } from '@/service/orderService'
-import { DeliverInfo } from './DeliverInfo'
+
 import { CartDetailInfo } from './CartDetailInfo'
+import { DeliverInfo } from './DeliverInfo'
 
 interface Props {
   cart: CartType

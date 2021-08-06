@@ -1,4 +1,4 @@
-import { CartType, getTotalPrice, getShippingFee, isFreeShippingFee } from './cart'
+import { CartType, getShippingFee, getTotalPrice, isFreeShippingFee } from './cart'
 
 describe('cart', () => {
   it('getTotalPrice', () => {

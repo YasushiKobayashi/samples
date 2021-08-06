@@ -2,9 +2,9 @@ import * as React from 'react'
 import Router from 'next/router'
 import useSWR from 'swr'
 
+import { BestConfirmTemplate } from '@/component/BestConfirmTemplate'
 import { AppStateContainer } from '@/contexts/AppStateContainer'
 import { CartType } from '@/models/cart'
-import { BestConfirmTemplate } from '@/component/BestConfirmTemplate'
 
 const fetchCart = async () => {
   const res = await fetch('/api/cart.json')
