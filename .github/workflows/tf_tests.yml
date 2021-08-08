@@ -1,5 +1,8 @@
 name: terraform test workflow
-on: [pull_request]
+on:
+  pull_request:
+    paths:
+      - 'tf/**'
 
 jobs:
   test_job:
