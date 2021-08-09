@@ -1,6 +1,6 @@
-bucketName: qtecfsl-kcxc4fp
-bucketRegion: ap-northeast-1
-distributionId: E328WXB08DXVWZ
+bucketName: ${env.BUCKET_NAME}
+bucketRegion: ${env.REGION}
+distributionId: ${env.DISTRIBUTION_ID}
 
 serverless-next-isr:
   component: "../../node_modules/@sls-next/serverless-component"
