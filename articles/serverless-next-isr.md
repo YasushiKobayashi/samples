@@ -43,9 +43,13 @@ Serverless Nextjs Plugin を使えば、パス関連もまとめて面倒を見�
 
 ### Serverless frameworkに対して環境変数が渡せない
 
-npm script or Makefile から環境変数で AWS の情報は渡したかったのですが、document を見てもわからずで一旦ベタ書きしています。
+~~npm script or Makefile から環境変数で AWS の情報は渡したかったのですが、document を見てもわからずで一旦ベタ書きしています。~~
 
-外から、これらを渡せないと環境毎にデプロイを分けることができないので、早めに対応したいです。
+~~外から、これらを渡せないと環境毎にデプロイを分けることができないので、早めに対応したいです。~~
+
+Makefile の書き方にミスがあり、渡せていたかっただけのためこちらの修正で　環境変数によって、deploy 先の s3 のバケットや cf は変更できました。
+
+https://github.com/YasushiKobayashi/samples/pull/367
 
 ### キャッシュが更新されない
 
