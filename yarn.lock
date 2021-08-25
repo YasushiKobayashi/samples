@@ -12783,12 +12783,13 @@ path@^0.12.7:
     process "^0.11.1"
     util "^0.10.3"
 
-pathpida@^0.15.4:
-  version "0.15.5"
-  resolved "https://registry.yarnpkg.com/pathpida/-/pathpida-0.15.5.tgz#91a2024fb2baf0edfab15cf87e5c957b219c73d0"
-  integrity sha512-sn+T1MxM0celmunTs+ik9ufD4+g79D5/pJNPRyU6PB6S4IIsSAQb6iUcQHNck1RRjQPstY13ZuIewVUQoq1HPg==
+pathpida@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/pathpida/-/pathpida-0.16.0.tgz#d5dc103d034d8bba3ba7537529cf1aa0e66a9a2b"
+  integrity sha512-zfgANsZagrqm54Pd01LIFGHLsgs0MuaZ7BVXOksBBulR1W1Ygz5RbxopsdEQ+WSRcE914RH03uByKqV/oP59jQ==
   dependencies:
     chokidar "^3.5.2"
+    ignore "^5.1.8"
     minimist "^1.2.5"
 
 pbkdf2@^3.0.3:
