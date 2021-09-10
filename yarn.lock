@@ -4019,9 +4019,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^17.0.15":
-  version "17.0.19"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.19.tgz#8f2a85e8180a43b57966b237d26a29481dacc991"
-  integrity sha512-sX1HisdB1/ZESixMTGnMxH9TDe8Sk709734fEQZzCV/4lSu9kJCPbo2PbTRoZM+53Pp0P10hYVyReUueGwUi4A==
+  version "17.0.20"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.20.tgz#a4284b184d47975c71658cd69e759b6bd37c3b8c"
+  integrity sha512-wWZrPlihslrPpcKyCSlmIlruakxr57/buQN1RjlIeaaTWDLtJkTtRW429MoQJergvVKc4IWBpRhWw7YNh/7GVA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -13243,9 +13243,9 @@ prettier-linter-helpers@^1.0.0:
     fast-diff "^1.1.2"
 
 prettier@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
-  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.0.tgz#85bdfe0f70c3e777cf13a4ffff39713ca6f64cba"
+  integrity sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==
 
 pretty-format@^25.2.1, pretty-format@^25.5.0:
   version "25.5.0"
@@ -16181,9 +16181,9 @@ try-resolve@^1.0.1:
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
 ts-auto-mock@^3.3.0:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.3.5.tgz#bf5ab6be965665e26c1b16df7a70bda63e86d37a"
-  integrity sha512-V1i2DrEjDHEtjlJi6kaMH/n8NGyX3iat8oIUh1rymhULBboWyBqv6cCogej9S2ZXBd1PM8vaPwS3J6ooM7beTw==
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.4.0.tgz#9d13e6cc7aa12dc8e84206ec7d33a8bd0d47d5c2"
+  integrity sha512-oA+fdkzcsrqHUzcOnRrpp27eO1WPxVjtZsi6oz+3MYxjhabhH10bMQWQ9Klc/nJPdmdGq9xeluY9eMGtz/1eqQ==
   dependencies:
     lodash-es "^4.17.21"
     micromatch "^4.0.4"
