@@ -3926,9 +3926,9 @@
     pretty-format "^25.2.1"
 
 "@types/jest@^27.0.1":
-  version "27.0.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.1.tgz#fafcc997da0135865311bb1215ba16dba6bdf4ca"
-  integrity sha512-HTLpVXHrY69556ozYkcq47TtQJXpcWAWfkoqz+ZGz2JnmZhzlRjprCIyFnetSy8gpDWwTTGBcRVv1J1I1vBrHw==
+  version "27.0.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.3.tgz#0cf9dfe9009e467f70a342f0f94ead19842a783a"
+  integrity sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==
   dependencies:
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
@@ -16190,9 +16190,9 @@ try-resolve@^1.0.1:
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
 ts-auto-mock@^3.3.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.4.0.tgz#9d13e6cc7aa12dc8e84206ec7d33a8bd0d47d5c2"
-  integrity sha512-oA+fdkzcsrqHUzcOnRrpp27eO1WPxVjtZsi6oz+3MYxjhabhH10bMQWQ9Klc/nJPdmdGq9xeluY9eMGtz/1eqQ==
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.5.0.tgz#a7fed77b2564c531440236789fb9d594802dc960"
+  integrity sha512-E1XjMO6UWK/e+i4Ri7h8xGFCIHAb+dxgojcmPQZabQXIJatddQvqJOypg7nYCD2lPtb43HVa3bQd6uHDYV5PvQ==
   dependencies:
     lodash-es "^4.17.21"
     micromatch "^4.0.4"
