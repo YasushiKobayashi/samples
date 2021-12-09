@@ -88,7 +88,7 @@
   },
   "dependencies": {
     "@prismicio/client": "^5.1.0",
-    "next": "^11.0.1",
+    "next": "^12.0.7",
     "pathpida": "^0.17.0",
     "prismic-reactjs": "^1.3.4",
     "react": "^17.0.2",
