@@ -15884,9 +15884,9 @@ textlint-rule-max-kanji-continuous-len@^1.1.1:
     textlint-rule-helper "^2.0.0"
 
 textlint-rule-max-ten@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/textlint-rule-max-ten/-/textlint-rule-max-ten-4.0.2.tgz#42c3662dde5291d4b1a09aea9aad5a3eeb545ed9"
-  integrity sha512-19DAGjbxJTmC8eyBmw7crSh+3YhoJdNRfTofubgi7Vhw0MsH4pueqCGRUdh88LA/BEwiHNqTIDVkyUx46Ew65w==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/textlint-rule-max-ten/-/textlint-rule-max-ten-4.0.3.tgz#8735810a13813a535d8923e841869b96d506cba0"
+  integrity sha512-2+XXPCOWJobJnsfFIHxVvZxrOgKOBE+M2NlptPJProYaK58xWawWBWHpS2tmRKdVuOzlfhIsXen4pT0xkhuj3Q==
   dependencies:
     kuromojin "^3.0.0"
     sentence-splitter "^3.2.0"
