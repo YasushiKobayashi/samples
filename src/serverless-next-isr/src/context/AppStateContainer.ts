@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { DefaultClient } from '@prismicio/client/types/client'
+import { Client } from '@prismicio/client'
 import { createContainer } from 'unstated-next'
 
 import { prismicClient } from '@/repository/prismic/client'
 
 const app = () => {
-  const [client] = React.useState<DefaultClient>(prismicClient())
+  const [client] = React.useState<Client>(prismicClient())
 
   return {
     client,

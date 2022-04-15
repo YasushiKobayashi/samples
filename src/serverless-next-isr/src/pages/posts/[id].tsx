@@ -1,18 +1,18 @@
 import * as React from 'react'
+import { asText } from '@prismicio/richtext'
 import { GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'node:querystring'
-import { RichText } from 'prismic-reactjs'
 import useSWR from 'swr'
 
 import { AppStateContainer } from '@/context/AppStateContainer'
-import { fetchPost, PostResponse, prismicClient } from '@/repository/prismic/client'
+import { fetchPost, PostDocument, prismicClient } from '@/repository/prismic/client'
 
 interface Params extends ParsedUrlQuery {
   id: string
 }
 
 interface Props {
-  post?: PostResponse
+  post?: PostDocument
 }
 
 export const getStaticPaths = async () => {
@@ -35,14 +35,14 @@ export const getStaticProps: GetStaticProps<Props, Params> = async context => {
   }
 }
 
-const Pages: React.VFC<Props> = ({ post }) => {
+const Pages: React.FC<Props> = ({ post }) => {
   if (!post) {
     return null
   }
 
   const { client } = AppStateContainer.useContainer()
   const { data } = useSWR('/post/', () => fetchPost(client, post.uid as string), {
-    initialData: post,
+    fallbackData: post,
   })
   if (!data) {
     return null
@@ -52,19 +52,19 @@ const Pages: React.VFC<Props> = ({ post }) => {
     if (!v.category?.data) {
       return
     }
-    return RichText.asText(v.category.data.category_name)
+    return asText(v.category.data.category_name)
   })
 
   return (
     <div>
       <p>タイトル</p>
-      <h1>{RichText.asText(data.data.title)}</h1>
+      <h1>{asText(data.data.title)}</h1>
 
       <p>記事カテゴリ</p>
       <div>{categories.join(', ')}</div>
 
       <p>記事詳細</p>
-      <div>{RichText.render(data.data.content)}</div>
+      <div>{asText(data.data.content)}</div>
     </div>
   )
 }

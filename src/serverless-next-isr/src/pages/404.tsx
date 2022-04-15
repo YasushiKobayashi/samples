@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const Pages: React.VFC = () => {
+const Pages: React.FC = () => {
   return <div>404 not found</div>
 }
 

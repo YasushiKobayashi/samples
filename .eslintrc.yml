@@ -107,6 +107,9 @@ rules:
   react/prop-types: 0
   react/button-has-type: 1
   react/jsx-props-no-spreading: 0
+  react/function-component-definition: 0
+  react/jsx-no-useless-fragment: 1
+  react/require-default-props: 0
 
   jsx-a11y/no-static-element-interactions: 0
   jsx-a11y/img-redundant-alt: 1

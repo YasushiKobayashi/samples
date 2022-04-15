@@ -7,4 +7,5 @@ jest.globals['ts-jest'] = {
   ...{ tsconfig: 'tsconfig.jest.json' },
 }
 
+jest.testEnvironment = 'jsdom'
 module.exports = jest

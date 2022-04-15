@@ -5,11 +5,12 @@ distributionId: ${env.DISTRIBUTION_ID}
 serverless-next-isr:
   component: "../../node_modules/@sls-next/serverless-component"
   inputs:
+    name:
+        defaultLambda: serverless-next-isr
     build:
       cmd: ../../node_modules/.bin/next
       env:
         NODE_ENV: production
-    name: "serverless-next-isr"
     bucketName: ${bucketName}
     bucketRegion: ${bucketRegion}
     cloudfront:

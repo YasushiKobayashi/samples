@@ -1,17 +1,17 @@
 import * as React from 'react'
+import { asText } from '@prismicio/richtext'
 import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
-import { RichText } from 'prismic-reactjs'
 import useSWR from 'swr'
 
 import { AppStateContainer } from '@/context/AppStateContainer'
-import { CategoriesResponse, PostsResponse, prismicClient } from '@/repository/prismic/client'
+import { CategoriesDocument, PostsDocument, prismicClient } from '@/repository/prismic/client'
 import { topService } from '@/service/topService'
 import { pagesPath } from '@/utils/$path'
 
 interface Props {
-  posts: PostsResponse
-  categories: CategoriesResponse
+  posts: PostsDocument
+  categories: CategoriesDocument
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -28,20 +28,20 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
 const Pages: NextPage<Props> = props => {
   const { client } = AppStateContainer.useContainer()
-  const { data } = useSWR('/top', () => topService(client), { initialData: props })
+  const { data } = useSWR('/top', () => topService(client), { fallbackData: props })
   if (!data) {
     return null
   }
 
   const categoryList = data.categories.results.map(v => {
-    return <li key={v.id}>{RichText.asText(v.data.category_name)}</li>
+    return <li key={v.id}>{asText(v.data.category_name)}</li>
   })
 
   const postList = data.posts.results.map(v => {
     return (
       <li key={v.id}>
         <Link href={pagesPath.posts._id(v.uid as string).$url()}>
-          <a>{RichText.asText(v.data.title)}</a>
+          <a>{asText(v.data.title)}</a>
         </Link>
       </li>
     )
