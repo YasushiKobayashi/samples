@@ -1,5 +1,5 @@
-const jest = require('../../jest.config');
+const jest = require('../../jest.config')
 
-jest.moduleNameMapper = { ...jest.moduleNameMapper, '@/(.*)$': '<rootDir>/src/$1' };
-
-module.exports = jest;
+jest.moduleNameMapper = { ...jest.moduleNameMapper, '@/(.*)$': '<rootDir>/src/$1' }
+jest.testEnvironment = 'jsdom'
+module.exports = jest

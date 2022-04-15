@@ -15,4 +15,5 @@ const targets = stdout
   .split('\n')
   .filter(v => v !== '')
 jest.testRegex = targets.concat([jest.testRegex])
+jest.testEnvironment = 'jsdom'
 module.exports = jest
