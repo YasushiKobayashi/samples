@@ -1,8 +1,8 @@
-import { DefaultClient } from '@prismicio/client/types/client'
+import * as prismic from '@prismicio/client'
 
 import { fetchCategories, fetchPosts } from '@/repository/prismic/client'
 
-export const topService = async (client: DefaultClient) => {
+export const topService = async (client: prismic.Client) => {
   const posts = fetchPosts(client)
   const categories = fetchCategories(client)
   const res = await Promise.all([posts, categories])
