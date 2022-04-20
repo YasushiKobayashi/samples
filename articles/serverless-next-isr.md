@@ -100,6 +100,14 @@ Prismic の api の叩き方は、多少癖があるきもしますが、documen
 
 api を叩くだけでは問題なさそうだったのですが、Prismic のレスポンスの型をみると any を使っており generics に対応してなかったので、継承して下記のように自分で型を作りました。
 
+
+\* 2022/4/20 追記
+
+\* 下記 PR で対応しているのですが、Prismic のフロントライブラリーで破壊的変更があったので、最新版では下記の書き方は動きません。後日書き直しますが、詳細は下記 PR を参考にして下さい。
+
+https://github.com/YasushiKobayashi/samples/pull/531/files
+https://github.com/YasushiKobayashi/samples/pull/531/commits/ddcec8c0c86d60c5ca413c1776b94c78ca8d2f3b
+
 ```typescript
 import Prismic from '@prismicio/client'
 import ApiSearchResponse from '@prismicio/client/types/ApiSearchResponse'

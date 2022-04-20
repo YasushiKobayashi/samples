@@ -207,6 +207,19 @@ if (process.env.NODE_ENV === 'test') {
 }
 ```
 
+\* 2022/4/20 追記
+
+\* jest か testing-library のアップデートかどれが原因なのか、調査まではできていないので、下記のエラーが出て非同期で import するのはできなくなっていました。
+
+```
+Cannot add a hook after tests have started running. Hooks must be defined synchronously.
+```
+
+
+該当の PR は下記です。
+https://github.com/YasushiKobayashi/samples/pull/531/files
+
+
 rust のように、言語仕様でできる言語同様にテストを書くことができるわけではないですが、 js(ts) でも同様のテストの実行は可能でした。
 
 今回サンプルコードにした内容は全てこちらの PR で作成しており、すべて動作確認可能です。
