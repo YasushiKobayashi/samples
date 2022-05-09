@@ -14716,9 +14716,9 @@ rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.8.1, rollup-pluginutils@^2.8.2:
     estree-walker "^0.6.1"
 
 rollup@^2.70.1:
-  version "2.70.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.70.2.tgz#808d206a8851628a065097b7ba2053bd83ba0c0d"
-  integrity sha512-EitogNZnfku65I1DD5Mxe8JYRUCy0hkK5X84IlDtUs+O6JRMpRciXTzyCUuX11b5L5pvjH+OmFXiQ3XjabcXgg==
+  version "2.72.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.72.1.tgz#861c94790537b10008f0ca0fbc60e631aabdd045"
+  integrity sha512-NTc5UGy/NWFGpSqF1lFY8z9Adri6uhyMLI6LvPAXdBKoPRFhIIiBUpt+Qg2awixqO3xvzSijjhnb4+QEZwJmxA==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -16715,9 +16715,9 @@ try-resolve@^1.0.1:
   integrity sha1-z95vq9ctY+V5fPqrhzq76OcA6RI=
 
 ts-auto-mock@^3.5.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.6.0.tgz#884dc0e412d988ba0b1a4641985d6cb81021da2a"
-  integrity sha512-0Vs0ZJ4NadPQTueAUHq3h5wAq5ixgSgIrIYd4XwOIPbPm+3BlG+BD34WVCukEDbOwEVk+a8BGs8NpOmdvPBy7w==
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.6.2.tgz#a0ce1857cc94e0fef83f210ab97499413552df81"
+  integrity sha512-ApHKLw1TlYd7SjS2k99yb0ZwIshwznSgIyRkw4IA9/OeHK1sXorOpApG+a7UTq1aVVDlzTTRTibqPH8gS6AOcA==
   dependencies:
     lodash-es "^4.17.21"
     micromatch "^4.0.5"
