@@ -71,7 +71,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.31.2",
+    "rollup-plugin-typescript2": "^0.32.0",
     "serverless": "^2.72.3",
     "textlint": "^12.1.1",
     "textlint-rule-ja-no-mixed-period": "^2.1.1",
