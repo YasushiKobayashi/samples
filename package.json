@@ -72,7 +72,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.32.0",
-    "serverless": "^2.72.3",
+    "serverless": "^3.19.0",
     "textlint": "^12.1.1",
     "textlint-rule-ja-no-mixed-period": "^2.1.1",
     "textlint-rule-max-ten": "^4.0.3",
