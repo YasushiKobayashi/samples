@@ -1,13 +1,5 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  reviewers:
-    - YasushiKobayashi
-  assignees:
-    - YasushiKobayashi
 
 - package-ecosystem: github-actions
   directory: "/"
@@ -17,27 +9,3 @@ updates:
     - YasushiKobayashi
   assignees:
     - YasushiKobayashi
-
-- package-ecosystem: terraform
-  directory: "/"
-  schedule:
-    interval: daily
-  reviewers:
-    - YasushiKobayashi
-  assignees:
-    - YasushiKobayashi
-
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
-  reviewers:
-    - YasushiKobayashi
-  assignees:
-    - YasushiKobayashi
-
-- package-ecosystem: composer
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
