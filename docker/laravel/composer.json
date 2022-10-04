@@ -19,7 +19,7 @@
         "facade/ignition": "2.17.6",
         "fakerphp/faker": "1.20.0",
         "laravel/sail": "0.0.10",
-        "mockery/mockery": "^1.4.2",
+        "mockery/mockery": "1.5.1",
         "nunomaduro/collision": "5.11.0",
         "phpunit/phpunit": "9.5.20"
     },
