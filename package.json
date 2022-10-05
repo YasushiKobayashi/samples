@@ -39,7 +39,7 @@
     "@sls-next/aws-lambda": "^3.7.0",
     "@sls-next/aws-sqs": "^3.7.0",
     "@sls-next/serverless-component": "^3.7.0",
-    "@testing-library/react": "^12.1.5",
+    "@testing-library/react": "13.4.0",
     "@types/jest": "27.5.2",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
