@@ -86,7 +86,7 @@
     "ts-loader": "^9.2.8",
     "ttypescript": "^1.5.13",
     "typescript": "^4.6.3",
-    "zenn-cli": "0.1.130"
+    "zenn-cli": "0.1.131"
   },
   "dependencies": {
     "@prismicio/client": "^6.4.2",
