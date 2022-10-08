@@ -1,11 +1,11 @@
+const nextJest = require('next/jest')
 const jest = require('../../jest.config')
 
+const createJestConfig = nextJest({
+  dir: './',
+})
+
 jest.moduleNameMapper = { ...jest.moduleNameMapper, '@/(.*)$': '<rootDir>/src/$1' }
+jest.testEnvironment = 'jest-environment-jsdom'
 
-jest.globals['ts-jest'] = {
-  ...jest.globals['ts-jest'],
-  ...{ tsconfig: 'tsconfig.jest.json' },
-}
-
-jest.testEnvironment = 'jsdom'
-module.exports = jest
+module.exports = createJestConfig(jest)

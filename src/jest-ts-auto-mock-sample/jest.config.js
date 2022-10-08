@@ -1,5 +1,19 @@
 const jest = require('../../jest.config')
 
 jest.moduleNameMapper = { ...jest.moduleNameMapper, '@/(.*)$': '<rootDir>/src/$1' }
-jest.testEnvironment = 'jsdom'
+
+jest.transform = {
+  '^.+\\.(j|t)s?$': 'ts-jest',
+  '^.+\\.(j|t)sx?$': 'ts-jest',
+}
+
+jest.globals = {
+  ...jest.globals,
+  ...{
+    'ts-jest': {
+      compiler: 'ttypescript',
+    },
+  },
+}
+jest.testEnvironment = 'jest-environment-jsdom'
 module.exports = jest

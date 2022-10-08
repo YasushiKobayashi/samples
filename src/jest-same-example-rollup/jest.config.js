@@ -19,5 +19,5 @@ if (spawn.status === 0) {
 }
 
 jest.testRegex = targets.concat([jest.testRegex])
-jest.testEnvironment = 'jsdom'
+jest.testEnvironment = 'jest-environment-jsdom'
 module.exports = jest

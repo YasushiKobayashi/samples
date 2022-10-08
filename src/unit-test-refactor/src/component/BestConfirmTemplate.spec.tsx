@@ -5,15 +5,15 @@ import { submitOrder } from '@/service/orderService'
 
 import { BestConfirmTemplate } from './BestConfirmTemplate'
 
-describe('BestConfirmTemplate', () => {
-  beforeEach(() => {
-    /* eslint-disable no-import-assign,@typescript-eslint/ban-ts-comment */
-    // @ts-ignore
-    submitOrder = jest.fn()
-  })
+jest.mock('@/service/orderService')
 
+describe('BestConfirmTemplate', () => {
   afterEach(() => {
     cleanup()
+
+    /* eslint-disable no-import-assign,@typescript-eslint/ban-ts-comment */
+    // @ts-ignore
+    submitOrder.mockClear()
   })
 
   it('購入まで', () => {
