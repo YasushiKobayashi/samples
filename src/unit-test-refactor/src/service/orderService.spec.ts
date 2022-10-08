@@ -5,7 +5,7 @@ import { orderPost } from '@/request/cart'
 
 import { submitOrder } from './orderService'
 
-jest.mock('next/router')
+// jest.mock('next/router')
 jest.mock('@/request/cart')
 
 describe('orderService', () => {
@@ -14,7 +14,7 @@ describe('orderService', () => {
 
     /* eslint-disable no-import-assign,@typescript-eslint/ban-ts-comment */
     // @ts-ignore
-    orderPost = jest.fn()
+    orderPost.mockClear()
   })
 
   it('購入済みユーザー', async () => {
