@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@prismicio/client": "^6.4.2",
-    "@prismicio/richtext": "^2.0.1",
+    "@prismicio/richtext": "2.1.1",
     "@prismicio/types": "^0.1.27",
     "next": "^12.1.5",
     "pathpida": "^0.18.1",
