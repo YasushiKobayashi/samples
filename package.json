@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-alias": "4.0.0",
     "@sls-next/aws-cloudfront": "^3.7.0",
     "@sls-next/aws-lambda": "^3.7.0",
     "@sls-next/aws-sqs": "^3.7.0",
