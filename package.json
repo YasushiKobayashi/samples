@@ -63,7 +63,7 @@
     "jest-environment-jsdom": "^29.1.2",
     "jest-html-reporter": "^3.7.0",
     "jest-ts-auto-mock": "^2.1.0",
-    "lerna": "^5.6.1",
+    "lerna": "5.6.2",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
