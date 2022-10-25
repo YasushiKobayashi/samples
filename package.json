@@ -41,7 +41,7 @@
     "@sls-next/serverless-component": "^3.7.0",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "29.2.0",
-    "@types/react": "^18.0.21",
+    "@types/react": "18.0.22",
     "@types/react-dom": "18.0.7",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@typescript-eslint/parser": "5.41.0",
