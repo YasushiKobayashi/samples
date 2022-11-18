@@ -19,7 +19,7 @@
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
     "fix:md": "yarn lint:md --fix",
-    "cp-artifacts": "lerna run --stream cp-artifacts",
+    "cp-artifacts": "lerna run --stream --parallel cp-artifacts",
     "prepare": "husky install"
   },
   "lint-staged": {
