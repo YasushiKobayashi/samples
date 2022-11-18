@@ -1,0 +1,16 @@
+{
+  "name": "playwright-sample",
+  "version": "0.0.0",
+  "author": "YasushiKobayashi <ptpadan@gmail.com>",
+  "homepage": "https://github.com/YasushiKobayashi/samples#readme",
+  "scripts": {
+    "e2e:chromium": "playwright test --trace on --project=chromium",
+    "dev": "playwright test --project=chromium --debug -u",
+    "codegen": "playwright codegen http://localhost:3000",
+    "report": "playwright show-report",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "trace": "playwright show-trace trace.zip",
+    "cp-artifacts": "mkdir -p $TEST_ARTIFACTS/playwright-sample && cp -fr test-results $TEST_ARTIFACTS/playwright-sample | exit 0"
+  }
+}
