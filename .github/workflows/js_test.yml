@@ -95,8 +95,7 @@ jobs:
 
       - run: yarn
       - name: serve
-          run: -
-            yarn dev &
+        run: yarn dev &
           working-directory: src/next-sample
       - name: e2e
           run: yarn e2e:chromium
