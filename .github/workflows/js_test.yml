@@ -94,6 +94,8 @@ jobs:
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - run: yarn
+      - run: yarn playwright install
+
       - name: serve
         run: yarn dev &
         working-directory: src/next-sample
