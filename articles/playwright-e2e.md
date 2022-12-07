@@ -3,7 +3,7 @@ title: E2Eテストフレームワークをこれから選ぶならPlaywright一
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Playwright', 'E2E', 'frontend']
-published: true
+published: false
 ---
 
 ## Playwrightとは
