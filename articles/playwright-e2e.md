@@ -1,5 +1,5 @@
 ---
-title: E2Eテストフレームワークをこれから選ぶならPlaywright一択
+title: E2Eテストフレームワークをこれから選ぶならPlaywright
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Playwright', 'E2E', 'frontend']
@@ -10,7 +10,7 @@ published: true
 
 Playwright は Microsoft が開発している E2E テスト用のフレームワークです。
 
-Selenium・Cypress・TestCafe など、いくつかの E2E テストのフレームワークを使ったことがありますが、一番使いやすいフレームワークだと感じており、今後は E2E テストを導入する際は Playwright 一択だと考えています。
+Selenium・Cypress・TestCafe など、いくつかの E2E テストのフレームワークを使ったことがありますが、一番使いやすいフレームワークだと感じており、今後は E2E テストを導入する際は Playwright がいいと考えています。
 
 
 ## Playwrightのメリット
