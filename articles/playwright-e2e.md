@@ -3,7 +3,7 @@ title: E2Eテストフレームワークをこれから選ぶならPlaywright一
 emoji: "📚"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Playwright', 'E2E', 'frontend']
-published: false
+published: true
 ---
 
 ## Playwrightとは
@@ -78,3 +78,12 @@ Autify にしかないのは、前回のテスト結果との画面のスクリ�
 実行時間は、CI で継続的に Autify を回したことがないのでそこまで意識したことがないすが、Playwight の方がおそらく圧倒的に速いです。
 
 そのため予算が許せて、誰でも簡単に E2E テストを作れる環境を作りたいのであれば、Autify の方が良さそうですが、CI と連携した素早くテストを実行したい場合は Playwright の方がいいかもしれません。
+
+
+今回サンプルコードにした内容や、動作確認で使用したコードは全てこちらの PR で作成しており、すべて動作確認可能です。
+
+https://github.com/YasushiKobayashi/samples/pull/760
+
+https://github.com/YasushiKobayashi/samples/tree/master/src/playwright-sample
+
+https://github.com/YasushiKobayashi/samples/tree/master/src/next-sample
