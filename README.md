@@ -21,3 +21,10 @@
 
 ## Next.js/Serverless Frameworkでisr対応サイトを立ち上げる
 - https://zenn.dev/ptpadan/articles/serverless-next-isr
+
+
+# setup
+
+```bash
+$ cat .node-version | nodenv install
+```

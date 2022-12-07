@@ -1,0 +1,9 @@
+{
+  "name": "next-sample",
+  "version": "0.0.0",
+  "author": "YasushiKobayashi <ptpadan@gmail.com>",
+  "homepage": "https://github.com/YasushiKobayashi/samples#readme",
+  "scripts": {
+    "dev": "next dev"
+  }
+}

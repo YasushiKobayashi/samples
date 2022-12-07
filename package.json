@@ -19,7 +19,7 @@
     "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "fix:sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
     "fix:md": "yarn lint:md --fix",
-    "cp-artifacts": "lerna run --stream cp-artifacts",
+    "cp-artifacts": "lerna run --stream --parallel cp-artifacts",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -34,6 +34,8 @@
     ]
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.4.5",
+    "@playwright/test": "^1.27.1",
     "@rollup/plugin-alias": "4.0.2",
     "@sls-next/aws-cloudfront": "^3.7.0",
     "@sls-next/aws-lambda": "^3.7.0",
@@ -67,6 +69,7 @@
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
+    "playwright": "^1.27.1",
     "prettier": "^2.7.1",
     "rollup": "^2.79.1",
     "rollup-plugin-analyzer": "^4.0.0",

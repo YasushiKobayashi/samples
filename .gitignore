@@ -53,3 +53,5 @@ enc.txt
 .env
 .serverless
 .serverless_nextjs
+test-results
+trace.zip
