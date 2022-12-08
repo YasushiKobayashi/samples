@@ -1,4 +1,4 @@
-FROM php:7.4-fpm as base
+FROM php:8.2-fpm as base
 MAINTAINER Yasushi kobayashi <kobayashi.yasushi@new-ship.com>
 
 ENV TZ=Asia/Tokyo
