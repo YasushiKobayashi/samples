@@ -16720,7 +16720,7 @@ minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5, minimist@^1.
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-minimist@^1.1.3:
+minimist@^1.1.3, minimist@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
@@ -18388,14 +18388,14 @@ path@^0.12.7:
     process "^0.11.1"
     util "^0.10.3"
 
-pathpida@^0.18.1:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/pathpida/-/pathpida-0.18.1.tgz#2a0a4aaf30d75e1af75574ad2cf792ebc4c20839"
-  integrity sha512-rDWOi9lcbc2tV+2LSfQW7p5i6Tu0GSfsSXjYMP4qcXnnmuTYgOp7zE4ei2+P+wg9ntpwKAwHLpWZNNseJbKrSQ==
+pathpida@^0.20.0:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/pathpida/-/pathpida-0.20.1.tgz#d5f0ecb88ce56a7deb2729a14947dfec6e2531b6"
+  integrity sha512-kHP27AIgeS3AqPTug9FLwQ/VpPkwjMv+TgMgpePeLKj/gMyY6h8/gRtAsWjTwzDV92LtHnbMSy3V12jQ/xVBeg==
   dependencies:
     chokidar "^3.5.3"
     ignore "^5.2.0"
-    minimist "^1.2.5"
+    minimist "^1.2.7"
 
 pbkdf2@^3.0.3:
   version "3.1.2"
