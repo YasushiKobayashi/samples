@@ -22,6 +22,7 @@ export const Top: React.FC<Props> = ({ submit }) => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     submit(form)
+    setForm({ ...initialState })
   }
 
   return (
