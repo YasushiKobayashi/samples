@@ -55,3 +55,4 @@ enc.txt
 .serverless_nextjs
 test-results
 trace.zip
+.jest-test-results.json

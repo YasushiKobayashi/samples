@@ -36,5 +36,6 @@ module.exports = {
   verbose: true,
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?|tsx?|js?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  modulePathIgnorePatterns: ['node_modules', 'jest-test-results.json', 'html-report'],
   setupFiles: ['../../jest-setup.ts'],
 }

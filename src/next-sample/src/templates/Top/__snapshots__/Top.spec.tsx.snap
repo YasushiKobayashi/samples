@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`templates/Top Snap Shot 1`] = `
+<DocumentFragment>
+  <form>
+    <div
+      style="margin-bottom: 16px;"
+    >
+      <div>
+        <label
+          for="firstName"
+        >
+          First Name
+        </label>
+        <input
+          id="firstName"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      style="margin-bottom: 16px;"
+    >
+      <div>
+        <label
+          for="lastName"
+        >
+          Last Name
+        </label>
+        <input
+          id="lastName"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <button
+      type="submit"
+    >
+      submit
+    </button>
+  </form>
+</DocumentFragment>
+`;
