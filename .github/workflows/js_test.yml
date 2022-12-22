@@ -26,19 +26,19 @@ jobs:
         run: |
           echo "::set-output name=dir::$(yarn cache dir)"
       - name: cache yarn
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
       - name: cache npm
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: ${{ runner.os }}-npm-cache
 
       - name: cache node_modules
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: |
             node_modules
@@ -84,19 +84,19 @@ jobs:
         run: |
           echo "::set-output name=dir::$(yarn cache dir)"
       - name: cache yarn
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
       - name: cache npm
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('yarn.lock') }}
           restore-keys: ${{ runner.os }}-npm-cache
 
       - name: cache node_modules
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.0
         with:
           path: |
             node_modules
