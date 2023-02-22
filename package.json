@@ -36,7 +36,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.4.5",
     "@playwright/test": "^1.27.1",
-    "@rollup/plugin-alias": "4.0.2",
+    "@rollup/plugin-alias": "4.0.3",
     "@sls-next/aws-cloudfront": "^3.7.0",
     "@sls-next/aws-lambda": "^3.7.0",
     "@sls-next/aws-sqs": "^3.7.0",
