@@ -1,17 +1,23 @@
-name: Test workflow
+name: js Test workflow
 on:
   push:
     branches:
       - master
   pull_request:
 
+permissions:
+  id-token: write
+  contents: read
+  actions: read
+  pull-requests: write
+
+env:
+  NODE_ENV: test
+  TEST_ARTIFACTS: /tmp/artifacts
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: test
-      TEST_ARTIFACTS: /tmp/artifacts
-
     steps:
       - run: mkdir -p $TEST_ARTIFACTS
       - uses: actions/checkout@v3
@@ -64,15 +70,11 @@ jobs:
         if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: gh pr merge --auto --merge "$PR_URL"
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   e2e:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: test
-      TEST_ARTIFACTS: /tmp/artifacts
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.6.0
