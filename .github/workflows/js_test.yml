@@ -53,6 +53,7 @@ jobs:
 
       - run: yarn
       - run: yarn lint:ts
+      # - run: yarn lint:md
       # - run: yarn lint:sass
       - run: make build
       - run: yarn test
