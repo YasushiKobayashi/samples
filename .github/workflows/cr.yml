@@ -12,13 +12,13 @@ jobs:
   test:
     if: github.event.issue.pull_request != '' && startsWith(github.event.comment.body, '/review_gpt')
     runs-on: ubuntu-latest
-    steps:
-      - uses: anc95/ChatGPT-CodeReview@v1.0.8
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # Optional
-          LANGUAGE: Japanese
-          MODEL:
-          top_p: 1
-          temperature: 1
+  steps:
+    - uses: anc95/ChatGPT-CodeReview@v1.0.8
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        # Optional
+        LANGUAGE: Japanese
+        MODEL:
+        top_p: 1
+        temperature: 1
