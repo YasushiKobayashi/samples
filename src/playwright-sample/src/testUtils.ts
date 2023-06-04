@@ -1,4 +1,5 @@
 import AxeBuilder from '@axe-core/playwright'
+import { Page } from '@playwright/test'
 
 export const baseUrl = 'http://localhost:3000/'
 export const baseDir = 'test-results/screenshots'
