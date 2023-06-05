@@ -30,6 +30,9 @@
 ## hygen/Jest/Storybookでテストカバレッジが自然と上がっていく開発環境作り
 - https://zenn.dev/ptpadan/articles/hygen-storybook-jest
 
+## axeを活用して、アクセシビリティをちゃんと理解しなくても、アクセシビリティを担保したhtmlを書く
+- https://zenn.dev/ptpadan/articles/axe-accessibility
+
 # setup
 
 ```bash
