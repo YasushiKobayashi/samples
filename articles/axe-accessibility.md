@@ -109,3 +109,5 @@ Playwright のセットアップやテストの書き方については、こち
 https://zenn.dev/ptpadan/articles/playwright-e2e
 
 今回サンプルコードにした内容や、動作確認で使用したコードは全てこちらの PR で作成しており、すべて動作確認可能です。
+
+https://github.com/YasushiKobayashi/samples/pull/880
