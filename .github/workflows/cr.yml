@@ -1,8 +1,8 @@
 name: Code Review
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   test:
-    if: github.event.issue.pull_request != '' && startsWith(github.event.comment.body, '/review_gpt')
+    if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
     runs-on: ubuntu-latest
     steps:
       - uses: anc95/ChatGPT-CodeReview@v1.0.8
