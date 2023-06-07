@@ -11856,12 +11856,7 @@ eslint-scope@^7.2.0:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
 
-eslint-visitor-keys@^3.3.0:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
-  integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
-
-eslint-visitor-keys@^3.4.1:
+eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
   integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
@@ -23311,9 +23306,9 @@ try-resolve@^1.0.1:
   integrity sha512-yHeaPjCBzVaXwWl5IMUapTaTC2rn/eBYg2fsG2L+CvJd+ttFbk0ylDnpTO3wVhosmE1tQEvcebbBeKLCwScQSQ==
 
 ts-auto-mock@^3.6.2:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.6.4.tgz#4a28deefc62e6c0890a60dba51ee8564c59e4e78"
-  integrity sha512-NDMlKRZotUQgQARp38vwDaP5ucQXnPK/A7H/lpAtcQmwzLAdLnwgxtNUzYF2G2gKQqw7SNcyGkjizWZm8EHNQw==
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.7.0.tgz#68255faf02fa911c7603152f2f215007375424b0"
+  integrity sha512-UiQ3oK03h73W8XrXdTuBxw22oKyJRavA47JhCyvMQjYwiRXa4fe/lGXkvtSg/FNjAcA4Rx3nazC9L7y2CBJmag==
   dependencies:
     lodash-es "4.17.21"
     micromatch "4.0.5"
