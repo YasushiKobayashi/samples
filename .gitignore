@@ -56,3 +56,4 @@ enc.txt
 test-results
 trace.zip
 .jest-test-results.json
+junit.xml
