@@ -80,7 +80,7 @@ jobs:
       - name: record build
         run: launchable record build --name ${GITHUB_RUN_ID}
       - name: launchable record tests
-        run: launchable record tests --no-build jest src/**/junit.xml
+        run: launchable record tests jest src/**/junit.xml
         if: always()
 
       - name: Enable auto-merge for Dependabot PRs
