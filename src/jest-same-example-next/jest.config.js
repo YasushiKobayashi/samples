@@ -10,4 +10,8 @@ const targets = stdout
   .filter(v => v !== '')
 jest.testRegex = targets.concat([jest.testRegex])
 jest.testEnvironment = 'jsdom'
+jest.reporters = [
+  'default',
+  ['jest-junit', { suiteName: 'next-sample' }],
+]
 module.exports = jest

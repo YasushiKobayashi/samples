@@ -6,6 +6,7 @@
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
   "scripts": {
     "test": "NODE_ENV=test jest --coverage",
+    "test:ci": "NODE_ENV=test yarn test --ci --reporters=default --reporters=jest-junit",
     "test:watch": "NODE_ENV=test jest --watch",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
