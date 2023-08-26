@@ -12,5 +12,9 @@ jest.moduleNameMapper = {
 
 jest.setupFilesAfterEnv = ['./jest.setup.js']
 jest.testEnvironment = 'jest-environment-jsdom'
+jest.reporters = [
+  'default',
+  ['jest-junit', { suiteName: 'next-sample' }],
+]
 
 module.exports = createJestConfig(jest)

@@ -20,4 +20,8 @@ if (spawn.status === 0) {
 
 jest.testRegex = targets.concat([jest.testRegex])
 jest.testEnvironment = 'jest-environment-jsdom'
+jest.reporters = [
+  'default',
+  ['jest-junit', { suiteName: 'next-sample' }],
+]
 module.exports = jest
