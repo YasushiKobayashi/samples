@@ -76,6 +76,8 @@ jobs:
           pip install launchable
       - name: verify
         run: launchable verify
+      - name: record build
+        run: launchable record build --name ${GITHUB_RUN_ID}
 
       - name: Enable auto-merge for Dependabot PRs
         if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
