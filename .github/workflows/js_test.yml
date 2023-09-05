@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: mkdir -p $TEST_ARTIFACTS
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v3.8.1
@@ -90,7 +90,7 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3.8.1
         with:
           node-version-file: '.node-version'
