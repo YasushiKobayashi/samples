@@ -23164,9 +23164,9 @@ try-resolve@^1.0.1:
   integrity sha512-yHeaPjCBzVaXwWl5IMUapTaTC2rn/eBYg2fsG2L+CvJd+ttFbk0ylDnpTO3wVhosmE1tQEvcebbBeKLCwScQSQ==
 
 ts-auto-mock@^3.6.2:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.7.0.tgz#68255faf02fa911c7603152f2f215007375424b0"
-  integrity sha512-UiQ3oK03h73W8XrXdTuBxw22oKyJRavA47JhCyvMQjYwiRXa4fe/lGXkvtSg/FNjAcA4Rx3nazC9L7y2CBJmag==
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.7.1.tgz#c11cabbfdf43f217ef184303848ed27a352a6c06"
+  integrity sha512-FK39cqM+ZIloSyoRP82jlVfbylueNa4biWQuY6SkoCu84i28Uc9mEw2PiTAi1zr6WXlw5lOfGfz8xAfaE8KPtw==
   dependencies:
     lodash-es "4.17.21"
     micromatch "4.0.5"
