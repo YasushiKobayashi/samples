@@ -11125,13 +11125,13 @@ esbuild-jest@^0.5.0:
     "@babel/plugin-transform-modules-commonjs" "^7.12.13"
     babel-jest "^26.6.3"
 
-esbuild-loader@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/esbuild-loader/-/esbuild-loader-3.2.0.tgz#78f11e1a2fd651758de490860acebda1c7e10131"
-  integrity sha512-lnIdRMQpk50alCa0QoW0ozc0D3rjJXl02mtMsk9INIcW25RPZhDja332bu85ixwVNbhQ7VfBRcQyZ/qza8mWiA==
+esbuild-loader@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/esbuild-loader/-/esbuild-loader-4.0.2.tgz#5452fb40919d9a0959655522cd2732dc4c383e13"
+  integrity sha512-kj88m0yrtTEJDeUEF+3TZsq7t9VPzQQj7UmXAzUbIaipoYSrd0UxKAcg4l9CBgP8uVoploiw+nKr8DIv6Y9gXw==
   dependencies:
     esbuild "^0.19.0"
-    get-tsconfig "^4.6.2"
+    get-tsconfig "^4.7.0"
     loader-utils "^2.0.4"
     webpack-sources "^1.4.3"
 
@@ -12589,7 +12589,7 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
-get-tsconfig@^4.6.2:
+get-tsconfig@^4.7.0:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.7.2.tgz#0dcd6fb330391d46332f4c6c1bf89a6514c2ddce"
   integrity sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==
