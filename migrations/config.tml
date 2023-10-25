@@ -1,0 +1,4 @@
+[twitter]
+driver = "mysql"
+dsn = "mysql://root:@tcp(127.0.0.1:3003)/twitter?charset=utf8"
+directory = "twitter"
