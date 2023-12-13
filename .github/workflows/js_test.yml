@@ -80,6 +80,7 @@ jobs:
       - name: launchable record tests
         run: launchable record tests jest src/**/junit.xml
         if: always()
+        continue-on-error: true
 
       - name: Enable auto-merge for Dependabot PRs
         if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
