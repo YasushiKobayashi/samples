@@ -24563,9 +24563,9 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 zenn-cli@^0.1.131:
-  version "0.1.148"
-  resolved "https://registry.yarnpkg.com/zenn-cli/-/zenn-cli-0.1.148.tgz#279bc4600788a10c5b24ecc1f5683104069d0bda"
-  integrity sha512-q4c3W6HOJZzX+Ce/7d4vBm5iY2G8j5o+d5P04BuxE5U9rg2qOrZS9PJEIFk9QktJ7BwJ6RjxkGiQI+rnGx/BIw==
+  version "0.1.150"
+  resolved "https://registry.yarnpkg.com/zenn-cli/-/zenn-cli-0.1.150.tgz#6142d7c82254fa683dedaec5226dbe9006195afa"
+  integrity sha512-sf/oKEx8e74CyFQ4jwFMRKDyF9cVkDH3XrU1IhGddBvwpYYrFySZ5kKL3Wn0BVC7EiqVFMvoxjQ+nEGOoBCW9w==
 
 zip-stream@^2.1.2:
   version "2.1.3"
