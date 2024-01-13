@@ -70,7 +70,7 @@ jobs:
       - uses: codecov/codecov-action@v3
       - run: yarn type-check
       - name: Publish to Chromatic
-        uses: chromaui/action@v1
+        uses: chromaui/action@v10
         # Chromatic GitHub Action options
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
