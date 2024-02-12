@@ -5,7 +5,7 @@
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "test": "NODE_ENV=test jest --coverage",
     "test:ci": "NODE_ENV=test yarn test --ci --reporters=default --reporters=jest-junit",
