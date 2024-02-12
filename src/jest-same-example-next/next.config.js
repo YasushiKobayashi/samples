@@ -1,4 +1,5 @@
 const next = {
+  output: 'export',
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
   url: false,
