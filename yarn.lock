@@ -23116,9 +23116,9 @@ ts-api-utils@^1.0.1:
   integrity sha512-wNMeqtMz5NtwpT/UZGY5alT+VoKdSsOOP/kqHFcUW1P/VRhH2wJ48+DN2WwUliNbQ976ETwDL0Ifd2VVvgonvg==
 
 ts-auto-mock@^3.6.2:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.7.2.tgz#ed9ae43d76cc7e209022d2fa4d9fe670dee56a00"
-  integrity sha512-gDHeEeAd6NXjJZqaI2NBeD8CR0LfoeVsPRbN47+t5QmLCW0pMyBmrMTb18jq5XzM39LE88BdVNiClPZ11K38tw==
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/ts-auto-mock/-/ts-auto-mock-3.7.3.tgz#270f59b535740ddc0ec4381c9db6eaf2c083fb6f"
+  integrity sha512-EmFVlfQQWogVtWWgkDXVdtLgGje0P8PaWFz217A4ojNIMwF+iKFnim6ykZsGAtClWCfmGig0VMH7KlbMxc8yKw==
   dependencies:
     lodash-es "4.17.21"
     micromatch "4.0.5"
