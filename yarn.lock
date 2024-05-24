@@ -4037,7 +4037,12 @@
   dependencies:
     "@prismicio/types" "^0.2.0"
 
-"@prismicio/types@0.2.3", "@prismicio/types@^0.2.0", "@prismicio/types@^0.2.3":
+"@prismicio/types@0.2.9":
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.2.9.tgz#9846b8830b52256b3090b2221a8240ba415b1b9f"
+  integrity sha512-1uhHnZTiGeCi+rmO507B8jtnUTCNetdgrC5sfZEw9zsCplfgBELt0+BN1RFsXWLbZbyvR9xzHcrJ87Ykqa8JZA==
+
+"@prismicio/types@^0.2.0", "@prismicio/types@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@prismicio/types/-/types-0.2.3.tgz#9f4c5bce441e1d59242f1795acb77f7a583cad99"
   integrity sha512-mHsZ9ora8He6PAn+Q/0MCVdlfc0Xv8rSEYJyfwywDApuvssGvgUbeHE6XTqPhK2dJwb0mAkJzCpZiQJRt9+bvw==
