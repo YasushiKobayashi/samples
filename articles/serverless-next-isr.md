@@ -229,6 +229,7 @@ Prismic/ Serverless frameworkの最新バージョンへの追従とバージョ
 削除前のコードはこちらに tag をつけています。
 
 https://github.com/YasushiKobayashi/samples/releases/tag/delete-serverless-next-isr
+https://github.com/YasushiKobayashi/samples/pull/1055
 
 また、serverless-next.jsは現状archiveされています。
 
