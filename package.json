@@ -37,10 +37,6 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.4.5",
     "@playwright/test": "^1.27.1",
-    "@sls-next/aws-cloudfront": "^3.7.0",
-    "@sls-next/aws-lambda": "^3.7.0",
-    "@sls-next/aws-sqs": "^3.7.0",
-    "@sls-next/serverless-component": "^3.7.0",
     "@storybook/addon-a11y": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -88,7 +84,6 @@
     "path": "^0.12.7",
     "playwright": "^1.27.1",
     "prettier": "^2.7.1",
-    "serverless": "^2.72.3",
     "textlint": "^13.3.1",
     "textlint-rule-ja-no-mixed-period": "^3.0.1",
     "textlint-rule-max-ten": "^4.0.4",
@@ -106,9 +101,6 @@
     "zenn-cli": "^0.1.131"
   },
   "dependencies": {
-    "@prismicio/client": "^6.4.2",
-    "@prismicio/richtext": "^2.0.1",
-    "@prismicio/types": "0.2.3",
     "next": "^14.1.0",
     "pathpida": "^0.22.0",
     "react": "^18.2.0",
