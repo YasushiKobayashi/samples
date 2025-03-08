@@ -229,3 +229,15 @@ https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-ro
 https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-next
 
 2021/8/21 追記：jest/ts-jest を 27 系に update すると、非同期での react-test-utils の import が動かなかったです。通常の import の場合動作します。
+
+
+\* 2025/03/09 追記
+
+rollup の sample コードの必要性は下がっている気がするため削除しました。
+削除前のコードはこちらに tag をつけています。
+
+https://github.com/YasushiKobayashi/samples/releases/tag/delete-rollup
+
+
+また、最近では vitest でこのようにテストが書けるようになっているので、vietst で in source testing を行うことも可能です。
+https://vitest.dev/guide/in-source
