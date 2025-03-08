@@ -16,9 +16,6 @@
       "@/*": [
         "src/*"
       ],
-      "jest-same-example-rollup": [
-        "../jest-same-example-rollup/dist"
-      ],
       "*": [
         "typings/*",
         "src/typings/*"
