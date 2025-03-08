@@ -237,7 +237,7 @@ rollup の sample コードの必要性は下がっている気がするため�
 削除前のコードはこちらに tag をつけています。
 
 https://github.com/YasushiKobayashi/samples/releases/tag/delete-rollup
-
+https://github.com/YasushiKobayashi/samples/pull/1049
 
 また、最近では vitest でこのようにテストが書けるようになっているので、vietst で in source testing を行うことも可能です。
 https://vitest.dev/guide/in-source
