@@ -18,10 +18,9 @@ describe('atoms/InputForm', () => {
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
+      if (Primary.play) Primary.play({ canvasElement: container })
       const results = await axeRunner(container)
       expect(results).toHaveNoViolations()
     })
-
-    await Primary.play({ canvasElement: container })
   })
 })
