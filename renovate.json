@@ -1,6 +1,8 @@
 {
+  "rangeStrategy": "replace",
   "extends": [
-    "config:base"
+    "github>cybozu/renovate-config",
+    "github>aquaproj/aqua-renovate-config#2.5.0"
   ],
   "excludeCommitPaths": ["docker/laravel/**"]
 }
