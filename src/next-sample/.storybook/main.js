@@ -19,34 +19,6 @@ module.exports = {
 
     config.module.rules = [
       ...config.module.rules,
-      ...[
-        {
-          test: /\.(ts|js|mjs)?$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'esbuild-loader',
-              options: {
-                loader: 'ts',
-                target: 'esnext',
-              },
-            },
-          ],
-        },
-        {
-          test: /\.tsx?$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'esbuild-loader',
-              options: {
-                loader: 'tsx',
-                target: 'esnext',
-              },
-            },
-          ],
-        },
-      ],
     ]
 
     return config
