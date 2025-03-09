@@ -10,7 +10,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "rootDir": "./src",
     "baseUrl": ".",
     "paths": {
       "@/*": [

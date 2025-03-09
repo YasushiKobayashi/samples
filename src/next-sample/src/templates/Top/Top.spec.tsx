@@ -19,8 +19,7 @@ describe('templates/Top', () => {
 
     await act(async () => {
       if (Primary.play) Primary.play({ canvasElement: container })
-      const results = await axeRunner(container)
-      expect(results).toHaveNoViolations()
+      expect(await axeRunner(container)).toHaveNoViolations()
     })
   })
 })

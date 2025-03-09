@@ -5,7 +5,7 @@ import { submitOrder } from '@/service/orderService'
 
 import { BestConfirmTemplate } from './BestConfirmTemplate'
 
-jest.mock('@/service/orderService')
+vi.mock('@/service/orderService')
 
 describe('BestConfirmTemplate', () => {
   afterEach(() => {

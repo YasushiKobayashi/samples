@@ -5,12 +5,12 @@ import { orderPost } from '@/request/cart'
 
 import { submitOrder } from './orderService'
 
-// jest.mock('next/router')
-jest.mock('@/request/cart')
+// vi.mock('next/router')
+vi.mock('@/request/cart')
 
 describe('orderService', () => {
   beforeEach(() => {
-    Router.push = jest.fn()
+    Router.push = vi.fn()
 
     /* eslint-disable no-import-assign,@typescript-eslint/ban-ts-comment */
     // @ts-ignore

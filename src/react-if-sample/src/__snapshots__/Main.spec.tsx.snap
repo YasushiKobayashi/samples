@@ -1,4 +1,79 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Main > Bad admin 1`] = `
+<DocumentFragment>
+  <p>
+    adminにはこれを見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+  <p>
+    adminだけこの情報も見せるよ
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Main > Bad user 1`] = `
+<DocumentFragment>
+  <p>
+    userにはこっち見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Main > Better admin 1`] = `
+<DocumentFragment>
+  <p>
+    adminにはこれを見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+  <p>
+    adminだけこの情報も見せるよ
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Main > Better user 1`] = `
+<DocumentFragment>
+  <p>
+    userにはこっち見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Main > Good admin 1`] = `
+<DocumentFragment>
+  <p>
+    adminにはこれを見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+  <p>
+    adminだけこの情報も見せるよ
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Main > Good user 1`] = `
+<DocumentFragment>
+  <p>
+    userにはこっち見せるよ
+  </p>
+  <p>
+    両方に見せるよ
+  </p>
+</DocumentFragment>
+`;
 
 exports[`Main Bad admin 1`] = `
 <DocumentFragment>

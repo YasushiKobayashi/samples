@@ -15,6 +15,11 @@ env:
   NODE_ENV: test
   TEST_ARTIFACTS: /tmp/artifacts
   LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN }}
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
