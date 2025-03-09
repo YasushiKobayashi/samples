@@ -5,13 +5,13 @@
   "author": "YasushiKobayashi <ptpadan@gmail.com>",
   "homepage": "https://github.com/YasushiKobayashi/samples#readme",
   "scripts": {
-    "test": "NODE_ENV=test jest --coverage --passWithNoTests --runInBand",
-    "test:ci": "NODE_ENV=test yarn test --ci --reporters=default --reporters=jest-junit",
-    "test:watch": "NODE_ENV=test jest --watch",
+    "vitest": "NODE_ENV=test jest --coverage --passWithNoTests --runInBand",
+    "vitest-ci": "NODE_ENV=test bun vitest --ci --reporters=default --reporters=jest-junit",
+    "vitest-watch": "NODE_ENV=test bun vitest --watch",
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "lint:ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
-    "fix": "npm run fix:ts",
-    "fix:ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
+    "type-check-watch": "npm run type-check -- --watch",
+    "lint-ts": "eslint --ext js --ext jsx --ext ts --ext tsx src",
+    "fix": "npm run fix-ts",
+    "fix-ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'"
   }
 }

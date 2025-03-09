@@ -28,6 +28,7 @@ jobs:
       - uses: actions/setup-node@v4.0.2
         with:
           node-version-file: '.node-version'
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -37,38 +38,14 @@ jobs:
       - name: record build
         run: launchable record build --name ${GITHUB_RUN_ID}
 
-      - name: yarn cache dir
-        id: yarn-cache
-        run: |
-          echo "::set-output name=dir::$(yarn cache dir)"
-      - name: cache yarn
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
-      - name: cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-npm-cache
 
-      - name: cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            ~/.cache/Cypress
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
-      - run: yarn
-      - run: yarn lint:ts
-      # - run: yarn lint:md
-      # - run: yarn lint:sass
-      - run: make build
-      - run: yarn test:ci
+      - run: bun install
+      - run: bun run lint-ts
+      # - run: bun run lint-md
+      # - run: bun run lint-sass
+      - run: bun run vitest-ci
       - uses: codecov/codecov-action@v4
-      - run: yarn type-check
+      - run: bun run type-check
       - name: Publish to Chromatic
         uses: chromaui/action@v11
         # Chromatic GitHub Action options
@@ -96,41 +73,18 @@ jobs:
       - uses: actions/setup-node@v4.0.2
         with:
           node-version-file: '.node-version'
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
 
-      - name: yarn cache dir
-        id: yarn-cache
-        run: |
-          echo "::set-output name=dir::$(yarn cache dir)"
-      - name: cache yarn
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
-      - name: cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-npm-cache
-
-      - name: cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: |
-            node_modules
-            ~/.cache/Cypress
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
-      - run: yarn
-      - run: yarn playwright install
+      - run: bun install
+      - run: bun playwright install
 
       - name: serve
-        run: yarn dev &
+        run: bun run dev &
         working-directory: src/next-sample
       - name: e2e
-        run: yarn e2e:chromium
+        run: bun run e2e-chromium
         working-directory: src/playwright-sample
-      - run: npx lerna run --stream --parallel cp-artifacts
+      - run: bun run lerna run --stream --parallel cp-artifacts
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
