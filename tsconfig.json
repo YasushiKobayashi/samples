@@ -26,6 +26,10 @@
     "jsx": "react",
     "types": ["vitest/importMeta", "vitest/globals"]
   },
+  "include": [
+    "types/**/*.ts",
+    "../../types/**/*.ts",
+  ],
   "exclude": [
     "dist/*",
     "dist",
