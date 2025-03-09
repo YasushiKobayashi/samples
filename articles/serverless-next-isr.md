@@ -225,12 +225,12 @@ https://github.com/YasushiKobayashi/samples/tree/master/src/serverless-next-isr
 
 \* 2025/03/09 追記
 
-Prismic/ Serverless frameworkの最新バージョンへの追従とバージョンアップ用の動作確認が困難なためサンプルコードの削除を行いました。
+Prismic/ Serverless framework の最新バージョンへの追従とバージョンアップ用の動作確認が困難なためサンプルコードの削除を行いました。
 削除前のコードはこちらに tag をつけています。
 
 https://github.com/YasushiKobayashi/samples/releases/tag/delete-serverless-next-isr
 https://github.com/YasushiKobayashi/samples/pull/1055
 
-また、serverless-next.jsは現状archiveされています。
+また、serverless-next.js は現状 archive されています。
 
 https://github.com/serverless-nextjs/serverless-next.js
