@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { composeStories } from '@storybook/react'
-import { render, waitFor } from '@testing-library/react'
+import { act, render } from '@testing-library/react'
 
 import { axeRunner } from '@/testUtils/axeRunner'
 
@@ -13,15 +13,9 @@ describe('atoms/InputForm', () => {
     const { container, asFragment } = render(<Primary />)
     expect(asFragment()).toMatchSnapshot()
 
-    // Execute the play function and wait for it to complete
-    if (Primary.play) {
-      await Primary.play({ canvasElement: container })
-    }
-
-    // Run accessibility check after play function completes
-    await waitFor(async () => {
-      const results = await axeRunner(container)
-      expect(results).toHaveNoViolations()
+    await act(async () => {
+      if (Primary.play) await Primary.play({ canvasElement: container })
+      expect(await axeRunner(container)).toHaveNoViolations()
     })
   })
 })

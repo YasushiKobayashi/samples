@@ -27,8 +27,9 @@
     "types": ["vitest/importMeta", "vitest/globals"]
   },
   "include": [
-    "types/**/*.ts",
-    "../../types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.ts",
   ],
   "exclude": [
     "dist/*",
