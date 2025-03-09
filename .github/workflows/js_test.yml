@@ -43,7 +43,7 @@ jobs:
       - run: bun run lint-ts
       # - run: bun run lint-md
       # - run: bun run lint-sass
-      - run: bun run vitest
+      - run: bun run vitest-ci
       - uses: codecov/codecov-action@v4
       - run: bun run type-check
       - name: Publish to Chromatic

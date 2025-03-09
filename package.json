@@ -8,6 +8,7 @@
     "start": "zenn preview",
     "build": "lerna run --stream --parallel build",
     "vitest": "lerna run --stream --parallel vitest",
+    "vitest-ci": "lerna run --stream --parallel vitest -- --reporter=junit --outputFile=test-report.junit.xml",
     "vitest-watch": "lerna run --parallel --stream vitest-watch",
     "type-check": "lerna run --stream --parallel type-check",
     "type-check-watch": "lerna run --parallel --stream type-check-watch",
