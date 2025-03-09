@@ -40,10 +40,10 @@ jobs:
 
 
       - run: bun install
-      - run: bun run lint:ts
-      # - run: bun run lint:md
-      # - run: bun run lint:sass
-      - run: bun run test:ci
+      - run: bun run lint-ts
+      # - run: bun run lint-md
+      # - run: bun run lint-sass
+      - run: bun run vitest-ci
       - uses: codecov/codecov-action@v4
       - run: bun run type-check
       - name: Publish to Chromatic
@@ -82,7 +82,7 @@ jobs:
         run: bun run dev &
         working-directory: src/next-sample
       - name: e2e
-        run: bun run e2e:chromium
+        run: bun run e2e-chromium
         working-directory: src/playwright-sample
       - run: bun run lerna run --stream --parallel cp-artifacts
       - uses: actions/upload-artifact@v4
