@@ -1,5 +1,5 @@
 import * as React from 'react'
-import type { Meta, StoryFn } from '@storybook/react'
+import type { Meta, StoryFn, StoryObj } from '@storybook/react'
 import { expect, userEvent, within } from '@storybook/test'
 import * as test from '@storybook/test'
 import { waitFor } from '@testing-library/react'
@@ -10,6 +10,7 @@ export default {
   title: 'atoms/InputForm',
   component: InputForm,
 } as Meta<typeof InputForm>
+type Story = StoryObj<typeof InputForm>
 
 const base = {
   id: 'id',
@@ -24,11 +25,13 @@ const PrimaryTemplate: StoryFn<typeof InputForm> = additionalProps => {
   return <InputForm {...props} />
 }
 
-export const Primary = PrimaryTemplate.bind({})
-Primary.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement)
-  await waitFor(async () => {
-    await userEvent.type(canvas.getByLabelText('label'), 'v')
-  })
-  expect(base.onChange).toHaveBeenCalledWith('v')
+export const Primary: Story = {
+  render: PrimaryTemplate,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await waitFor(async () => {
+      await userEvent.type(canvas.getByLabelText('label'), 'v')
+    })
+    expect(base.onChange).toHaveBeenCalledWith('v')
+  },
 }

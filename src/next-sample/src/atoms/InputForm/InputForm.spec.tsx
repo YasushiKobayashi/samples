@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { composeStories } from '@storybook/testing-react'
+import { composeStories } from '@storybook/react'
 import { act, cleanup, render } from '@testing-library/react'
 
 import { axeRunner } from '@/testUtils/axeRunner'
