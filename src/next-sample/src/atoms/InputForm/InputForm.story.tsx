@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { expect, jest } from '@storybook/jest'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import type { Meta, StoryFn, StoryObj } from '@storybook/react'
+import { expect, userEvent, within } from '@storybook/test'
+import * as test from '@storybook/test'
 import { waitFor } from '@testing-library/react'
 
 import { InputForm } from './InputForm'
@@ -9,26 +9,29 @@ import { InputForm } from './InputForm'
 export default {
   title: 'atoms/InputForm',
   component: InputForm,
-} as ComponentMeta<typeof InputForm>
+} as Meta<typeof InputForm>
+type Story = StoryObj<typeof InputForm>
 
 const base = {
   id: 'id',
   label: 'label',
   val: '',
-  onChange: jest.fn(),
+  onChange: test.fn(),
 }
 
-const PrimaryTemplate: ComponentStory<typeof InputForm> = additionalProps => {
+const PrimaryTemplate: StoryFn<typeof InputForm> = additionalProps => {
   base.onChange.mockClear()
   const props = { ...base, ...additionalProps }
   return <InputForm {...props} />
 }
 
-export const Primary = PrimaryTemplate.bind({})
-Primary.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement)
-  await waitFor(async () => {
-    await userEvent.type(canvas.getByLabelText('label'), 'v')
-  })
-  expect(base.onChange).toHaveBeenCalledWith('v')
+export const Primary: Story = {
+  render: PrimaryTemplate,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await waitFor(async () => {
+      await userEvent.type(canvas.getByLabelText('label'), 'v')
+    })
+    expect(base.onChange).toHaveBeenCalledWith('v')
+  },
 }

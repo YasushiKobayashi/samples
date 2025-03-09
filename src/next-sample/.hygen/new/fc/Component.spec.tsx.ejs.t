@@ -2,7 +2,7 @@
 to: <%= abs_path %>/<%= component_name %>.spec.tsx
 ---
 import * as React from 'react'
-import { composeStories } from '@storybook/testing-react'
+import { composeStories } from '@storybook/react'
 import { act, cleanup, render } from '@testing-library/react'
 
 import { axeRunner } from '@/testUtils/axeRunner'
@@ -22,10 +22,9 @@ describe('<%= path %>', () => {
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
+      if (Primary.play) Primary.play({ canvasElement: container })
       const results = await axeRunner(container)
       expect(results).toHaveNoViolations()
     })
-
-    await Primary.play({ canvasElement: container })
   });
 });
