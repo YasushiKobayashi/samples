@@ -187,3 +187,9 @@ Cline を使用することで、複数のファイルにまたがる変更や�
 - **作業時間の短縮**: 手動で行うと数時間かかる作業が数分で完了
 - **ミスの削減**: 人間が行うと見落としがちな細かい変更も正確に実施
 - **一貫性の確保**: すべてのファイルで同じパターンの変更を一貫して適用
+
+詳細な移行手順やその他のメモは、以下の PR とスクラップで確認できます：
+
+https://github.com/YasushiKobayashi/samples/pull/1068
+https://zenn.dev/ptpadan/scraps/8a03ecd391295e
+https://github.com/YasushiKobayashi/samples/pull/1079
