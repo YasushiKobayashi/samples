@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`templates/Top Snap Shot 1`] = `
+exports[`templates/Top > Snap Shot 1`] = `
 <DocumentFragment>
   <form>
     <div

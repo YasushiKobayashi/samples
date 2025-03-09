@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "new-fc": "hygen new fc",
-    "vitest": "NODE_ENV=test jest --json --outputFile=.jest-test-results.json --coverage --passWithNoTests --runInBand",
-    "vitest-ci": "NODE_ENV=test bun vitest --ci --reporters=default --reporters=jest-junit",
-    "vitest-watch": "NODE_ENV=test bun vitest --watch --updateSnapshot",
+    "vitest": "NODE_ENV=test vitest run",
+    "vitest-watch": "NODE_ENV=test vitest --ui",
     "type-check": "tsc --noEmit",
     "type-check-watch": "npm run type-check -- --watch",
     "story": "NODE_ENV=test storybook dev -h 0.0.0.0 -p 9006 -s ./public",

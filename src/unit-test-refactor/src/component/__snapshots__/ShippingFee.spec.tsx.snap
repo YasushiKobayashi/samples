@@ -1,4 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ShippingFee > 送料0円の場合は無料と表示 1`] = `
+<DocumentFragment>
+  無料
+</DocumentFragment>
+`;
+
+exports[`ShippingFee > 送料500円の場合はそのまま表示 1`] = `
+<DocumentFragment>
+  500円
+</DocumentFragment>
+`;
 
 exports[`ShippingFee 送料0円の場合は無料と表示 1`] = `
 <DocumentFragment>

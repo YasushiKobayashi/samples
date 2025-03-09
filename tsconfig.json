@@ -24,9 +24,7 @@
     "target": "es5",
     "noEmit": true,
     "jsx": "react",
-    "plugins": [
-      { "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false }
-    ]
+    "types": ["vitest/importMeta", "vitest/globals"]
   },
   "exclude": [
     "dist/*",

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import type { Meta, StoryFn, StoryObj } from '@storybook/react'
-import { expect, userEvent, within } from '@storybook/test'
-import * as test from '@storybook/test'
+import { expect, fn, userEvent, within } from '@storybook/test'
 import { waitFor } from '@testing-library/react'
 
 import { InputForm } from './InputForm'
@@ -16,7 +15,7 @@ const base = {
   id: 'id',
   label: 'label',
   val: '',
-  onChange: test.fn(),
+  onChange: fn(),
 }
 
 const PrimaryTemplate: StoryFn<typeof InputForm> = additionalProps => {
