@@ -1,14 +1,20 @@
+import { dirname, join } from "path";
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
   stories: ['../src/**/*.story.@(tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', 'storybook-addon-turbo-build', '@storybook/addon-interactions', '@storybook/addon-a11y'],
+  addons: [
+    getAbsolutePath("@storybook/addon-essentials"),
+    getAbsolutePath("storybook-addon-turbo-build"),
+    getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@storybook/addon-a11y"),
+    '@chromatic-com/storybook'
+  ],
+
   features: {
     interactionsDebugger: true,
   },
+
   webpackFinal: async config => {
     config.resolve.plugins = [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
 
@@ -46,4 +52,17 @@ module.exports = {
 
     return config
   },
+
+  framework: {
+    name: getAbsolutePath("@storybook/nextjs"),
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
+}
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, "package.json")));
 }

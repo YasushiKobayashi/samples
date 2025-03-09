@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { expect, jest } from '@storybook/jest'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import type { Meta, StoryFn } from '@storybook/react'
+import { expect, userEvent, within } from '@storybook/test'
+import * as test from '@storybook/test'
 import { waitFor } from '@testing-library/react'
 
 import { InputForm } from './InputForm'
@@ -9,16 +9,16 @@ import { InputForm } from './InputForm'
 export default {
   title: 'atoms/InputForm',
   component: InputForm,
-} as ComponentMeta<typeof InputForm>
+} as Meta<typeof InputForm>
 
 const base = {
   id: 'id',
   label: 'label',
   val: '',
-  onChange: jest.fn(),
+  onChange: test.fn(),
 }
 
-const PrimaryTemplate: ComponentStory<typeof InputForm> = additionalProps => {
+const PrimaryTemplate: StoryFn<typeof InputForm> = additionalProps => {
   base.onChange.mockClear()
   const props = { ...base, ...additionalProps }
   return <InputForm {...props} />

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { expect, jest } from '@storybook/jest'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { userEvent, within } from '@storybook/testing-library'
+import type { Meta, StoryFn } from '@storybook/react'
+import { expect, userEvent, within } from '@storybook/test'
+import * as test from '@storybook/test'
 import { waitFor } from '@testing-library/react'
 
 import { Top } from './Top'
@@ -9,13 +9,13 @@ import { Top } from './Top'
 export default {
   title: 'templates/Top',
   component: Top,
-} as ComponentMeta<typeof Top>
+} as Meta<typeof Top>
 
 const base = {
-  submit: jest.fn(),
+  submit: test.fn(),
 }
 
-const PrimaryTemplate: ComponentStory<typeof Top> = additionalProps => {
+const PrimaryTemplate: StoryFn<typeof Top> = additionalProps => {
   base.submit.mockClear()
   const props = { ...base, ...additionalProps }
   return <Top {...props} />
