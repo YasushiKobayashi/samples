@@ -28,6 +28,7 @@ jobs:
       - uses: actions/setup-node@v4.0.2
         with:
           node-version-file: '.node-version'
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
@@ -73,6 +74,7 @@ jobs:
       - uses: actions/setup-node@v4.0.2
         with:
           node-version-file: '.node-version'
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
 
       - run: bun install
       - run: bun playwright install
