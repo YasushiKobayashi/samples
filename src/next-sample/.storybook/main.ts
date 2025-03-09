@@ -1,5 +1,5 @@
 import { StorybookConfig } from '@storybook/nextjs'
-import { dirname, join } from 'path'
+import path, { dirname, join } from 'path'
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const config: StorybookConfig = {
