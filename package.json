@@ -36,6 +36,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.4.5",
     "@chromatic-com/storybook": "^3",
+    "@codecov/vite-plugin": "^1.9.0",
     "@playwright/test": "^1.27.1",
     "@storybook/addon-a11y": "^8.6.4",
     "@storybook/addon-essentials": "^8.6.4",
