@@ -37,5 +37,5 @@
 
 ```bash
 $ cat .node-version | nodenv install
-$ yarn
+$ bun install
 ```
