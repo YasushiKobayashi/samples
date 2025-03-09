@@ -50,6 +50,8 @@ jobs:
       # - run: bun run lint-sass
       - run: bun run vitest-ci
       - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - run: bun run type-check
       - name: Publish to Chromatic
         uses: chromaui/action@v11
