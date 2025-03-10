@@ -91,7 +91,7 @@
     "zenn-cli": "^0.1.131"
   },
   "dependencies": {
-    "next": "^14.1.0",
+    "next": "^15.0.0",
     "pathpida": "^0.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
