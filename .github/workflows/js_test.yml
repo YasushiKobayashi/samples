@@ -49,7 +49,7 @@ jobs:
       # - run: bun run lint-md
       # - run: bun run lint-sass
       - run: bun run vitest-ci
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - run: bun run type-check
