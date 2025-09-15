@@ -20,6 +20,6 @@ const axeRunner = async (page: Page, disableRules: string[] = []) => {
 let i = 1
 export const testPage = async (page: Page, basePath: string, disableRules: string[] = []) => {
   await axeRunner(page, disableRules)
-  // eslint-disable-next-line no-plusplus
+
   await page.screenshot({ path: `${basePath}/${i++}.png`, fullPage: true })
 }
