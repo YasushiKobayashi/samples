@@ -3,13 +3,7 @@ import Router from 'next/router'
 import useSWR from 'swr'
 
 import { AppStateContainer } from '@/contexts/AppStateContainer'
-import {
-  CartType,
-  getPaymentAmount,
-  getShippingFee,
-  getTotalPrice,
-  isFreeShippingFee,
-} from '@/models/cart'
+import { CartType, getPaymentAmount, getShippingFee, getTotalPrice, isFreeShippingFee } from '@/models/cart'
 
 const fetchCart = async () => {
   const res = await fetch('/api/cart.json')
