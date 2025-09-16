@@ -9,7 +9,7 @@ interface StateType {
 
 const initialState = {}
 
-const app = (state: StateType = initialState) => {
+const useApp = (state: StateType = initialState) => {
   const [user, updateUser] = React.useState<UserType | undefined>(state?.user)
 
   return {
@@ -18,4 +18,4 @@ const app = (state: StateType = initialState) => {
   }
 }
 
-export const AppStateContainer = createContainer(app)
+export const AppStateContainer = createContainer(useApp)
