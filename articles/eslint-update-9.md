@@ -3,7 +3,7 @@ title: ESLint 9へのアップデートとFlat Config移行の実践記録
 emoji: "🔧"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['eslint', 'typescript', 'javascript', 'linter', 'monorepo']
-published: false
+published: true
 ---
 
 # はじめに
@@ -304,3 +304,10 @@ ESLint 9 への移行は、最初は設定形式の変更に戸惑う場合が�
 - [ESLint 9.0.0 released](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
 - [Configuration Files (Flat Config)](https://eslint.org/docs/latest/use/configure/configuration-files)
 - [typescript-eslint](https://typescript-eslint.io/)
+
+
+# 実装例
+
+今回実際に行った ESLint のアップデートによる、コードの差分・流れは以下の PR で確認できます。
+
+https://github.com/YasushiKobayashi/samples/pull/1163
