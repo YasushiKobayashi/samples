@@ -77,7 +77,7 @@ Primary.play = async ({ canvasElement }) => {
 
 ## テンプレートをメンテナンスしていくことで、なるべく新しい書き方に追従できる
 
-例えば、Storybook はバージョンによって推奨される書き方が変わることがあるので、テンプレートを最新の書き方にすることで最新の書き方に追従していきやすい環境を作ることができます。
+例えば、Storybook はバージョンによって推奨される書き方が変わることがあります。テンプレートを最新の書き方に更新することで、新しい書き方への追従が容易になります。
 
 既存のコードのコピー&ペーストをベースにして作ってしまうと古い好ましくない書き方をベースにしてしまうことがありますが、テンプレートをメンテナンスしていくことで今好ましい書き方をし続けることができます。
 
@@ -86,7 +86,7 @@ Primary.play = async ({ canvasElement }) => {
 
 `Play function`を使用することで、シナリオテストを作成できるので、下記のようにフォームに入力・送信までテストできる Story を簡単に作成できます。
 
-`@storybook/jest` という addon で Storybook の中で jest のようにモックや assertion を書くこともできるので、Storybook でコンポーネントに関するテストは完結できます。
+`@storybook/jest` という addon で Storybook の中で Jest のようにモックや assertion を書くこともできるので、Storybook でコンポーネントに関するテストは完結できます。
 
 また、簡単なテストケースであれば jsdom 上でデバッグしていくことができますが、Storybook でテストを実行しているのでブラウザ上でもテストを実行し devtool で詳しい状態を見ることができるので、複雑なシナリオのテストでもこれまでより大幅に書きやすくなりました。
 
@@ -155,7 +155,7 @@ https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/temp
 
 参考記事はこちら。
 
-https://storybook.js.org/docs/react/writing-stories/play-function
+https://storybook.js.org/docs/writing-stories/play-function
 https://storybook.js.org/addons/@storybook/addon-jest
 https://zenn.dev/takepepe/articles/hygen-template-generator
 https://zenn.dev/azukiazusa/articles/df307292037265

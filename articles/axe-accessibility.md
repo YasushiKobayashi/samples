@@ -10,9 +10,9 @@ published: true
 
 `jest-axe` ・ `@axe-core/playwright`  を使用したテストを CI で回すことで、アクセシビリティを継続的に担保していくことができます。
 
-## jest axeを活用してコンポーネントのアクセシビリティ担保
+## Jest axeを活用してコンポーネントのアクセシビリティ担保
 
-`jest-axe`を使用することでコンポーネント単位でアクセシビリティテストをできます。
+`jest-axe`を使用することで、コンポーネント単位のアクセシビリティテストが可能になります。
 
 コンポーネント単位でテストができることで、1 つ 1 つアクセシビリティ的に正しいコンポーネントを作ることができ、小さい単位でアクセシビリティの改善をしていくことができるので既存プロジェクトにも導入がしやすいです。
 
@@ -53,7 +53,7 @@ https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/temp
 
 また、すべてのルールにちゃんとドキュメントがあり、今守りたいルールなのか考えながら導入していくことが可能です。
 
-下記のように基本的に日本語に翻訳されているルールも多いです。
+下記のように基本的には日本語訳が提供されているルールも多いです。
 
 https://dequeuniversity.com/rules/axe/4.4/label?lang=ja
 
@@ -65,7 +65,7 @@ https://zenn.dev/ptpadan/articles/hygen-storybook-jest
 
 ## Playwright axeでE2Eテストでもアクセシビリティテストする
 
-`@axe-core/playwright` を使うことで、E2E テストの中でもアクセシビリティテストができます。
+`@axe-core/playwright` を使うことで、end-to-end テストの中でもアクセシビリティテストができます。
 
 全てに対応しようとすると難しいものも多いので対応できてないルールも多いのですが、1 つのコンポーネントをテストするだけでは検出できるできないエラーを発見でき、例えばこのように h1 タグに関するエラーを出してくれます。
 
@@ -104,7 +104,7 @@ export const axeRunner = async (page: Page, disableRules: string[] = []) => {
 }
 ```
 
-Playwright のセットアップやテストの書き方については、こちらを参考にしてください Playwright が実行できていればすぐに上記のような方法でテスト可能です。。
+Playwright のセットアップやテストの書き方については、こちらを参考にしてください。Playwright が実行できていればすぐに上記のような方法でテスト可能です。
 
 https://zenn.dev/ptpadan/articles/playwright-e2e
 

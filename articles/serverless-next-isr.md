@@ -31,7 +31,7 @@ Next.js は isr/ssr 用の書き方が変わるので、そこを変えるだけ
 
 S3/CF や Firebase Hosting に Next.js をデプロイして、運用するにはパスの rewrite を自作する必要があります。
 
-Serverless Nextjs Plugin を使えば、パス関連もまとめて面倒を見てくれるので、export したサイトを作成する場合でも Serverless Nextjs Plugin を使うとインフラ構築が楽になります。
+Serverless Next.js Plugin を使えば、パス関連もまとめて面倒を見てくれるので、export したサイトを作成する場合でも Serverless Next.js Plugin を使うとインフラ構築が楽になります。
 
 ## ハマったポイント
 ### next-i18nextを使っていないのに、ビルドエラーになる
@@ -55,7 +55,7 @@ https://github.com/YasushiKobayashi/samples/pull/367
 
 `getStaticProps` の`revalidate` に設定している値で明らかにキャッシュの更新がされずにつまりました。
 
-下記のようにパスごとの ttl を設定することで、キャッシュを更新できるようになりました。
+下記のようにパスごとの TTL を設定することで、キャッシュを更新できるようになりました。
 
 https://github.com/YasushiKobayashi/samples/blob/master/src/serverless-next-isr/serverless.yml#L22-L30
 
@@ -71,7 +71,7 @@ isr/ssr を途中で変えることはできますが、途中で変えるとあ
 
 ### キャッシュの更新に時間差が激しい
 
-上記でキャッシュの revalidate/ttl を短くしていても、どうしてもキャッシュの更新に時間がかかってしまう場合があるので、今回作成した例では swr と併用するようにしています。長いときは 10 分くらい更新されません。
+上記でキャッシュの revalidate/TTL を短くしていても、どうしてもキャッシュの更新に時間がかかってしまう場合があるので、今回作成した例では swr と併用するようにしています。長いときは 10 分くらい更新されません。
 
 swr を使用することで、refetch のタイミングなどを swr に任せることがより楽にデータの管理ができます。
 
@@ -96,9 +96,9 @@ swr を使用することで、refetch のタイミングなどを swr に任せ
 
 ## Prismicで開発しやすくするためにしたこと
 
-Prismic の api の叩き方は、多少癖があるきもしますが、document 見ながら試すとそれほど難しい点は恐らくなかったです。
+Prismic の API の叩き方は、多少癖があるきもしますが、document 見ながら試すとそれほど難しい点は恐らくなかったです。
 
-api を叩くだけでは問題なさそうだったのですが、Prismic のレスポンスの型をみると any を使っており generics に対応してなかったので、継承して下記のように自分で型を作りました。
+API を叩くだけでは問題なさそうだったのですが、Prismic のレスポンスの型をみると any を使っており generics に対応してなかったので、継承して下記のように自分で型を作りました。
 
 
 \* 2022/4/20 追記
@@ -196,7 +196,7 @@ export const fetchPosts = async (client: DefaultClient) => {
 }
 ```
 
-react でのレンダリングは`prismic-reactjs`を使うことで、html をそのままレンダリングするパターン、text だけレンダリングしたいときも簡単に対応できました。
+react でのレンダリングは`prismic-reactjs`を使うことで、HTML をそのままレンダリングするパターン、text だけレンダリングしたいときも簡単に対応できました。
 
 ```typescript
 
@@ -221,11 +221,11 @@ const Pages: React.VFC<Props> = ({ post }) => {
 
 作成にあたって試したコードはこちらです。
 
-https://github.com/YasushiKobayashi/samples/tree/master/src/serverless-next-isr
+https://github.com/YasushiKobayashi/samples/tree/delete-serverless-next-isr/src/serverless-next-isr
 
 \* 2025/03/09 追記
 
-Prismic/ Serverless framework の最新バージョンへの追従とバージョンアップ用の動作確認が困難なためサンプルコードの削除を行いました。
+Prismic/ Serverless framework の最新バージョンへの追従とバージョンアップ用の動作確認が困難なためサンプルコードを削除しました。
 削除前のコードはこちらに tag をつけています。
 
 https://github.com/YasushiKobayashi/samples/releases/tag/delete-serverless-next-isr

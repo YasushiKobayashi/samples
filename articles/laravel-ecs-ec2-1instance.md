@@ -24,7 +24,7 @@ Laravel/ec2/docker-compose の手動デプロイで動いている API サーバ
     - 手動デプロイをしてることによる操作ミスで、サーバーが落ちることもありました
 - 環境が immutable ではない
     - サーバー内のコンテナの vendor の状態がわからず、想定外に自動デプロイがコケていることがありました 
-- ec2 上の docker の volume にしか、ログの永続化がされていない
+- ec2 上の Docker の volume にしか、ログの永続化がされていない
     - 小規模サービスのため一旦問題ないのですが、将来的には好ましくない
 - autoscale 構成になっていない
     - ロードバランサー配下にはありましたが、autoscale 構成になっていないため、サーバーが落ちた場合自動では復旧できない可能性があります
@@ -203,9 +203,9 @@ resource "aws_ecs_service" "api" {
 
 また、health check で説明した ecs の動的ポートマッピングを使用するために、nginx の hostPort は 0 を指定します。
 
-デプロイについての詳細は後述しますが、ecr に push する際の image id は Git のコミットハッシュを使用しており、使用するべき image id が terraform 上ではわからないので local 変数を適宜更新する形に一旦しています。
+デプロイについての詳細は後述しますが、ecr に push する際の image ID は Git のコミットハッシュを使用しており、使用するべき image ID が terraform 上ではわからないので local 変数を適宜更新する形に一旦しています。
 
-ここでは例えば、docker image を push するときは latest も push してそれを terraform では参照するなどの対応ができそうですが、最適な管理方法はまだわかっていません。
+ここでは例えば、Docker image を push するときは latest も push してそれを terraform では参照するなどの対応ができそうですが、最適な管理方法はまだわかっていません。
 
 ```hcl
 locals {
@@ -282,13 +282,13 @@ https://github.com/YasushiKobayashi/samples/tree/master/tf/laravel-ecs-ec2-1inst
 
 デプロイは ecs-deploy という shell script を使用しました。
 
-https://github.com/silinternational/ecs-deploy
+https://github.com/sil-org/ecs-deploy
 
 ecs のデプロイには様々なツールがありますが、使用するイメージを更新したいだけの最低限のデプロイには ecs deploy が適しているように思います。
 
 `./ecs-deploy -c api --service-name api --image ${ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/api:${COMMIT_ID}` のように使用するイメージを上書きするだけでデプロイができます。
 
-構築したサービスでは、この Makefile を GitHub actions で実行しています。
+構築したサービスでは、この Makefile を GitHub Actions で実行しています。
 
 ```bash
 COMMIT_ID := $(shell git log -n 1 --pretty=format:"%H")

@@ -1,5 +1,5 @@
 ---
-title: ESLint 9へのアップデートとFlat Config移行の実践記録
+title: ESLint 9へのアップデートとFlat Config移行ログ
 emoji: "🔧"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['eslint', 'typescript', 'javascript', 'linter', 'monorepo']
