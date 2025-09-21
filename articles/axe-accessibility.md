@@ -2,7 +2,7 @@
 title: axeを活用して、アクセシビリティをちゃんと理解しなくても、アクセシビリティを担保したhtmlを書く
 emoji: '📚'
 type: 'tech' # tech: 技術記事 / idea: アイデア
-topics: ['Jest', 'hygen', 'Playwgiht', 'axe', 'Accessibility']
+topics: ['Jest', 'hygen', 'Playwright', 'axe', 'Accessibility']
 published: true
 ---
 
