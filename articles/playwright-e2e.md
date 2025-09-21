@@ -1,7 +1,7 @@
 ---
 title: E2Eテストフレームワークをこれから選ぶならPlaywright
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['Playwright', 'E2E', 'frontend']
 published: true
 ---
@@ -12,7 +12,6 @@ Playwright は Microsoft が開発している end-to-end テスト用のフレ�
 
 Selenium・Cypress・TestCafe など、いくつかの end-to-end テストのフレームワークを使ったことがありますが、一番使いやすいフレームワークだと感じており、今後は end-to-end テストを導入する際は Playwright がいいと考えています。
 
-
 ## Playwrightのメリット
 
 ### ユーザーの動きに近い形でテストケースを自動生成できる
@@ -22,15 +21,15 @@ Selenium・Cypress・TestCafe など、いくつかの end-to-end テストの�
 class 名などではなく Testing Library のように label などをベースにしており、アクセシビリティを意識した HTML を書くことができていれば、ある程度自動生成したコードをそのまま使えます。
 
 ```typescript
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test'
 test('test', async ({ page }) => {
-  await page.goto('http://localhost:3000/');
-  await page.getByLabel('First Name').click();
-  await page.getByLabel('First Name').fill('first name');
-  await page.getByLabel('First Name').press('Tab');
-  await page.getByLabel('Last Name').fill('last name');
-  await page.getByRole('button', { name: 'submit' }).click();
-});
+  await page.goto('http://localhost:3000/')
+  await page.getByLabel('First Name').click()
+  await page.getByLabel('First Name').fill('first name')
+  await page.getByLabel('First Name').press('Tab')
+  await page.getByLabel('Last Name').fill('last name')
+  await page.getByRole('button', { name: 'submit' }).click()
+})
 ```
 
 ### ログがこれまでのどのツールよりも分かりやすい
@@ -39,9 +38,7 @@ Playwright でテストを失敗したときは、デフォルトでテストの
 
 ![](/images/playwright/trace.png)
 
-
-このログによりテストの失敗原因がわからなくなることがほとんどなくなり、デバッグしやすいです。
-
+このログにより、テストの失敗原因で悩むことがほとんどなくなり、デバッグしやすいです。
 
 ### ブラウザの自動操作が速い
 
@@ -73,10 +70,9 @@ GUI で完結するテストの作る簡単さは Autify の方が圧倒的に�
 ログのみやすさは、どちらも別の良さがあります。実行時の DOM や console の状態などの細かい情報は Playwgiht の方が多くありますが、Autify でも動画で画面の状態を詳しく見ることは可能です。
 Autify にしかないのは、前回のテスト結果との画面のスクリーンショットの差分があることでなぜ今落ちたのかわかりやすいです、ただ自分は Autify のスクショを regsuite でビジュアルリグレッションテストをしているので近いことをそれでもできています。
 
-実行時間は、CI で継続的に Autify を回したことがないのでそこまで意識したことがないすが、Playwight の方がおそらく圧倒的に速いです。
+実行時間は、CI で継続的に Autify を回したことがないのでそこまで意識したことはありませんが、Playwright の方がおそらく圧倒的に速いです。
 
 そのため予算が許せて、誰でも簡単に end-to-end テストを作れる環境を作りたいのであれば、Autify の方が良さそうですが、CI と連携した素早くテストを実行したい場合は Playwright の方がいいかもしれません。
-
 
 今回サンプルコードにした内容や、動作確認で使用したコードは全てこちらの PR で作成しており、すべて動作確認可能です。
 

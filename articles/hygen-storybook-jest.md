@@ -1,7 +1,7 @@
 ---
 title: hygen/Jest/Storybookでテストカバレッジが自然と上がっていく開発環境作り
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['Jest', 'Storybook', 'hygen', 'frontend']
 published: true
 ---
@@ -14,14 +14,11 @@ hygen は、テンプレートを使ってコードを生成するためのツ�
 
 また、Storybook と Jest を連動させることで、テストをメンテナンスする工数を減らしつつ、ストーリー・テストを増やすことができました。
 
-
 ## hygenでテンプレートをもとに必要なファイルを自動生成
-
 
 hygen は下記の記事で知り、こちらで作成しているテンプレートをもとに少しカスタマイズしたものをを使用しています。
 
 https://zenn.dev/takepepe/articles/hygen-template-generator
-
 
 `yarn new:fc` でこちらの記事同様に Story・テスト・scss ファイルを一気に生成できるようにしているので、Story・テストを作るまでのハードルを下げることができ、Story・テストを作ることを強制していくことができます。
 
@@ -36,7 +33,7 @@ https://zenn.dev/takepepe/articles/hygen-template-generator
 
 ## テンプレートをもとにpropsを編集するだけでStoryを作れるように
 
-テンプレートをもとに、  `Sample` というコンポーネントを作成した場合下記まで自動生成されるので、基本的に props を正しいものにするだけで Story が動きます。
+テンプレートをもとに、 `Sample` というコンポーネントを作成した場合下記まで自動生成されるので、基本的に props を正しいものにするだけで Story が動きます。
 
 ```typescript
 import * as React from 'react'
@@ -74,15 +71,13 @@ Primary.play = async ({ canvasElement }) => {
 
 後から欲しい物を追加するよりも消すほうが個人的には楽なので、このようにボタンクリックという必ずしも必要ではないものまでテンプレートに最初からいれています。
 
-
 ## テンプレートをメンテナンスしていくことで、なるべく新しい書き方に追従できる
 
-例えば、Storybook はバージョンによって推奨される書き方が変わることがあります。テンプレートを最新の書き方に更新することで、新しい書き方への追従が容易になります。
+例えば、Storybook はバージョンによって推奨される書き方が変わることがあります。テンプレートを最新の書き方に更新しておけば、新しい書き方への追従も容易になります。
 
 既存のコードのコピー&ペーストをベースにして作ってしまうと古い好ましくない書き方をベースにしてしまうことがありますが、テンプレートをメンテナンスしていくことで今好ましい書き方をし続けることができます。
 
 ## StorybookのPlay functionでシナリオテストでテストを完結させる
-
 
 `Play function`を使用することで、シナリオテストを作成できるので、下記のようにフォームに入力・送信までテストできる Story を簡単に作成できます。
 
@@ -120,10 +115,10 @@ Primary.play = async ({ canvasElement }) => {
   expect(base.submit).toHaveBeenCalledTimes(1)
 }
 ```
+
 コード全文はこちら。
 
 https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/templates/Top/Top.story.tsx
-
 
 ## StoryをJestで再利用
 
@@ -148,7 +143,6 @@ describe('templates/Top', () => {
 
 https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/templates/Top/Top.spec.tsx
 
-
 このように hygen のテンプレートで Story・テストを作りやすい環境を作ることで、最低限の Story・テストは必ず書くようになりテストカバレッジを向上させることができました。
 
 そして、`Play function`を使うことで Story だけをメンテナンスしていけばいい状態を作り、Story・テストを両方メンテナンスしていかなければならない状態を避けて、テストコードのメンテナンス工数を削減できました。
@@ -160,10 +154,8 @@ https://storybook.js.org/addons/@storybook/addon-jest
 https://zenn.dev/takepepe/articles/hygen-template-generator
 https://zenn.dev/azukiazusa/articles/df307292037265
 
-
 今回サンプルコードにした内容は全てこちらの PR で作成しており、すべて動作確認可能です。
 https://github.com/YasushiKobayashi/samples/pull/770
-
 
 今回作成した Storybook はこちらで確認可能です。
 

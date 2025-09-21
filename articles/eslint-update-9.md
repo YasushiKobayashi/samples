@@ -1,7 +1,7 @@
 ---
 title: ESLint 9へのアップデートとFlat Config移行ログ
-emoji: "🔧"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '🔧'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['eslint', 'typescript', 'javascript', 'linter', 'monorepo']
 published: true
 ---
@@ -150,8 +150,8 @@ const lightModeConfig = [
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: false,  // 型情報を使わない
-        ecmaFeatures: { jsx: true }
+        project: false, // 型情報を使わない
+        ecmaFeatures: { jsx: true },
       },
     },
     rules: {
@@ -168,7 +168,7 @@ const fullModeConfig = [
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: true,  // 型情報を使用
+        project: true, // 型情報を使用
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -186,6 +186,7 @@ export default isLightMode ? lightModeConfig : fullModeConfig
 ## 使い分けの戦略
 
 ### Lightモード（開発時）
+
 ```bash
 ESLINT_LIGHT_MODE=true bun run lint-ts
 ```
@@ -195,6 +196,7 @@ ESLINT_LIGHT_MODE=true bun run lint-ts
 - **メリット**: 開発効率を損なわない、保存時の快適性
 
 ### Fullモード（CI/本格チェック）
+
 ```bash
 # 環境変数なし（デフォルト）
 bun run lint-ts
@@ -266,6 +268,7 @@ ESLint 9 では多くのコマンドラインオプションが廃止されま�
 ある程度の規模のモノレポでは、ESLint がメモリ不足でクラッシュする場合があります。以下の対策が有効です。
 
 ### 1. Lightモードの活用
+
 開発時は Light モードを使用することで、メモリ使用量を大幅に削減できます。
 
 ```bash
@@ -274,6 +277,7 @@ ESLINT_LIGHT_MODE=true bun run lint-ts
 ```
 
 ### 2. Lernaを使用した並列実行
+
 メモリ使用量を分散させるため、ワークスペースごとに分割実行する。
 
 ```json
@@ -282,6 +286,7 @@ ESLINT_LIGHT_MODE=true bun run lint-ts
 ```
 
 ### 3. Node.jsのメモリ制限を増やす
+
 必要に応じて Node.js のヒープサイズを拡張する。
 
 ```json
@@ -304,7 +309,6 @@ ESLint 9 への移行は、最初は設定形式の変更に戸惑う場合が�
 - [ESLint 9.0.0 released](https://eslint.org/blog/2024/04/eslint-v9.0.0-released/)
 - [Configuration Files (Flat Config)](https://eslint.org/docs/latest/use/configure/configuration-files)
 - [typescript-eslint](https://typescript-eslint.io/)
-
 
 # 実装例
 
