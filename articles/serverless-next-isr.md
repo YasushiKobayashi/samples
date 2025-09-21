@@ -1,7 +1,7 @@
 ---
 title: Next.js/Serverless Frameworkでisr対応サイトを立ち上げる
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['nextjs', 'Serverless', 'Prismic']
 published: true
 ---
@@ -34,12 +34,12 @@ S3/CF や Firebase Hosting に Next.js をデプロイして、運用するに�
 Serverless Next.js Plugin を使えば、パス関連もまとめて面倒を見てくれるので、export したサイトを作成する場合でも Serverless Next.js Plugin を使うとインフラ構築が楽になります。
 
 ## ハマったポイント
+
 ### next-i18nextを使っていないのに、ビルドエラーになる
 
 モノレポで開発しており、package.json に dependencies がなかったため、`next-i18next`を使用しているかチェックしている箇所が`Cannot read property`でエラーになってしまいました。
 
 対処法は dependencies を追加するだけです。
-
 
 ### Serverless frameworkに対して環境変数が渡せない
 
@@ -75,7 +75,6 @@ isr/ssr を途中で変えることはできますが、途中で変えるとあ
 
 swr を使用することで、refetch のタイミングなどを swr に任せることがより楽にデータの管理ができます。
 
-
 ### Serverless frameworkとTerrafromで競合しないように
 
 今回のメディアは、まだ本運用が始まっていないですがインフラ構築にあたって、気をつけたいと思っている点として、Terraform とのリソース管理で競合しないようにしたいと考えています。
@@ -99,7 +98,6 @@ swr を使用することで、refetch のタイミングなどを swr に任せ
 Prismic の API の叩き方は、多少癖があるきもしますが、document 見ながら試すとそれほど難しい点は恐らくなかったです。
 
 API を叩くだけでは問題なさそうだったのですが、Prismic のレスポンスの型をみると any を使っており generics に対応してなかったので、継承して下記のように自分で型を作りました。
-
 
 \* 2022/4/20 追記
 
@@ -151,45 +149,45 @@ export const fetchPosts = async (client: DefaultClient) => {
 
 ```json
 {
-  "Main" : {
-    "title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
-        "label" : "タイトル",
-        "placeholder" : "タイトル"
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "タイトル",
+        "placeholder": "タイトル"
       }
     },
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "path",
-        "placeholder" : "記事URL"
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "path",
+        "placeholder": "記事URL"
       }
     },
-    "categories" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "category" : {
-            "type" : "Link",
-            "config" : {
-              "select" : "document",
-              "customtypes" : [ "sample-category" ],
-              "label" : "category",
-              "placeholder" : "category"
+    "categories": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "category": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["sample-category"],
+              "label": "category",
+              "placeholder": "category"
             }
           }
         },
-        "label" : "categories"
+        "label": "categories"
       }
     },
-    "content" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "label" : "content",
-        "placeholder" : "content"
+    "content": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "content",
+        "placeholder": "content"
       }
     }
   }

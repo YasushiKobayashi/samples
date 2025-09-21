@@ -1,7 +1,7 @@
 ---
 title: bun/vitestへの移行をClineで行ってみた
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['bun', 'vite', 'vitest', 'cline']
 published: true
 ---
@@ -45,39 +45,33 @@ bun への移行によって得られた主なメリットは以下の通りで�
 初めて Cline を使用しましたが、エディターだけでは手間のかかる置換作業などを一度に自動化できることがわかりました。また、作業内容を簡潔にまとめてもらうこともできます。
 
 > Clineは以下の作業を自動化してくれました：
-> 
+>
 > 1. **package.jsonファイルの更新**
 >    - yarnコマンドをbunコマンドに置き換え
 >    - `yarn` → `bun run`
 >    - `yarn fix:ts` → `bun run fix-ts`
-> 
 > 2. **lerna.jsonの設定更新**
 >    - `"npmClient": "yarn"` → `"npmClient": "bun"`
 >    - `"npmClientArgs": ["--no-lockfile"]` を削除
 >    - `"useWorkspaces": true` を追加
-> 
 > 3. **Makefileの更新**
 >    - yarnコマンドをbunコマンドに置き換え
 >    - `yarn build:modules` → `bun run build-modules`
-> 
 > 4. **GitHub Actionsワークフローの更新**
 >    - yarnキャッシュ関連の設定をbunに変更
 >    - yarnコマンドをbunコマンドに置き換え
-> 
 > 5. **コマンド名の形式変更**
 >    - コロン区切りからハイフン区切りに変更
 >    - `test:ci` → `vitest-ci`
 >    - `type-check:watch` → `type-check-watch`
 >    - `lint:ts` → `lint-ts`
-> 
 > 6. **テスト関連コマンドの名前変更**
 >    - bunのデフォルトテストコマンドとの競合を回避
 >    - `test` → `vitest`
 >    - `test:ci` → `vitest-ci`
 >    - `test:watch` → `vitest-watch`
-> 
+>
 > これらの変更により、プロジェクト全体がbunを使用するように統一され、コマンド名の一貫性も確保されました。
-
 
 # vitestへの移行
 
@@ -104,6 +98,7 @@ Jest から vitest への移行には以下のようなメリットがありま�
 vitest の移行は、まず設定ファイルを手動で作成し、1 つのディレクトリを手動で移行しました。具体的には、`vitest.config.ts`と`vitest-setup.tsx`を作成し、1 つのプロジェクトのテストファイルを更新して動作確認を行いました。
 
 テストファイルの移行では、主に以下のような変更が必要でした：
+
 - import パスの更新（`jest`→`vitest`）
 - テストユーティリティの更新（`jest-axe`→`vitest-axe`）
 - 一部のテスト構文の調整

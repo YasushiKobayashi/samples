@@ -1,7 +1,7 @@
 ---
 title: 0.11系のTerraformを1系までupdateするためにやったこと
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['Terraform']
 published: true
 ---
@@ -22,7 +22,7 @@ Terraform を 0.11 系で動いていたものを、一気に Terraform1 系ま�
 
 ### 0.13系でapplyをして、stateを更新する
 
->  This guide focuses on changes from v0.13 to v0.14. Terraform supports upgrade tools and features only for one major release upgrade at a time, so if you are currently using a version of Terraform prior to v0.13 please upgrade through the latest minor releases of all of the intermediate versions first, reviewing the previous upgrade guides for any considerations that may be relevant to you.
+> This guide focuses on changes from v0.13 to v0.14. Terraform supports upgrade tools and features only for one major release upgrade at a time, so if you are currently using a version of Terraform prior to v0.13 please upgrade through the latest minor releases of all of the intermediate versions first, reviewing the previous upgrade guides for any considerations that may be relevant to you.
 
 https://developer.hashicorp.com/terraform/language/upgrade-guides/0-14
 

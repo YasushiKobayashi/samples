@@ -11,11 +11,34 @@
       },
       "ja-no-mixed-period": {
         "severity": "warning"
+      },
+      "no-mix-dearu-desumasu": {
+        "severity": "warning"
+      },
+      "ja-no-weak-phrase": {
+        "severity": "warning"
+      },
+      "ja-no-redundant-expression": {
+        "severity": "warning"
+      },
+      "no-dropping-the-ra": {
+        "severity": "warning"
+      },
+      "max-ten": {
+        "max": 5,
+        "severity": "warning"
+      },
+      "no-doubled-joshi": {
+        "severity": "warning"
       }
     },
     "spellcheck-tech-word": true,
-    "no-doubled-joshi": true,
-    "ja-no-redundant-expression": true,
+    "no-doubled-joshi": {
+      "severity": "warning"
+    },
+    "ja-no-redundant-expression": {
+      "severity": "warning"
+    },
     "ja-no-successive-word": true,
     "ja-unnatural-alphabet": true,
     "max-ten": {
@@ -31,13 +54,8 @@
     "common-misspellings": true,
     "no-dead-link": {
       "checkRelative": false,
-      "ignore": ["http://localhost*"]
-    },
-    "no-mix-dearu-desumasu": {
-      "preferInHeader": "",
-      "preferInBody": "ですます",
-      "preferInList": "",
-      "strict": false
+      "ignore": ["http://localhost*"],
+      "severity": "warning"
     }
   }
 }

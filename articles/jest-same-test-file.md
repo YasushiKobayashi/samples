@@ -1,7 +1,7 @@
 ---
 title: jestでテストファイルと実装ファイルをまとめてみる
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['jest', 'JavaScript', 'TypeScript']
 published: true
 ---
@@ -38,7 +38,7 @@ https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=37728aa5
 
 まず、`testRegex` を以下のようにします。絶対パス必要なので、`path`などを使って書く必要があります。
 
-`jest.testRegex = path.resolve(__dirname, 'src')`  
+`jest.testRegex = path.resolve(__dirname, 'src')`
 
 こちらで、src 以下に基本的な実装コードが入っている場合は、src 以下だけを対象にテストを回すことができるようになります。
 `__tests_` にテストがある場合は、対象に入りませんが src 以下すべてを対象にしているため`src/main.spec.ts`などはもちろんこの方法でも対象に入ります。
@@ -46,13 +46,13 @@ https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=37728aa5
 ただしこの方法の場合は、テストがないファイルもテストの対象実行に含まれてしまうので、テストが不要なファイルは実行結果から除外するようにしたいです。
 
 ## テストがないファイルは除外するようにする
+
 テストがないファイルは除外するようにしたいですが、正規表現でそのまま頑張るのは、実装ディレクトリを工夫したりしないといけないため少し面倒です。
 `jest.testRegex`は array も使えるため少し雑ですが、`describe`が入っているファイルの一覧を検索することでテストファイルとみなし、シェル芸で対象ファイルを絞り問題なくテストを実行できました。
 
 このやり方は、`// @TEST` でコメントを書いて検索するなど何でもいいです。
 
 この方法でテストが必要なファイルのリストアップができたの、 `src/*`以下を対象にテストを回す必要はなくなったので、 `testRegex` の記述は消しても大丈夫です。
-
 
 ※エラーが出ないよりベターな書き方をコメントいただいたので、下記コードの修正をしています。
 
@@ -81,28 +81,25 @@ jest.testRegex = targets.concat([jest.testRegex])
 rollup でビルドしてみたコードを確認すると、下記のコードが生成されています。
 Jest の`describe` が残ってしまっているため、消さないと他で import した際にエラーとなります。
 
-
-
 ```javascript
 var test = function () {
-    return true;
-};
+  return true
+}
 var main = function () {
-    return test();
-};
+  return test()
+}
 describe('main', function () {
-    it('test', function () {
-        var res = test();
-        expect(res).toBeTruthy();
-    });
-});
+  it('test', function () {
+    var res = test()
+    expect(res).toBeTruthy()
+  })
+})
 
-export { main };
+export { main }
 ```
 
 rollup では `rollup-plugin-terser` を使うことで、圧縮する際に簡単にテストコードの削除できます。
 下記のコメントを追加することで、テストコードが圧縮する際に自動で削除されます。
-
 
 ```typescript
 /* @__PURE__ */
@@ -161,21 +158,19 @@ describe('Component', () => {
 こちらのように、バンドル後の js にも影響はないです。
 
 ```javascript
-import {createElement as t} from "react";
+import { createElement as t } from 'react'
 var r = function () {
-        return "test method"
-    },
-    e = function () {
-        return t("div", null, "test")
-    };
-export {
-    e as Component,
-    r as main
-};
+    return 'test method'
+  },
+  e = function () {
+    return t('div', null, 'test')
+  }
+export { e as Component, r as main }
 // # sourceMappingURL=jest-same-example-rollup.esm.js.map
 ```
 
 ### createMockは使用できない
+
 ただし、 `ts-auto-mock` のようなテスト時のビルド方法に依存したライブラリを使用すると、rollup でのビルドは失敗しました。
 
 ## Next.jsでテストを同一ファイルに書く
@@ -215,10 +210,8 @@ if (process.env.NODE_ENV === 'test') {
 Cannot add a hook after tests have started running. Hooks must be defined synchronously.
 ```
 
-
 該当の PR は下記です。
 https://github.com/YasushiKobayashi/samples/pull/531/files
-
 
 rust のように、言語仕様でできる言語同様にテストを書くことができるわけではないですが、 js(ts) でも同様のテストの実行は可能でした。
 
@@ -229,7 +222,6 @@ https://github.com/YasushiKobayashi/samples/tree/delete-rollup/src/jest-same-exa
 https://github.com/YasushiKobayashi/samples/tree/delete-rollup/src/jest-ts-auto-mock-sample
 
 2021/8/21 追記：jest/ts-jest を 27 系に update すると、非同期での react-test-utils の import が動かなかったです。通常の import の場合動作します。
-
 
 \* 2025/03/09 追記
 

@@ -1,7 +1,7 @@
 ---
 title: ecs/ec2インスタンス一台で動く、Laravelのapi環境をTerraformで構築する
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['Terraform', 'Laravel', 'ecs', 'ec2']
 published: true
 ---
@@ -20,15 +20,15 @@ Laravel/ec2/docker-compose の手動デプロイで動いている API サーバ
 
 - image の作りがあまりよくなく、ログのパーミッションエラーがまれに発生していた
 - 手動運用が発生してしまう
-    - 当時の構成は、`.env`などはインスタンスにあるものを直接編集するフローがあり、コード管理ができていないです
-    - 手動デプロイをしてることによる操作ミスで、サーバーが落ちることもありました
+  - 当時の構成は、`.env`などはインスタンスにあるものを直接編集するフローがあり、コード管理ができていないです
+  - 手動デプロイをしてることによる操作ミスで、サーバーが落ちることもありました
 - 環境が immutable ではない
-    - サーバー内のコンテナの vendor の状態がわからず、想定外に自動デプロイがコケていることがありました 
+  - サーバー内のコンテナの vendor の状態がわからず、想定外に自動デプロイがコケていることがありました
 - ec2 上の Docker の volume にしか、ログの永続化がされていない
-    - 小規模サービスのため一旦問題ないのですが、将来的には好ましくない
+  - 小規模サービスのため一旦問題ないのですが、将来的には好ましくない
 - autoscale 構成になっていない
-    - ロードバランサー配下にはありましたが、autoscale 構成になっていないため、サーバーが落ちた場合自動では復旧できない可能性があります
-    - こちらも同様に、小規模サービスのためリスクとしてはあまりないです
+  - ロードバランサー配下にはありましたが、autoscale 構成になっていないため、サーバーが落ちた場合自動では復旧できない可能性があります
+  - こちらも同様に、小規模サービスのためリスクとしてはあまりないです
 
 現状明確なリスクがあるのは、ログのパーミッション・手動構成・immutable ではないことです。
 
@@ -272,11 +272,9 @@ resource "aws_ecs_task_definition" "api" {
 
 ```
 
-
 また、task/ecs 関連はディレクトリを分けて apply するようにしています。
 
 https://github.com/YasushiKobayashi/samples/tree/master/tf/laravel-ecs-ec2-1instance/task
-
 
 ## デプロイ方法
 
@@ -374,7 +372,6 @@ resource "aws_iam_policy" "api_ci" {
 }
 ```
 
-
 ## 想定外でハマったこと
 
 ### ecsを動かすためにハマったこと
@@ -387,10 +384,10 @@ ecs 関連ではどこでエラーが発生して、タスクの更新ができ�
 
 ![](https://storage.googleapis.com/zenn-user-upload/byuhj4jrmwdgevo7e476gbm9c9yf)
 
-
 ### Laravel/nginxでハマったこと
 
 #### たまにエラーメッセージの内容がおかしい
+
 db 接続用の OS の環境変数の設定を間違っていただけなのに、PDO とは全く別のエラーが発生したりしており、何が原因でエラーが発生しているか把握することに時間がかかってしまうことがありました。
 
 設定不備/キャッシュがおかしいときはエラーメッセージが信用できないこともあるので、状況からエラー内容を想定したほうがエラーに結びつく可能性があります。
@@ -415,6 +412,7 @@ php artisan config:cache
 php artisan migrate --seed --force &
 exec "php-fpm"
 ```
+
 ```bash
 SHELL=/bin/bash
 BASH_ENV=/container.env
@@ -429,4 +427,3 @@ BASH_ENV=/container.env
 どこまで、このようなツールが管理できるか把握しきれていないのですが、docker-compose と連携して簡単に task を作成したり、alb/autoscale 関連も面倒を見てくれたりするようなので、基本的に手っ取り早く ecs 環境を構築したい場合はこのようなツールを使ったほうが良さそうです。
 
 https://github.com/aws/copilot-cli
-

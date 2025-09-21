@@ -9,6 +9,7 @@ Zenn の記事とサンプルコードを 1 つのモノレポで管理してい
 ## 主要コマンド
 
 ### 開発環境セットアップ
+
 ```bash
 # .node-versionで指定されたNode.jsバージョンをインストール
 cat .node-version | nodenv install
@@ -18,6 +19,7 @@ bun install
 ```
 
 ### テスト実行
+
 ```bash
 # 全ワークスペースのテストを並列実行
 bun run vitest
@@ -33,6 +35,7 @@ bunx vitest path/to/test.spec.tsx
 ```
 
 ### 型チェックとリント
+
 ```bash
 # 全ワークスペースの型チェック
 bun run type-check
@@ -51,6 +54,7 @@ bun run fix
 ```
 
 ### ビルドと開発
+
 ```bash
 # 全ワークスペースを並列ビルド
 bun run build
@@ -63,6 +67,7 @@ bun run dev
 ```
 
 ### PlaywrightでのE2Eテスト
+
 ```bash
 # Playwrightブラウザをインストール
 bun playwright install
@@ -74,11 +79,13 @@ bun run e2e-chromium
 ## アーキテクチャ
 
 ### モノレポ構造
+
 - Bun ワークスペースと連携した Lerna で複数パッケージを管理
 - `/src`内の各サンプルプロジェクトは独立したワークスペース（独自の`package.json`を持つ）
 - ルートレベルのスクリプトが全ワークスペースでの並列実行を統括
 
 ### テストアーキテクチャ
+
 - **フレームワーク**: パフォーマンスと設定の簡素化のため Jest から Vitest へ移行
 - **テスト環境**: 高速 DOM テスト用の Happy DOM
 - **Reactテスト**: `@testing-library/react`と`@vitejs/plugin-react`を使用
@@ -87,6 +94,7 @@ bun run e2e-chromium
 - **テストファイル**: 実装ファイルと同じ場所に配置（例：`Main.tsx`と`Main.spec.tsx`）
 
 ### CI/CDパイプライン
+
 - **GitHub Actions**: master へのプッシュと PR 時の自動テスト
 - **テスト実行**: リント、型チェック、ユニットテスト、end-to-end テストを実行
 - **カバレッジレポート**: Codecov へ自動アップロード
@@ -94,6 +102,7 @@ bun run e2e-chromium
 - **Launchable統合**: テストインテリジェンスとフレーキーテスト検出
 
 ### 主要な技術的決定
+
 - **パッケージマネージャー**: 高速インストールと組み込み TypeScript サポートのため Yarn から Bun へ移行
 - **テストフレームワーク**: ESM サポート改善と実行速度向上のため Jest から Vitest へ移行
 - **設定**: ルートの共有 Vitest 設定とワークスペース固有のオーバーライド
@@ -102,6 +111,7 @@ bun run e2e-chromium
 ## 最近の移行
 
 プロジェクトは最近大規模な移行を実施：
+
 1. **Yarn → Bun**: パッケージインストール速度の向上とスクリプトの簡素化
 2. **Jest → Vitest**: TypeScript サポート改善、テスト実行高速化、設定の簡素化
 3. これらの移行により設定ファイルがクリーンになり、開発体験が向上

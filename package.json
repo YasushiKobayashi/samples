@@ -18,19 +18,18 @@
     "fix": "bun run fix-ts & bun run fix-sass & bun run fix-md",
     "fix-ts": "prettier --parser typescript --write 'src/**/*.ts{,x}'",
     "fix-sass": "stylelint --config .stylelintrc.yml 'src/**/*.scss' --fix",
-    "fix-md": "bun run lint-md --fix",
+    "fix-md": "bun run lint-md --fix && prettier --write --parser markdown 'articles/*' '**/*.md' '**/*.mdx'",
     "cp-artifacts": "lerna run --stream --parallel cp-artifacts",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "prettier --parser typescript --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
-    "*.md": [
-      "textlint --fix",
-      "git add"
+    "*.{md,mdx}": [
+      "prettier --write --parser markdown",
+      "textlint --fix"
     ]
   },
   "devDependencies": {

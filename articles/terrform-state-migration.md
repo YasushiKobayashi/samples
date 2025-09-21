@@ -1,7 +1,7 @@
 ---
 title: Terraformで誤って、stateをmigrationしてしまったときの対策
-emoji: "📚"
-type: "tech" # tech: 技術記事 / idea: アイデア
+emoji: '📚'
+type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['Terraform']
 published: true
 ---
@@ -59,7 +59,6 @@ Do you want to migrate all workspaces to "s3"?
 ### .terraform以下を削除してからinitする
 
 完全新規のいつもどおりの状態になるので、今回のようなケースで init する場合は、この方法を取ったほうが良さそうです。
-
 
 ## 対策方法
 
