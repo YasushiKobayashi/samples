@@ -104,7 +104,7 @@ export const axeRunner = async (page: Page, disableRules: string[] = []) => {
 }
 ```
 
-Playwright のセットアップやテストの書き方については、こちらを参考にしてください Playwright が実行できていればすぐに上記のような方法でテスト可能です。
+Playwright のセットアップやテストの書き方については、こちらを参考にしてください。Playwright が実行できていればすぐに上記のような方法でテスト可能です。
 
 https://zenn.dev/ptpadan/articles/playwright-e2e
 
