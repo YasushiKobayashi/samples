@@ -14,7 +14,7 @@
 ## 可読性・テスタビリティ・拡張性を高くif文を書く書き方
 
 - https://qiita.com/jkhayate/items/5d98c93b10710b81a149
-  https://github.com/YasushiKobayashi/samples/tree/unit-test-sample/src/react-if-sample
+- https://github.com/YasushiKobayashi/samples/tree/unit-test-sample/src/react-if-sample
 
 # ts-auto-mockでinterfaceからテスト用データのモック生成を楽にする
 
