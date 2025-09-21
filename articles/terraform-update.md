@@ -8,7 +8,7 @@ published: true
 
 Terraform を 0.11 系で動いていたものを、一気に Terraform1 系まで一気に update しました。
 
-まだ 0.11 系を使っている人はあまりいないと思うので、この記事のニーズがあるかわかりませんが、ハマりどころをまとめていきます。
+まだ 0.11 系を使っている人はあまりいないと考えられるので、この記事のニーズがあるかわかりませんが、ハマりどころをまとめていきます。
 
 ## 古いバージョンが動かないので、上げないと身動きがとれなくなった
 
@@ -24,7 +24,7 @@ Terraform を 0.11 系で動いていたものを、一気に Terraform1 系ま�
 
 >  This guide focuses on changes from v0.13 to v0.14. Terraform supports upgrade tools and features only for one major release upgrade at a time, so if you are currently using a version of Terraform prior to v0.13 please upgrade through the latest minor releases of all of the intermediate versions first, reviewing the previous upgrade guides for any considerations that may be relevant to you.
 
-https://www.terraform.io/upgrade-guides/0-14.html
+https://developer.hashicorp.com/terraform/language/upgrade-guides/0-14
 
 上記のように、0.14 系より新しいバージョンの Terraform を使用するためには、0.13 系を経由して apply をして state の状態をバージョンアップできるようにする必要があります。
 

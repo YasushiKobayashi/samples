@@ -30,7 +30,7 @@ https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=37728aa5
 - テスト用に新たなファイルを作成することなく、すぐにテストを書き始めることができる
 - 実装とユニットテストの距離が近いため、コードの理解がしやすい
 
-のようなメリットがあり、この書き方を他の言語でもしてみたいなと思ったので、jest でできるかを試してみます。
+のようなメリットがあり、この書き方を他の言語でもしてみたいなと思ったので、Jest でできるかを試してみます。
 
 結論としては、`jest.config` を頑張り、テストコードの書き方を工夫することできました。
 
@@ -79,7 +79,7 @@ jest.testRegex = targets.concat([jest.testRegex])
 
 この書き方でテストを書けることはわかりましたが、`import`の仕方によっては、proudction コードにも影響がでてしまいそうなので、影響がないか rollup が生成するコードで確認をしてみます。
 rollup でビルドしてみたコードを確認すると、下記のコードが生成されています。
-jest の`describe` が残ってしまっているため、消さないと他で import した際にエラーとなります。
+Jest の`describe` が残ってしまっているため、消さないと他で import した際にエラーとなります。
 
 
 
@@ -209,7 +209,7 @@ if (process.env.NODE_ENV === 'test') {
 
 \* 2022/4/20 追記
 
-\* jest か testing-library のアップデートかどれが原因なのか、調査まではできていないので、下記のエラーが出て非同期で import するのはできなくなっていました。
+\* Jest か testing-library のアップデートかどれが原因なのか、調査まではできていないので、下記のエラーが出て非同期で import するのはできなくなっていました。
 
 ```
 Cannot add a hook after tests have started running. Hooks must be defined synchronously.
@@ -225,8 +225,8 @@ rust のように、言語仕様でできる言語同様にテストを書くこ
 今回サンプルコードにした内容は全てこちらの PR で作成しており、すべて動作確認可能です。
 
 https://github.com/YasushiKobayashi/samples/pull/59
-https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-rollup
-https://github.com/YasushiKobayashi/samples/tree/master/src/jest-same-example-next
+https://github.com/YasushiKobayashi/samples/tree/delete-rollup/src/jest-same-example-rollup
+https://github.com/YasushiKobayashi/samples/tree/delete-rollup/src/jest-ts-auto-mock-sample
 
 2021/8/21 追記：jest/ts-jest を 27 系に update すると、非同期での react-test-utils の import が動かなかったです。通常の import の場合動作します。
 

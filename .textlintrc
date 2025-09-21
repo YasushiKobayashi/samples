@@ -8,8 +8,36 @@
     "preset-ja-technical-writing": {
       "sentence-length": {
         "max": 200
+      },
+      "ja-no-mixed-period": {
+        "severity": "warning"
       }
     },
-    "spellcheck-tech-word": true
+    "spellcheck-tech-word": true,
+    "no-doubled-joshi": true,
+    "ja-no-redundant-expression": true,
+    "ja-no-successive-word": true,
+    "ja-unnatural-alphabet": true,
+    "max-ten": {
+      "max": 4
+    },
+    "max-kanji-continuous-len": {
+      "max": 6
+    },
+    "terminology": true,
+    "no-todo": true,
+    "no-empty-section": true,
+    "abbr-within-parentheses": true,
+    "common-misspellings": true,
+    "no-dead-link": {
+      "checkRelative": false,
+      "ignore": ["http://localhost*"]
+    },
+    "no-mix-dearu-desumasu": {
+      "preferInHeader": "",
+      "preferInBody": "ですます",
+      "preferInList": "",
+      "strict": false
+    }
   }
 }

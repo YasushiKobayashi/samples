@@ -10,7 +10,7 @@ Terraform で aws のリソースを管理し state は S3 で管理している
 
 ## Terraformのstateが他のものが引き継がれてしまっている
 
-state や provider の設定などは、基本的にどのディレクトリでも一緒になるので大体はファイルごとコピーを行い、state のキーだけを変更して`terraform init`を行っていました。
+state や provider の設定などは、基本的にどのディレクトリでも一緒になるので大体はファイルごとコピーし、state のキーだけを変更して`terraform init`を行っていました。
 
 今回は、state のキーの変更を忘れて、 `terraform init` を先に行ってしまいました。
 
