@@ -47,7 +47,7 @@
     "@storybook/react": "^8.6.4",
     "@storybook/test": "^8.6.4",
     "@testing-library/react": "^16.0.0",
-    "@types/react": "18.3.22",
+    "@types/react": "18.3.24",
     "@types/react-dom": "19.1.5",
     "@typescript-eslint/eslint-plugin": "8.44.0",
     "@typescript-eslint/parser": "8.44.0",
