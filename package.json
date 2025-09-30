@@ -101,7 +101,7 @@
     "vitest": "^3.0.8",
     "vitest-axe": "1.0.0-pre.5",
     "vitest-canvas-mock": "^0.3.3",
-    "zenn-cli": "^0.1.131"
+    "zenn-cli": "^0.2.0"
   },
   "dependencies": {
     "next": "^15.0.0",
