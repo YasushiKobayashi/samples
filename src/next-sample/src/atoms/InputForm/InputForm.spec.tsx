@@ -1,20 +1,30 @@
 import * as React from 'react'
-import { composeStories } from '@storybook/react'
-import { act, render } from '@testing-library/react'
+import { act, render, waitFor } from '@testing-library/react'
+import { userEvent } from '@testing-library/user-event'
+import { vi } from 'vitest'
 
 import { axeRunner } from '@/testUtils/axeRunner'
-
-import * as stories from './InputForm.story'
-
-const { Primary } = composeStories(stories)
+import { InputForm } from './InputForm'
 
 describe('atoms/InputForm', () => {
   it('Snap Shot', async () => {
-    const { container, asFragment } = render(<Primary />)
+    const onChange = vi.fn()
+    const props = {
+      id: 'id',
+      label: 'label',
+      val: '',
+      onChange,
+    }
+
+    const { container, asFragment, getByLabelText } = render(<InputForm {...props} />)
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
-      if (Primary.play) await Primary.play({ canvasElement: container })
+      const user = userEvent.setup()
+      await waitFor(async () => {
+        await user.type(getByLabelText('label'), 'v')
+      })
+      expect(onChange).toHaveBeenCalledWith('v')
       expect(await axeRunner(container)).toHaveNoViolations()
     })
   })

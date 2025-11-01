@@ -1,12 +1,10 @@
 import * as React from 'react'
-import { composeStories } from '@storybook/react'
-import { act, cleanup, render } from '@testing-library/react'
+import { act, cleanup, render, waitFor } from '@testing-library/react'
+import { userEvent } from '@testing-library/user-event'
+import { vi } from 'vitest'
 
 import { axeRunner } from '@/testUtils/axeRunner'
-
-import * as stories from './Top.story'
-
-const { Primary } = composeStories(stories)
+import { Top } from './Top'
 
 describe('templates/Top', () => {
   afterEach(() => {
@@ -14,11 +12,25 @@ describe('templates/Top', () => {
   })
 
   it('Snap Shot', async () => {
-    const { container, asFragment } = render(<Primary />)
+    const submit = vi.fn()
+    const props = { submit }
+
+    const { container, asFragment, getByLabelText, getByRole } = render(<Top {...props} />)
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
-      if (Primary.play) Primary.play({ canvasElement: container })
+      const user = userEvent.setup()
+      await waitFor(async () => {
+        await user.type(getByLabelText('First Name'), 'LeBron')
+        await user.type(getByLabelText('Last Name'), 'James')
+        await user.click(getByRole('button', { name: 'submit' }))
+      })
+
+      expect(submit).toHaveBeenCalledWith({
+        firstName: 'LeBron',
+        lastName: 'James',
+      })
+      expect(submit).toHaveBeenCalledTimes(1)
       expect(await axeRunner(container)).toHaveNoViolations()
     })
   })
