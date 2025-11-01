@@ -118,7 +118,7 @@ Primary.play = async ({ canvasElement }) => {
 
 コード全文はこちら。
 
-https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/templates/Top/Top.story.tsx
+https://github.com/YasushiKobayashi/samples/blob/main/src/next-sample/src/templates/Top/Top.story.tsx
 
 ## StoryをJestで再利用
 
@@ -141,7 +141,7 @@ describe('templates/Top', () => {
 
 コード全文はこちら。
 
-https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/templates/Top/Top.spec.tsx
+https://github.com/YasushiKobayashi/samples/blob/main/src/next-sample/src/templates/Top/Top.spec.tsx
 
 このように hygen のテンプレートで Story・テストを作りやすい環境を作ることで、最低限の Story・テストは必ず書くようになりテストカバレッジを向上させることができました。
 

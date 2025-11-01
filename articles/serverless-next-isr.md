@@ -57,7 +57,7 @@ https://github.com/YasushiKobayashi/samples/pull/367
 
 下記のようにパスごとの TTL を設定することで、キャッシュを更新できるようになりました。
 
-https://github.com/YasushiKobayashi/samples/blob/master/src/serverless-next-isr/serverless.yml#L22-L30
+https://github.com/YasushiKobayashi/samples/blob/main/src/serverless-next-isr/serverless.yml#L22-L30
 
 これで `/posts/[id]`については、ちゃんと isr できるようになったのですが、なぜか top ページだけキャッシュが更新されず、s3 のデータが更新されていません。
 
