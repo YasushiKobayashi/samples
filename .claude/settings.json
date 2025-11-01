@@ -1,0 +1,22 @@
+{
+    "permissions": {
+      "allow": [
+        "Bash(bun run:*)",
+        "Bash(NODE_ENV=test vitest run:*)",
+        "Bash(gh run view:*)",
+        "Bash(gh run download:*)",
+        "Bash(gh api:*)",
+        "Bash(gh run watch:*)",
+        "Bash(gh run list:*)"
+      ],
+      "deny": [],
+      "ask": []
+    },
+    "enableAllProjectMcpServers": true,
+    "enabledMcpjsonServers": [
+        "playwright-mcp",
+        "codex",
+        "serena",
+    ]
+  }
+  
