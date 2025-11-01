@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { act, render, waitFor } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
+import { act, fireEvent, render } from '@testing-library/react'
 import { vi } from 'vitest'
 
 import { axeRunner } from '@/testUtils/axeRunner'
@@ -20,10 +19,7 @@ describe('atoms/InputForm', () => {
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
-      const user = userEvent.setup()
-      await waitFor(async () => {
-        await user.type(getByLabelText('label'), 'v')
-      })
+      fireEvent.change(getByLabelText('label'), { target: { value: 'v' } })
       expect(onChange).toHaveBeenCalledWith('v')
       expect(await axeRunner(container)).toHaveNoViolations()
     })

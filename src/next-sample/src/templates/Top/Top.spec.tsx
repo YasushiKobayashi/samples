@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { act, cleanup, render, waitFor } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
+import { act, cleanup, fireEvent, render } from '@testing-library/react'
 import { vi } from 'vitest'
 
 import { axeRunner } from '@/testUtils/axeRunner'
@@ -19,12 +18,9 @@ describe('templates/Top', () => {
     expect(asFragment()).toMatchSnapshot()
 
     await act(async () => {
-      const user = userEvent.setup()
-      await waitFor(async () => {
-        await user.type(getByLabelText('First Name'), 'LeBron')
-        await user.type(getByLabelText('Last Name'), 'James')
-        await user.click(getByRole('button', { name: 'submit' }))
-      })
+      fireEvent.change(getByLabelText('First Name'), { target: { value: 'LeBron' } })
+      fireEvent.change(getByLabelText('Last Name'), { target: { value: 'James' } })
+      fireEvent.click(getByRole('button', { name: 'submit' }))
 
       expect(submit).toHaveBeenCalledWith({
         firstName: 'LeBron',
