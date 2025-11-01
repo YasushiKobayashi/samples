@@ -1,5 +1,5 @@
 ![Test workflow](https://github.com/YasushiKobayashi/samples/workflows/Test%20workflow/badge.svg)
-[![codecov](https://codecov.io/gh/YasushiKobayashi/samples/branch/master/graph/badge.svg)](https://app.codecov.io/gh/YasushiKobayashi/samples)
+[![codecov](https://codecov.io/gh/YasushiKobayashi/samples/branch/main/graph/badge.svg)](https://app.codecov.io/gh/YasushiKobayashi/samples)
 
 # ブログ等のサンプルコードとzennの記事管理リポジトリ
 
@@ -8,8 +8,8 @@
 ## jestでテストファイルと実装ファイルをまとめてみる
 
 - https://zenn.dev/ptpadan/articles/jest-same-test-file
-- https://github.com/YasushiKobayashi/samples/blob/master/src/jest-same-example-next
-- https://github.com/YasushiKobayashi/samples/blob/master/src/jest-same-example-rollup
+- https://github.com/YasushiKobayashi/samples/blob/main/src/jest-same-example-next
+- https://github.com/YasushiKobayashi/samples/blob/main/src/jest-same-example-rollup
 
 ## 可読性・テスタビリティ・拡張性を高くif文を書く書き方
 
@@ -19,7 +19,7 @@
 # ts-auto-mockでinterfaceからテスト用データのモック生成を楽にする
 
 - https://note.com/jkhayate/n/n5a347fb5e79d
-- https://github.com/YasushiKobayashi/samples/blob/master/src/jest-ts-auto-mock-sample
+- https://github.com/YasushiKobayashi/samples/blob/main/src/jest-ts-auto-mock-sample
 
 ## ecs/ec2インスタンス一台で動く、Laravelのapi環境をTerraformで構築する
 

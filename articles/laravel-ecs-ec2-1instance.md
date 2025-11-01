@@ -53,7 +53,7 @@ fargate も同様の理由で、現状のインスタンスサイズ・台数を
 
 下記のものも terraform で作成していますが、特に今回の構成で違いは少ないので、詳細を見たい方は GitHub からソースを見てください（必要なものは全て terraform で作成しています）。
 
-https://github.com/YasushiKobayashi/samples/tree/master/tf/laravel-ecs-ec2-1instance
+https://github.com/YasushiKobayashi/samples/tree/main/tf/laravel-ecs-ec2-1instance
 
 - vpc
 - ecr
@@ -111,7 +111,7 @@ rds の作成では、初期ユーザーのパスワードの設定などが必�
 
 ```hcl
 resource "aws_kms_key" "api" {
-  description             = "api task master key"
+  description             = "api task main key"
   deletion_window_in_days = 10
 }
 
@@ -274,7 +274,7 @@ resource "aws_ecs_task_definition" "api" {
 
 また、task/ecs 関連はディレクトリを分けて apply するようにしています。
 
-https://github.com/YasushiKobayashi/samples/tree/master/tf/laravel-ecs-ec2-1instance/task
+https://github.com/YasushiKobayashi/samples/tree/main/tf/laravel-ecs-ec2-1instance/task
 
 ## デプロイ方法
 

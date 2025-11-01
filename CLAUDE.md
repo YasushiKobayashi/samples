@@ -95,7 +95,7 @@ bun run e2e-chromium
 
 ### CI/CDパイプライン
 
-- **GitHub Actions**: master へのプッシュと PR 時の自動テスト
+- **GitHub Actions**: main へのプッシュと PR 時の自動テスト
 - **テスト実行**: リント、型チェック、ユニットテスト、end-to-end テストを実行
 - **カバレッジレポート**: Codecov へ自動アップロード
 - **Chromatic統合**: Storybook コンポーネントのビジュアルリグレッションテスト

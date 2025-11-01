@@ -78,6 +78,6 @@ Autify にしかないのは、前回のテスト結果との画面のスクリ�
 
 https://github.com/YasushiKobayashi/samples/pull/760
 
-https://github.com/YasushiKobayashi/samples/tree/master/src/playwright-sample
+https://github.com/YasushiKobayashi/samples/tree/main/src/playwright-sample
 
-https://github.com/YasushiKobayashi/samples/tree/master/src/next-sample
+https://github.com/YasushiKobayashi/samples/tree/main/src/next-sample

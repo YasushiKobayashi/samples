@@ -30,7 +30,7 @@ expect.extend(toHaveNoViolations)
 次に axe を実行するための、ラッパーの関数を用意して実行するようにしています。
 自分はこちらのように axe のラッパーを用意してこのサンプルリポジトリでは、特に除外の設定をしていないですが、導入しているプロジェクトでは担保することが難しいルールを基本除外にしています。
 
-https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/testUtils/axeRunner.ts
+https://github.com/YasushiKobayashi/samples/blob/main/src/next-sample/src/testUtils/axeRunner.ts
 
 ```typescript
 import { configureAxe } from 'jest-axe'
@@ -43,7 +43,7 @@ export const axeRunner = configureAxe({
 })
 ```
 
-https://github.com/YasushiKobayashi/samples/blob/master/src/next-sample/src/templates/Top/Top.spec.tsx#L22
+https://github.com/YasushiKobayashi/samples/blob/main/src/next-sample/src/templates/Top/Top.spec.tsx#L22
 
 ## コンポーネントベースで不要なものは都度除外
 
