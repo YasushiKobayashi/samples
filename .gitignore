@@ -58,3 +58,4 @@ trace.zip
 .jest-test-results.json
 junit.xml
 settings.local.json
+test-report.junit.xml

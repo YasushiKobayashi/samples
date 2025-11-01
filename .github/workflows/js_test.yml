@@ -88,6 +88,9 @@ jobs:
       - name: serve
         run: bun run dev &
         working-directory: src/next-sample
+      - name: wait for server
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000 > /dev/null 2>&1; do sleep 1; done'
       - name: e2e
         run: bun run e2e-chromium
         working-directory: src/playwright-sample
