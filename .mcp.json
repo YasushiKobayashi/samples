@@ -1,0 +1,22 @@
+{
+    "mcpServers": {
+      "playwright-mcp": {
+        "command": "npx",
+        "args": ["@playwright/mcp@latest"]
+      },
+      "codex": {
+        "type": "stdio",
+        "command": "codex",
+        "args": ["mcp"]
+      },
+      "serena": {
+        "command": "uvx",
+        "args": [
+          "--from",
+          "git+https://github.com/oraios/serena",
+          "serena-mcp-server"
+        ]
+      }
+    }
+  }
+  

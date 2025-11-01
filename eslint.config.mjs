@@ -1,4 +1,3 @@
-// eslint.config.mjs
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import reactPlugin from 'eslint-plugin-react'
@@ -7,6 +6,8 @@ import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
 import simpleImportSortPlugin from 'eslint-plugin-simple-import-sort'
 import importAccessPlugin from 'eslint-plugin-import-access/flat-config'
+import testingLibraryPlugin from 'eslint-plugin-testing-library'
+import storybookPlugin from 'eslint-plugin-storybook'
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
 
@@ -253,6 +254,22 @@ const fullModeConfig = [
       'jsx-a11y/anchor-has-content': 0,
       'jsx-a11y/alt-text': 1,
     },
+  },
+  {
+    files: ['**/*.spec.{ts,tsx}', '**/*.test.{ts,tsx}'],
+    plugins: { 'testing-library': testingLibraryPlugin },
+    rules: {
+      'testing-library/await-async-events': 2,
+      'testing-library/await-async-queries': 2,
+      'testing-library/await-async-utils': 2,
+      'testing-library/no-await-sync-events': 2,
+      'testing-library/no-await-sync-queries': 2,
+    },
+  },
+  {
+    files: ['**/*.story.{ts,tsx}', '**/*.stories.{ts,tsx}'],
+    plugins: { storybook: storybookPlugin },
+    rules: { 'storybook/default-exports': 2 },
   },
   {
     plugins: { prettier: prettierPlugin },

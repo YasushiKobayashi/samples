@@ -1,8 +1,8 @@
 import * as React from 'react'
-import type { Meta, StoryFn, StoryObj } from '@storybook/react'
-import { expect, userEvent, within } from '@storybook/test'
-import * as test from '@storybook/test'
+import type { Meta, StoryFn, StoryObj } from '@storybook/nextjs'
 import { waitFor } from '@testing-library/react'
+import { expect, userEvent, within } from 'storybook/test'
+import * as test from 'storybook/test'
 
 import { Top } from './Top'
 
