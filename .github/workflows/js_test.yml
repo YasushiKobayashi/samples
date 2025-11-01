@@ -14,7 +14,6 @@ permissions:
 env:
   NODE_ENV: test
   TEST_ARTIFACTS: /tmp/artifacts
-  LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN }}
   CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
 concurrency:
@@ -34,14 +33,6 @@ jobs:
         with:
           node-version-file: '.node-version'
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-      - name: Install launchable command
-        run: |
-          pip install launchable
-      - name: record build
-        run: launchable record build --name ${GITHUB_RUN_ID}
 
 
       - run: bun install
@@ -60,11 +51,6 @@ jobs:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: src/next-sample
-
-      - name: launchable record tests
-        run: launchable record tests jest src/**/junit.xml
-        if: always()
-        continue-on-error: true
 
       - name: Enable auto-merge for Dependabot PRs
         if: ${{contains(steps.metadata.outputs.dependency-names, 'my-dependency') && steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
