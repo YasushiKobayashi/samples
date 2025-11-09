@@ -10,4 +10,4 @@ registries:
 - type: standard
   ref: v4.432.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: oven-sh/bun@bun-v1.3.1
+- name: oven-sh/bun@bun-v1.3.2
