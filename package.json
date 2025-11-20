@@ -101,7 +101,7 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.8",
     "vitest-axe": "1.0.0-pre.5",
-    "vitest-canvas-mock": "^0.3.3",
+    "vitest-canvas-mock": "^1.0.0",
     "zenn-cli": "^0.2.9"
   },
   "dependencies": {
