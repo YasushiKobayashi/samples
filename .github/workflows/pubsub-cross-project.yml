@@ -1,0 +1,28 @@
+name: deploy cross project pubsub
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        type: boolean
+        description: "If true, run terraform apply (otherwise plan only)"
+        default: true
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  PUBLISHER_PROJECT_ID: sample-publisher
+  SUBSCRIBER_PROJECT_ID: sample-subscriber
+  REGION: asia-northeast1
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - uses: actions/checkout@v6
