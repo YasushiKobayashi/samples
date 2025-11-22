@@ -1,5 +1,5 @@
 ![Test workflow](https://github.com/YasushiKobayashi/samples/workflows/Test%20workflow/badge.svg)
-[![codecov](https://codecov.io/gh/YasushiKobayashi/samples/branch/main/graph/badge.svg)](https://app.codecov.io/gh/YasushiKobayashi/samples)
+[![codecov](https://app.codecov.io/gh/YasushiKobayashi/samples/graph/badge.svg?token=WSAOBKDE54)](https://codecov.io/gh/YasushiKobayashi/samples)
 
 # ブログ等のサンプルコードとzennの記事管理リポジトリ
 
