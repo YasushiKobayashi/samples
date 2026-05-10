@@ -1,0 +1,34 @@
+{
+  "checksums": [
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.13/bun-darwin-aarch64.zip",
+      "checksum": "5467E3F65DBA526B9FEA98F0CCE04EFAFC0C63E169733EC27B876A3AD32DA190",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.13/bun-darwin-x64.zip",
+      "checksum": "E5A6C8B64F419925232D111ECB13E25F0ABF55E54F792341F987623FD0778009",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.13/bun-linux-aarch64.zip",
+      "checksum": "70BAE41B3908B0A120E1E58C5C8AF30E74AFAE3B8D11B0D3FDD8E787DDFB4B22",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.13/bun-linux-x64.zip",
+      "checksum": "79C0771FA8B92C33AAE41E15A0E0D307EA99D0E2F00317C71C6C53237A78E25A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/oven-sh/bun/bun-v1.3.13/bun-windows-x64.zip",
+      "checksum": "85B14F3E0584218E9B63407B3AA6B90C4835EC5C32435C1F12CB6FC13667C7C9",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.510.0/registry.yaml",
+      "checksum": "AA3F2C20C9F95A35D141161C5961E2560FACBDC4C6DC60F02103DFB297334947",
+      "algorithm": "sha256"
+    }
+  ]
+}
