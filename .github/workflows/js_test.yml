@@ -44,6 +44,17 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - run: bun run type-check
+
+      - name: Install Playwright browsers
+        run: bunx playwright install --with-deps chromium
+        working-directory: src/next-sample
+      - name: Build Storybook
+        run: bun run build-storybook
+        working-directory: src/next-sample
+      - name: Run Storybook tests
+        run: bun run test-storybook
+        working-directory: src/next-sample
+
       - name: Publish to Chromatic
         uses: chromaui/action@v15
         # Chromatic GitHub Action options

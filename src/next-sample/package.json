@@ -11,6 +11,21 @@
     "type-check": "tsc --noEmit",
     "type-check-watch": "npm run type-check -- --watch",
     "story": "NODE_ENV=test storybook dev -h 0.0.0.0 -p 9006 -s ./public",
-    "build-storybook": "NODE_ENV=test storybook build --stats-json"
+    "build-storybook": "NODE_ENV=test storybook build --stats-json",
+    "test-storybook": "NODE_ENV=test concurrently -k -s first \"http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && test-storybook --url http://localhost:6006\""
+  },
+  "devDependencies": {
+    "@storybook/test-runner": "^0.24.3",
+    "concurrently": "^9.2.1",
+    "http-server": "^14.1.1",
+    "msw": "^2.14.5",
+    "msw-storybook-addon": "^2.0.7",
+    "playwright": "^1.59.1",
+    "wait-on": "^9.0.5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
