@@ -1,11 +1,11 @@
 // This file has been automatically migrated to valid ESM format by Storybook.
-import { fileURLToPath } from "node:url";
-import { createRequire } from "node:module";
+import { fileURLToPath } from 'node:url'
+import { createRequire } from 'node:module'
 import { StorybookConfig } from '@storybook/nextjs'
 import path, { dirname, join } from 'path'
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const require = createRequire(import.meta.url);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+const require = createRequire(import.meta.url)
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const config: StorybookConfig = {
@@ -13,9 +13,11 @@ const config: StorybookConfig = {
 
   addons: [
     getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-docs")
+    getAbsolutePath('@chromatic-com/storybook'),
+    getAbsolutePath('@storybook/addon-docs'),
   ],
+
+  staticDirs: ['../public'],
 
   webpackFinal: async config => {
     if (config.resolve) {
@@ -35,7 +37,7 @@ const config: StorybookConfig = {
 
   typescript: {
     reactDocgen: 'react-docgen-typescript',
-  }
+  },
 }
 
 function getAbsolutePath(value: string) {
