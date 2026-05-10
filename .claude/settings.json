@@ -16,7 +16,7 @@
     "enabledMcpjsonServers": [
         "playwright-mcp",
         "codex",
-        "serena",
+        "serena"
     ]
   }
   
