@@ -243,7 +243,9 @@ await Primary.play({ canvasElement: container })
 
 `msw-storybook-addon` の readme や Storybook 公式が推奨している `setProjectAnnotations` を setupFile でグローバル登録するパターンは、新規プロジェクトであればそちらの方が公式準拠で素直です。今回採用しなかったのは既存事情側の理由で、既存の spec が `<Story />` JSX 直書きや手動 Wrapper コンポーネントで書かれていると、preview の decorator が二重に適用されて大量のリグレッションが起きるためです。テストファイル単位でオプトインできるヘルパー方式の方が、既存のコードに影響を出さず段階的に乗せていきやすいので今回はこちらに倒しました。
 
-今回サンプルコードにした内容は全てこちらの PR で作成しており、すべて動作確認可能です。
+今回サンプルコードにした内容や、動作確認で使用したコードは全てこちらの PR で作成しており、すべて動作確認可能です。
+
+https://github.com/YasushiKobayashi/samples/pull/1243
 
 https://github.com/YasushiKobayashi/samples/tree/main/src/msw-storybook-sample
 
