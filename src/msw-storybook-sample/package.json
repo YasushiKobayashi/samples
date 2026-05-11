@@ -1,0 +1,29 @@
+{
+  "name": "msw-storybook-sample",
+  "version": "0.0.0",
+  "author": "YasushiKobayashi <ptpadan@gmail.com>",
+  "homepage": "https://github.com/YasushiKobayashi/samples#readme",
+  "scripts": {
+    "vitest": "NODE_ENV=test vitest run",
+    "vitest-watch": "NODE_ENV=test vitest --ui",
+    "type-check": "tsc --noEmit",
+    "type-check-watch": "npm run type-check -- --watch",
+    "story": "NODE_ENV=test storybook dev -p 9007 -s ./public",
+    "build-storybook": "NODE_ENV=test storybook build",
+    "test-storybook": "NODE_ENV=test concurrently -k -s first \"http-server storybook-static --port 6007 --silent\" \"wait-on tcp:6007 && test-storybook --url http://localhost:6007\""
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "10.3.6",
+    "@storybook/test-runner": "0.24.3",
+    "concurrently": "9.2.1",
+    "http-server": "14.1.1",
+    "msw": "2.14.5",
+    "msw-storybook-addon": "2.0.7",
+    "wait-on": "9.0.5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

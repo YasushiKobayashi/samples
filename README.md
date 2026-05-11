@@ -66,6 +66,11 @@
 
 - https://zenn.dev/ptpadan/articles/vim-tmux-iterm-ide
 
+## msw-storybook-addonのMSWをvitestからも使えるようにする
+
+- https://zenn.dev/ptpadan/articles/msw-storybook-vitest
+- https://github.com/YasushiKobayashi/samples/tree/main/src/msw-storybook-sample
+
 # setup
 
 ```bash
