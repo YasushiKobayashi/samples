@@ -28,6 +28,10 @@ interface RunnableStory {
 export const renderStory = async (Story: RunnableStory): Promise<HTMLElement> => {
   const canvasElement = document.createElement('div')
   document.body.appendChild(canvasElement)
-  await Story.run({ canvasElement })
-  return canvasElement
+  try {
+    await Story.run({ canvasElement })
+    return canvasElement
+  } finally {
+    canvasElement.remove()
+  }
 }

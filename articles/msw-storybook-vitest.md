@@ -42,13 +42,23 @@ export const UserCard: React.FC<{ userId: number }> = ({ userId }) => {
   const [error, setError] = React.useState<string | null>(null)
 
   React.useEffect(() => {
+    let cancelled = false
+    setUser(null)
+    setError(null)
     fetch(`/api/users/${userId}`)
       .then(res => {
         if (!res.ok) throw new Error(`status ${res.status}`)
         return res.json() as Promise<User>
       })
-      .then(setUser)
-      .catch((e: Error) => setError(e.message))
+      .then(data => {
+        if (!cancelled) setUser(data)
+      })
+      .catch((e: Error) => {
+        if (!cancelled) setError(e.message)
+      })
+    return () => {
+      cancelled = true
+    }
   }, [userId])
 
   if (error) return <p role="alert">読み込みに失敗しました: {error}</p>
