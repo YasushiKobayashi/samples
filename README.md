@@ -71,6 +71,11 @@
 - https://zenn.dev/ptpadan/articles/msw-storybook-vitest
 - https://github.com/YasushiKobayashi/samples/tree/main/src/msw-storybook-sample
 
+## launchd/gh/git worktreeでGitHubのレビュー依頼からローカルのClaude Codeを自動起動する
+
+- https://zenn.dev/ptpadan/articles/local-claude-review-daemon
+- https://github.com/YasushiKobayashi/agent-dispatch
+
 # setup
 
 ```bash
