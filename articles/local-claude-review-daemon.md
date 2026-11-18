@@ -71,9 +71,10 @@ driver は `modernc.org/sqlite` にしました。pure Go で cgo が要らな�
 そこで `~/.reviewd/repos/<owner>__<name>.git` に専用の bare mirror を作り、そこから detached の worktree を生やす形にしました。レビュー対象の取得は `refs/pull/<N>/head` 経由にしているので、fork からの PR も同じ経路で動きます。
 
 ```sh
-git clone --mirror https://github.com/<owner>/<name>.git ~/.reviewd/repos/<owner>__<name>.git
-git fetch origin +refs/pull/<N>/head:refs/reviewd/pr/<N>
-git worktree add --detach ~/.reviewd/worktrees/<owner>__<name>/<name>-pr<N> <head SHA>
+gh repo clone <owner>/<name> ~/.reviewd/repos/<owner>__<name>.git -- --bare
+git -C ~/.reviewd/repos/<owner>__<name>.git fetch origin +refs/pull/<N>/head:refs/reviewd/pr/<N>
+git -C ~/.reviewd/repos/<owner>__<name>.git worktree add --detach \
+  ~/.reviewd/worktrees/<owner>__<name>/<name>-pr<N> <head SHA>
 ```
 
 https://github.com/YasushiKobayashi/agent-dispatch/blob/main/internal/worktree/worktree.go
@@ -154,6 +155,8 @@ gh api repos/<owner>/<name>/pulls/<N>/comments --paginate --jq '.[]'
 ```
 
 この種別は PR 1 件ごとに gh を追加で 2 回叩くので、`on` に持つ有効なルールが無ければ検索自体を行わないようにしています。また、同じ PR で `review_requested` と同時に検知された場合は、1 回の poll では片方だけ走らせて残りを次の poll に回します。worktree のパスが PR 単位で共通なので、並行に走ると互いに消し合ってしまうためです。
+
+ただし、この制御は 1 回の poll の中でしか効きません。Ghostty モードではタブを開いた時点で poll が終わり、claude はそのまま worktree の中で動き続けます。次の poll で同じ PR のイベントが走ると、worktree は準備の段階で作り直されるので、対話中のタブの足元が入れ替わります。同じ PR で対話を続けている間は、タブを閉じてから次のイベントを拾わせるようにしています。
 
 コメント本文はそのままプロンプトに入るので、作成者が書いた指示に claude が従ってしまう余地はあります。作成者以外のコメントを拾わないのは、ノイズを減らすと同時にこの影響範囲を PR 作成者に限る意味もあります。
 
@@ -350,6 +353,8 @@ https://github.com/YasushiKobayashi/agent-dispatch/blob/main/scripts/next-versio
   run: echo "tag=$(scripts/next-version.sh)" >> "$GITHUB_OUTPUT"
 - name: Push the tag
   if: steps.version.outputs.tag != ''
+  env:
+    TAG: ${{ steps.version.outputs.tag }}
   run: |
     git tag "$TAG"
     git push origin "$TAG"
@@ -357,6 +362,8 @@ https://github.com/YasushiKobayashi/agent-dispatch/blob/main/scripts/next-versio
   if: steps.version.outputs.tag != ''
   with:
     args: release --clean
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 https://github.com/YasushiKobayashi/agent-dispatch/blob/main/.github/workflows/ci.yml
@@ -371,7 +378,7 @@ tag 判定に外部の Action を使わず shell script にしたのは、判定
 
 大きいリポジトリの bare mirror は 160MB 級になり、Ghostty モードでは worktree も掃除せず残ります。`~/.reviewd/` は確実に溜まっていくので、`reviewd gc` のようなコマンドを作るか迷いました。
 
-結論としては入れないことにしました。Ghostty モードでは実行中のタブが worktree を掴んだままで、`reviewd` 側はそのタブが終わったかどうかを知れません。自動削除は「作業中のディレクトリを消し飛ばす」リスクを持ち込みます。そのリスクを取るより、溜まったら `rm -rf` する手間を選びました。消す前に `reviewd status` でタブが残っていないかを見る、という運用です。
+結論としては入れないことにしました。Ghostty モードでは実行中のタブが worktree を掴んだままで、`reviewd` 側はそのタブが終わったかどうかを知れません。自動削除は「作業中のディレクトリを消し飛ばす」リスクを持ち込みます。そのリスクを取るより、溜まったら `rm -rf` する手間を選びました。`reviewd status` は実行履歴を出すだけで、Ghostty の run は `launched` のまま残ります。消す前に Ghostty で対象 PR のタブを直接確認して、閉じてから削除する運用です。
 
 レビュー結果の PR へのコメント投稿も、CLI の機能としては入れていません。こちらは外向きの副作用がある操作なので、無人で動くものに最初から持たせたくありませんでした。CLI 側は `result.md` への保存と macOS 通知までで止めています。通知をクリックすると結果が開きます。投稿の線引きは前述のとおり skill 側に置いてあり、条件を全部満たすときだけ approve まで進みます。どこまで自動で投稿してよいかはリポジトリの事情で変わります。そのため CLI ではなく skill 側で決められる形が気に入っています。
 
